@@ -15,28 +15,31 @@
 <script src="/js/typeWriter.js"></script>
 </head>
 <body>
+	<%
+	String currentUrl = request.getRequestURI(); //관리자페이지용도
+	%>
 	<!-- [s] wrap -->
 	<div id="wrap">
 
 		<!-- [s] container -->
 		<div id="container">
-<!-- 			<ul id="fullmenu"> -->
-<!-- 				<li data-menuanchor="page1"><a href="#page1">첫번째 페이지</a></li> -->
-<!-- 				<li data-menuanchor="page2"><a href="#page2">두번째 페이지</a></li> -->
-<!-- 				<li data-menuanchor="page3"><a href="#page3">세번째 페이지</a></li> -->
-<!-- 				<li data-menuanchor="page4"><a href="#page4">네번째 페이지</a></li> -->
-<!-- 				<li data-menuanchor="page5"><a href="#page5">다섯번째 페이지</a></li> -->
-<!-- 				<li data-menuanchor="footer"><a href="#footer">FOOTER</a></li> -->
-<!-- 			</ul> -->
+			<!-- 			<ul id="fullmenu"> -->
+			<!-- 				<li data-menuanchor="page1"><a href="#page1">첫번째 페이지</a></li> -->
+			<!-- 				<li data-menuanchor="page2"><a href="#page2">두번째 페이지</a></li> -->
+			<!-- 				<li data-menuanchor="page3"><a href="#page3">세번째 페이지</a></li> -->
+			<!-- 				<li data-menuanchor="page4"><a href="#page4">네번째 페이지</a></li> -->
+			<!-- 				<li data-menuanchor="page5"><a href="#page5">다섯번째 페이지</a></li> -->
+			<!-- 				<li data-menuanchor="footer"><a href="#footer">FOOTER</a></li> -->
+			<!-- 			</ul> -->
 			<!-- 헤더 -->
 			<header class="header" id="mainHeader">
 				<div class="logo">
-				<a href="" >PORTFOLIO</a>
+					<a href="">PORTFOLIO</a>
 				</div>
 				<nav>
 					<ul id="fullmenu">
-						<li data-menuanchor="page2"><a href="#page2">두번째 페이지</a></li>
-						<li data-menuanchor="page3"><a href="#page3">세번째 페이지</a></li>
+						<li data-menuanchor="page2"><a href="#page2">About</a></li>
+						<li data-menuanchor="page3"><a href="#page3">Career</a></li>
 						<li data-menuanchor="page4"><a href="#page4">네번째 페이지</a></li>
 						<li data-menuanchor="page5"><a href="#page5">다섯번째 페이지</a></li>
 					</ul>
@@ -49,10 +52,17 @@
 					<div class="section sec1 body">
 						<h1>
 							<a href="" class="typewrite" data-period="2000"
-								data-type='[ "안녕하세요.", "저의 포트폴리오에 오신걸 환영합니다.", "스크롤을 내려주세요." ]'>
-								<span class="wrap"></span>
+								data-type='[ "DONGHEE PORTFOLIO" ]'> <span class="wrap"></span>
 							</a>
 						</h1>
+						<div class="scroll-down">
+							Scroll down
+							<div class="arrow">
+								<svg width="28" height="28" viewBox="0 0 24 24">
+									<path fill="white" d="M12 16l-6-6h12z" />
+								</svg>
+							</div>
+						</div>
 					</div>
 					<div class="section sec2">
 						<h2 class="motion m1">2번 타이틀입니다</h2>
