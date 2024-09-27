@@ -101,7 +101,7 @@ a {
 	flex-direction: column; /* 수직으로 배치 */
 	align-items: center; /* 중앙 정렬 */
 	position: fixed; /* 고정 위치 */
-	bottom: 80px; /* 하단에서의 위치 */
+	bottom: 50px; /* 하단에서의 위치 */
 	left: 50%; /* 수평 중앙 */
 	transform: translateX(-50%); /* 정확한 중앙 위치 조정 */
 	color: white; /* 글자 색상 */

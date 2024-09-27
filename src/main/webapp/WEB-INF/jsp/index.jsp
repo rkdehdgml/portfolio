@@ -22,15 +22,6 @@
 
 		<!-- [s] container -->
 		<div id="container">
-			<!-- 			<ul id="fullmenu"> -->
-			<!-- 				<li data-menuanchor="page1"><a href="#page1">첫번째 페이지</a></li> -->
-			<!-- 				<li data-menuanchor="page2"><a href="#page2">두번째 페이지</a></li> -->
-			<!-- 				<li data-menuanchor="page3"><a href="#page3">세번째 페이지</a></li> -->
-			<!-- 				<li data-menuanchor="page4"><a href="#page4">네번째 페이지</a></li> -->
-			<!-- 				<li data-menuanchor="page5"><a href="#page5">다섯번째 페이지</a></li> -->
-			<!-- 				<li data-menuanchor="footer"><a href="#footer">FOOTER</a></li> -->
-			<!-- 			</ul> -->
-			<!-- 헤더 -->
 			<header class="header" id="mainHeader">
 				<div class="logo">
 					<a href="">PORTFOLIO</a>
@@ -64,7 +55,7 @@
 						</div>
 					</div>
 					<div class="section sec2">
-						<h2 class="motion m1">2번 타이틀입니다</h2>
+						<h2 class="motion m1">2번 테이블 입니다.</h2>
 						<h2 class="motion m2">2번 타이틀입니다</h2>
 						<h2 class="motion m3">2번 타이틀입니다</h2>
 						<h2 class="motion m4">2번 타이틀입니다</h2>
