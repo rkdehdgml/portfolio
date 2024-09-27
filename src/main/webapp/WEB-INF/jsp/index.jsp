@@ -9,8 +9,10 @@
 <title>포트폴리오</title>
 <link rel="stylesheet" type="text/css" href="/css/main.css">
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
 <script src="/js/main.js"></script>
+<script src="/js/typeWriter.js"></script>
 </head>
 <body>
 	<!-- [s] wrap -->
@@ -18,51 +20,65 @@
 
 		<!-- [s] container -->
 		<div id="container">
-			<ul id="fullmenu">
-				<li data-menuanchor="page1"><a href="#page1">첫번째 페이지</a></li>
-				<li data-menuanchor="page2"><a href="#page2">두번째 페이지</a></li>
-				<li data-menuanchor="page3"><a href="#page3">세번째 페이지</a></li>
-				<li data-menuanchor="page4"><a href="#page4">네번째 페이지</a></li>
-				<li data-menuanchor="page5"><a href="#page5">다섯번째 페이지</a></li>
-				<li data-menuanchor="footer"><a href="#footer">FOOTER</a></li>
-			</ul>
-			<header class="header">
-				<div class="logo">Fixed Header</div>
+<!-- 			<ul id="fullmenu"> -->
+<!-- 				<li data-menuanchor="page1"><a href="#page1">첫번째 페이지</a></li> -->
+<!-- 				<li data-menuanchor="page2"><a href="#page2">두번째 페이지</a></li> -->
+<!-- 				<li data-menuanchor="page3"><a href="#page3">세번째 페이지</a></li> -->
+<!-- 				<li data-menuanchor="page4"><a href="#page4">네번째 페이지</a></li> -->
+<!-- 				<li data-menuanchor="page5"><a href="#page5">다섯번째 페이지</a></li> -->
+<!-- 				<li data-menuanchor="footer"><a href="#footer">FOOTER</a></li> -->
+<!-- 			</ul> -->
+			<!-- 헤더 -->
+			<header class="header" id="mainHeader">
+				<div class="logo">
+				<a href="" >PORTFOLIO</a>
+				</div>
+				<nav>
+					<ul id="fullmenu">
+						<li data-menuanchor="page2"><a href="#page2">두번째 페이지</a></li>
+						<li data-menuanchor="page3"><a href="#page3">세번째 페이지</a></li>
+						<li data-menuanchor="page4"><a href="#page4">네번째 페이지</a></li>
+						<li data-menuanchor="page5"><a href="#page5">다섯번째 페이지</a></li>
+					</ul>
+				</nav>
 			</header>
-
-			<div id="fullpage">
-				<div class="section sec1">
-					<h2 class="motion m1">1번 타이틀입니다</h2>
-					<h2 class="motion m2">1번 타이틀입니다</h2>
-					<h2 class="motion m3">1번 타이틀입니다</h2>
+			<!-- //헤더 -->
+			<!-- 메인 -->
+			<main>
+				<div id="fullpage">
+					<div class="section sec1 body">
+						<h1>
+							<a href="" class="typewrite" data-period="2000"
+								data-type='[ "안녕하세요.", "저의 포트폴리오에 오신걸 환영합니다.", "스크롤을 내려주세요." ]'>
+								<span class="wrap"></span>
+							</a>
+						</h1>
+					</div>
+					<div class="section sec2">
+						<h2 class="motion m1">2번 타이틀입니다</h2>
+						<h2 class="motion m2">2번 타이틀입니다</h2>
+						<h2 class="motion m3">2번 타이틀입니다</h2>
+						<h2 class="motion m4">2번 타이틀입니다</h2>
+						<h2 class="motion m5">2번 타이틀입니다</h2>
+					</div>
+					<div class="section sec3">
+						<h2 class="motion m1">3번 타이틀입니다</h2>
+						<h2 class="motion m2">3번 타이틀입니다</h2>
+					</div>
+					<div class="section sec4">
+						<h2 class="motion m1">4번 타이틀입니다</h2>
+						<h2 class="motion m2">4번 타이틀입니다</h2>
+					</div>
+					<div class="section sec5">
+						<h2 class="motion m1">5번 타이틀입니다</h2>
+						<h2 class="motion m2">5번 타이틀입니다</h2>
+						<h2 class="motion m3">5번 타이틀입니다</h2>
+					</div>
+					<div class="section footer">FOOTER</div>
 				</div>
-				<div class="section sec2">
-					<h2 class="motion m1">2번 타이틀입니다</h2>
-					<h2 class="motion m2">2번 타이틀입니다</h2>
-					<h2 class="motion m3">2번 타이틀입니다</h2>
-					<h2 class="motion m4">2번 타이틀입니다</h2>
-					<h2 class="motion m5">2번 타이틀입니다</h2>
-				</div>
-				<div class="section sec3">
-					<h2 class="motion m1">3번 타이틀입니다</h2>
-					<h2 class="motion m2">3번 타이틀입니다</h2>
-				</div>
-				<div class="section sec4">
-					<h2 class="motion m1">4번 타이틀입니다</h2>
-					<h2 class="motion m2">4번 타이틀입니다</h2>
-				</div>
-				<div class="section sec5">
-					<h2 class="motion m1">5번 타이틀입니다</h2>
-					<h2 class="motion m2">5번 타이틀입니다</h2>
-					<h2 class="motion m3">5번 타이틀입니다</h2>
-				</div>
-				<div class="section footer">FOOTER</div>
-			</div>
+			</main>
+			<!-- //메인 -->
 		</div>
-		<!-- [e] container -->
-
 	</div>
-	<!-- [e] wrap -->
-
 </body>
 </html>
