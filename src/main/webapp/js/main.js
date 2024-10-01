@@ -4,6 +4,7 @@ $(document).ready(function() {
 		$('#fullpage').fullpage({
 			menu: '#fullmenu',
 			verticalCentered: false,
+			keyboardScrolling: true,
 			css3: false,
 			autoScrolling: true,
 			lockAnchors: true,

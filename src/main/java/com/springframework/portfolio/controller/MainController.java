@@ -5,15 +5,23 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.springframework.portfolio.common.CommandMap;
 
 @Controller
 public class MainController {
-	
-	@RequestMapping(value="/main.do")
-	public String main (HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
-		
+
+	@RequestMapping(value = "/main.do")
+	public String main(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
+
 		return "index";
+	}
+
+	// 3번 섹션의 동적 콘텐츠를 반환하는 메서드
+	@RequestMapping(value = "/aboutMe.do")
+	@ResponseBody
+	public String aboutMeSection(HttpServletRequest request, HttpServletResponse response) {
+		return "aboutMe"; 
 	}
 }

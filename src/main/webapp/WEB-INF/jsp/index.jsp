@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -7,9 +8,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>포트폴리오</title>
 <link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/typeWriter.js"></script>
 </head>
@@ -55,20 +60,26 @@
 						</div>
 					</div>
 					<div class="section sec2">
-						<h2 class="motion m1">2번 테이블 입니다.</h2>
-						<h2 class="motion m2">2번 타이틀입니다</h2>
-						<h2 class="motion m3">2번 타이틀입니다</h2>
-						<h2 class="motion m4">2번 타이틀입니다</h2>
-						<h2 class="motion m5">2번 타이틀입니다</h2>
+						<div class="motion m1">
+							<c:import url="/WEB-INF/jsp/aboutMe.jsp" />
+						</div>
 					</div>
 					<div class="section sec3">
 						<h2 class="motion m1">3번 타이틀입니다</h2>
 						<h2 class="motion m2">3번 타이틀입니다</h2>
 					</div>
 					<div class="section sec4">
-						<h2 class="motion m1">4번 타이틀입니다</h2>
-						<h2 class="motion m2">4번 타이틀입니다</h2>
+						<div class="slide">
+							<h2>슬라이드 1</h2>
+						</div>
+						<div class="slide">
+							<h2>슬라이드 2</h2>
+						</div>
+						<div class="slide">
+							<h2>슬라이드 3</h2>
+						</div>
 					</div>
+
 					<div class="section sec5">
 						<h2 class="motion m1">5번 타이틀입니다</h2>
 						<h2 class="motion m2">5번 타이틀입니다</h2>

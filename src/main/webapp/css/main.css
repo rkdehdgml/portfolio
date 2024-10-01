@@ -97,15 +97,16 @@ a {
 }
 
 .scroll-down {
-	display: flex;
-	flex-direction: column; /* 수직으로 배치 */
-	align-items: center; /* 중앙 정렬 */
-	position: fixed; /* 고정 위치 */
-	bottom: 50px; /* 하단에서의 위치 */
-	left: 50%; /* 수평 중앙 */
-	transform: translateX(-50%); /* 정확한 중앙 위치 조정 */
-	color: white; /* 글자 색상 */
-	z-index: 1000; /* 다른 요소보다 위에 오도록 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    bottom: 50px;
+    left: 50px;
+    top: 30%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 1000;
 }
 
 .arrow {
@@ -195,6 +196,14 @@ a {
 	text-align: center;
 	padding: 0;
 	margin: 0;
+}
+
+#carousel {
+  height: 280px; /* 필요한 경우 높이 조정 */
+  width: 960px;  /* 레이아웃에 맞게 너비 조정 */
+  background-color: #fff;
+  position: relative;
+  margin: 0 auto; /* 중앙 정렬 */
 }
 
 /* motion */
