@@ -20,8 +20,8 @@ public class MainController {
 
 	// 3번 섹션의 동적 콘텐츠를 반환하는 메서드
 	@RequestMapping(value = "/aboutMe.do")
-	@ResponseBody
-	public String aboutMeSection(HttpServletRequest request, HttpServletResponse response) {
+	public String aboutMe(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
+		
 		return "aboutMe"; 
 	}
 }
