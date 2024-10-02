@@ -23,15 +23,12 @@
 	<div id="wrap">
 		<div id="container">
 			<header class="header" id="mainHeader">
-				<div class="logo">
-					<a href="">PORTFOLIO</a>
-				</div>
 				<nav>
 					<ul id="fullmenu">
-						<li data-menuanchor="page2"><a href="#page2">About</a></li>
-						<li data-menuanchor="page3"><a href="#page3">Career</a></li>
-						<li data-menuanchor="page4"><a href="#page4">네번째 페이지</a></li>
-						<li data-menuanchor="page5"><a href="#page5">다섯번째 페이지</a></li>
+						<li data-menuanchor="page2"><a href="#page2">ABOUT ME</a></li>
+						<li data-menuanchor="page3"><a href="#page3">SKILS</a></li>
+						<li data-menuanchor="page4"><a href="#page4">CAREER</a></li>
+						<li data-menuanchor="page5"><a href="#page5">PROJECT</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -40,42 +37,34 @@
 					<div class="section sec1 body">
 						<h1>
 							<a href="" class="typewrite" data-period="2000"
-								data-type='[ "DONGHEE PORTFOLIO" ]'> <span class="wrap"></span></a>
+								data-type='["DONGHEE PORTFOLIO" ]'> <span class="wrap"></span>
+							</a>
 						</h1>
 						<div class="scroll-down">
 							Scroll down
 							<div class="arrow">
 								<svg width="28" height="28" viewBox="0 0 24 24">
-                                    <path fill="white"
-										d="M12 16l-6-6h12z" />
-                                </svg>
+									<path fill="white" d="M12 16l-6-6h12z" />
+								</svg>
 							</div>
 						</div>
 					</div>
 					<div class="section sec2">
 						<div class="motion m1">
+							<h2 class="subject">ABOUT ME</h2>
+						</div>
+						<div class="motion m2">
 							<c:import url="/WEB-INF/jsp/aboutMe.jsp" />
 						</div>
 					</div>
 					<div class="section sec3">
-						<h2 class="motion m1">3번 타이틀입니다</h2>
-						<h2 class="motion m2">3번 타이틀입니다</h2>
+						<h2 class="motion m1">SKILS</h2>
 					</div>
 					<div class="section sec4">
-						<div class="slide">
-							<h2>슬라이드 1</h2>
-						</div>
-						<div class="slide">
-							<h2>슬라이드 2</h2>
-						</div>
-						<div class="slide">
-							<h2>슬라이드 3</h2>
-						</div>
+						<h2 class="motion m1">CAREER</h2>
 					</div>
 					<div class="section sec5">
-						<h2 class="motion m1">5번 타이틀입니다</h2>
-						<h2 class="motion m2">5번 타이틀입니다</h2>
-						<h2 class="motion m3">5번 타이틀입니다</h2>
+						<h2 class="motion m1">PROJECT</h2>
 					</div>
 					<div class="section footer">FOOTER</div>
 				</div>
