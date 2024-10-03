@@ -36,8 +36,8 @@
 				<div id="fullpage">
 					<div class="section sec1 body">
 						<h1>
-							<a href="" class="typewrite" data-period="2000"
-								data-type='["DONGHEE PORTFOLIO" ]'> <span class="wrap"></span>
+							<a href="" class="typewrite" data-period="1500"
+								data-type='["WELCOME TO","DONGHEE PORTFOLIO" ]'> <span class="wrap"></span>
 							</a>
 						</h1>
 						<div class="scroll-down">
