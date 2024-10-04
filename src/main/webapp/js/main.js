@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$('#fullpage').fullpage({
 		menu: '#fullmenu',
-		anchors: ['page1', 'page2', 'page3', 'page4', 'page5','footer'],
+		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'footer'],
 		verticalCentered: false,
 		keyboardScrolling: true,
 		css3: false,

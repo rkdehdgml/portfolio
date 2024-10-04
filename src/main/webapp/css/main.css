@@ -20,26 +20,30 @@ body {
 	margin: 10px;
 	padding: 0;
 	padding-right: 50px;
-	padding-top: 40px;
+	padding-top: 10px; /* 메뉴를 위쪽으로 이동시키기 위한 padding 조정 */
 }
 
 #fullmenu li {
 	width: 100px;
 	margin-left: 50px;
-	margin-bottom: 40px; /* 각 메뉴 항목 간격을 더 넓힘 */
+	margin-bottom: 20px; /* 메뉴 간격을 줄이기 위해 margin-bottom 조정 */
 	writing-mode: horizontal-tb;
 }
 
 #fullmenu li a {
-	color: #000;
+	color: rgba(0, 0, 0, 0.5); /* 기본 글씨 색상은 연한 검정색 */
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 22px; /* 글자 크기를 크게 설정 (원하는 크기로 변경) */
+	font-weight: bold; /* 글자를 굵게 설정 */
 	opacity: 0.8;
-	transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease, color 0.3s ease;
+	white-space: nowrap;
 }
 
 #fullmenu li.active a {
-	opacity: 1;
+	color: #000; /* 활성화된 섹션일 때 글자 색상을 흰색으로 변경 */
+	font-size: 36px; /* 활성화된 상태일 때 글자 크기 더 크게 설정 */
+	font-weight: bold; /* 활성화된 상태에서도 굵은 글씨 유지 */
 }
 
 .body {
@@ -50,8 +54,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	  padding: 3em 2em;
-  font: normal 40px/50px Arial, sans-serif;
+	padding: 3em 2em;
+	font: normal 40px/50px Arial, sans-serif;
 }
 
 * {
@@ -77,31 +81,27 @@ a {
 	width: 15%;
 	background-color: #fff;
 	z-index: 10000;
-	transition: transform 0.5s ease, opacity 0.5s ease; /* 부드러운 전환 추가 */
+	transition: transform 0.5s ease, opacity 0.5s ease;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding: 100px 0;
-	font-weight: bold; /* 글자를 굵게 설정 */
-	transform: translateX(-100%); /* 왼쪽에서 숨김 */
-	opacity: 0; /* 초기 상태에서 투명하게 설정 */
+	padding: 80px 0; /* 메뉴 위치를 위쪽으로 이동 */
+	font-weight: bold;
+	transform: translateX(-100%);
+	opacity: 0;
 }
 
 .fp-viewing-page2 #mainHeader, 
 .fp-viewing-page3 #mainHeader,
 .fp-viewing-page4 #mainHeader, 
 .fp-viewing-page5 #mainHeader {
-	transform: translateX(0); /* 원래 위치로 이동 */
-	opacity: 1; /* 보이게 설정 */
+	transform: translateX(0);
+	opacity: 1;
 }
-
-/* .fp-viewing-page1 #mainHeader { */
-/* 	display: none; */
-/* } */
 
 #mainHeader {
 	transform: translateX(-100%);
-	transition: transform 1s ease, opacity 1s ease; /* 속도 조정 */
+	transition: transform 1s ease, opacity 1s ease;
 	opacity: 0;
 }
 
@@ -116,7 +116,7 @@ a {
 
 .fp-viewing-page1 #mainHeader {
 	transform: translateX(-100%);
-	opacity: 0; /* 페이지 1에서 사라짐 */
+	opacity: 0;
 }
 
 .header .logo {
@@ -130,7 +130,7 @@ a {
 
 .sec1 {
 	background: #000;
- 	color: #fff;
+	color: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -144,22 +144,22 @@ a {
 }
 
 .sec2, .sec3, .sec4, .sec5 {
-	background: #fff; /* 각 섹션의 배경색 (흰색) */
-	color: #000; /* 텍스트 색상 (검정색) */
-	min-height: 100vh; /* 섹션 높이를 뷰포트 높이에 맞춤 */
+	background: #fff;
+	color: #000;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start; /* 수직 가운데 정렬 */
-	align-items: center; /* 수평 가운데 정렬 */
+	justify-content: flex-start;
+	align-items: center;
 	text-align: center;
 	padding: 0;
 	margin: 0;
-	overflow: visible; /* 내용이 잘리지 않도록 설정 */
+	overflow: visible;
 }
 
 .sec2, .sec3, .sec4, .sec5 {
-	width: 85%; /* 나머지 너비 설정 */
-	margin-left: 15%; /* 헤더의 넓이만큼 오른쪽으로 이동 */
+	width: 85%;
+	margin-left: 15%;
 }
 
 .section {
@@ -185,6 +185,15 @@ a {
 	margin-top: 5px;
 }
 
+.subject {
+    font-size: 36px; /* 글자 크기 */
+    color: #000; /* 글자 색상 */
+    margin-bottom: 0; /* 하단 여백 제거 */
+    white-space: nowrap; /* 텍스트가 줄바꿈되지 않도록 설정 */
+    width: 100%; /* 너비 조정 */
+    text-align: center; /* 가운데 정렬 */
+}
+
 @keyframes bounce {
 	0%, 20%, 50%, 80%, 100% {
 		transform: translateY(0);
@@ -195,87 +204,4 @@ a {
 	60% {
 		transform: translateY(-5px);
 	}
-}
-
-#container #fullpage .motion {
-	opacity: 0;
-	display: block;
-	padding-top: 50px;
-}
-
-#container #fullpage .fp-completely .motion {
-	opacity: 1;
-	padding-top: 0;
-	transition: all 0.5s ease;
-}
-
-#container #fullpage .motion.m1 {
-	padding: 100px 0 0;
-}
-
-#container #fullpage .fp-completely .motion.m1 {
-	padding-left: 0px;
-}
-
-#container #fullpage .motion.m2 {
-	padding: 0;
-	padding-right: 200px;
-}
-
-#container #fullpage .fp-completely .motion.m2 {
-	padding-right: 0px;
-}
-
-#container #fullpage .fp-completely .m1 {
-	transition-delay: 0s;
-}
-
-#container #fullpage .fp-completely .m2 {
-	transition-delay: 0.3s;
-}
-
-#container #fullpage .fp-completely .m3 {
-	transition-delay: 0.6s;
-}
-
-#container #fullpage .fp-completely .m4 {
-	transition-delay: 0.9s;
-}
-
-#container #fullpage .fp-completely .m5 {
-	transition-delay: 1.2s;
-}
-
-#container #fullpage .fp-completely .m6 {
-	transition-delay: 1.5s;
-}
-
-#container #fullpage .fp-completely .m7 {
-	transition-delay: 1.8s;
-}
-
-#container #fullpage .fp-completely .m8 {
-	transition-delay: 2.1s;
-}
-
-#container #fullpage .fp-completely .m9 {
-	transition-delay: 2.4s;
-}
-
-#container #fullpage .fp-completely .m10 {
-	transition-delay: 2.7s;
-}
-
-#container #fullpage .fp-completely .m11 {
-	transition-delay: 3.0s;
-}
-
-.footer {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	padding: 0;
-	background: #fff;
 }
