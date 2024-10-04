@@ -1,0 +1,44 @@
+
+p {
+  height: 50px;
+  float: left;
+  margin-right: 0.3em;
+  margin-top: 0px;
+  font-size: 30px;
+}
+
+b {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  height: 50px;
+}
+
+.span1 {
+  display: inline-block;
+  color: #fff; /* 글자 색상 */
+  position: relative;
+  white-space: nowrap; /* 줄 바꿈을 방지 */
+  top: 0;
+  left: 0;
+  animation: move 10s infinite; /* 애니메이션 적용 */
+  animation-delay: 2.2s; /* 애니메이션 지연 시간 */
+   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* 이동 부분의 속도 조정 */
+}
+
+@keyframes move {
+  0%   { top: 0px; }
+  20%  { top: -50px; }
+  40%  { top: -100px; }
+  60%  { top: -150px; }
+/*    80%  { top: -200px; }  */
+ 100% { top: 0px; } /* 100%에서 원래 위치로 돌아감 */
+}
+
+@keyframes move {
+  0%, 20%  { top: 0px; }
+  40%  { top: -50px; }
+  60%  { top: -100px; }
+  80%  { top: -150px; }
+  100% { top: 0px; } /* 원래 위치로 돌아감 */
+}

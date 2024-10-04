@@ -2,18 +2,22 @@
 
 .about-me {
 	display: flex;
-	flex-direction: column; /* 자식 요소를 세로로 배치 */
-	align-items: center; /* 수평 가운데 정렬 */
-	justify-content: flex-start; /* 상단 정렬 */
-	width: 100%; /* 왼쪽 헤더(15%)를 제외한 나머지 영역 차지 */
-	margin-left: 15%; /* 헤더의 넓이만큼 왼쪽으로 여백 */
-	text-align: center; /* 텍스트 중앙 정렬 */
-	padding-top: 50px; /* 원하는 만큼 상단 여백 */
+	justify-content: center; /* 수평 가운데 정렬 */
+	align-items: center; /* 수직 가운데 정렬 */
+	gap: 20px; /* 카드 사이 간격 */
+	flex-wrap: wrap; /* 여러 줄로 배치하려면 추가 */
+	width: 85%; /* 헤더를 제외한 너비 */
+	margin-left: 15%; /* 헤더 공간을 제외한 위치 */
+	padding-top: 50px;
+	text-align: center;
+	margin: 0 auto; /* 중앙에 배치 */
 }
+
 
 .subject {
 	font-size: 36px; /* 원하는 글자 크기로 조정 */
 	color: #000; /* 글자 색상 */
 	margin-bottom: 0; /* 하단 여백 제거 */
-	
 }
+
+

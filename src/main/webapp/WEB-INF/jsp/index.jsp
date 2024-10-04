@@ -9,6 +9,7 @@
 <title>포트폴리오</title>
 <link rel="stylesheet" type="text/css" href="/css/main.css">
 <link rel="stylesheet" type="text/css" href="/css/aboutMe.css">
+<link rel="stylesheet" type="text/css" href="/css/textAnimation.css">
 <!-- aboutMe.css 추가 -->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript"
@@ -35,11 +36,11 @@
 			<main>
 				<div id="fullpage">
 					<div class="section sec1 body">
-						<h1>
-							<a href="" class="typewrite" data-period="1500"
-								data-type='["WELCOME TO","DONGHEE PORTFOLIO" ]'> <span class="wrap"></span>
-							</a>
-						</h1>
+						<p>저는</p>
+						<b> <span class="span1">풀스택 개발자 입니다.<br />
+								책임감 있는 개발자입니다.<br /> 발전을 위해 노력하는 개발자 입니다.<br /> 미래를 꿈꾸는 개발자 입니다.<br />
+						</span>
+						</b>
 						<div class="scroll-down">
 							Scroll down
 							<div class="arrow">
@@ -51,7 +52,7 @@
 					</div>
 					<div class="section sec2">
 						<div class="motion m1">
-							<h2 class="subject">ABOUT ME</h2>
+							<h2 class="subject">Interview</h2>
 						</div>
 						<div class="motion m2">
 							<c:import url="/WEB-INF/jsp/aboutMe.jsp" />
@@ -66,7 +67,7 @@
 					<div class="section sec5">
 						<h2 class="motion m1">PROJECT</h2>
 					</div>
-					<div class="section footer">FOOTER</div>
+					<div class="section footer">ⓒcopyright</div>
 				</div>
 			</main>
 		</div>
