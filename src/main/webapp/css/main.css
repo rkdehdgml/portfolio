@@ -33,7 +33,7 @@ body {
 #fullmenu li a {
 	color: rgba(0, 0, 0, 0.5); /* 기본 글씨 색상은 연한 검정색 */
 	text-decoration: none;
-	font-size: 22px; /* 글자 크기를 크게 설정 (원하는 크기로 변경) */
+	font-size: 20px; /* 글자 크기를 크게 설정 (원하는 크기로 변경) */
 	font-weight: bold; /* 글자를 굵게 설정 */
 	opacity: 0.8;
 	transition: opacity 0.3s ease, color 0.3s ease;
@@ -42,7 +42,7 @@ body {
 
 #fullmenu li.active a {
 	color: #000; /* 활성화된 섹션일 때 글자 색상을 흰색으로 변경 */
-	font-size: 36px; /* 활성화된 상태일 때 글자 크기 더 크게 설정 */
+	font-size: 32px; /* 활성화된 상태일 때 글자 크기 더 크게 설정 */
 	font-weight: bold; /* 활성화된 상태에서도 굵은 글씨 유지 */
 }
 
@@ -78,7 +78,7 @@ a {
 	top: 0;
 	left: 0;
 	height: 100%;
-	width: 15%;
+	width: 20%;
 	background-color: #fff;
 	z-index: 10000;
 	transition: transform 0.5s ease, opacity 0.5s ease;
@@ -149,17 +149,17 @@ a {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-	text-align: center;
-	padding: 0;
+	justify-content: flex-start; /* 상단 정렬 */
+	align-items: flex-start; /* 왼쪽 정렬 */
+	text-align: left; /* 왼쪽 정렬 */
+	padding: 20px; /* 약간의 패딩 추가 */
 	margin: 0;
 	overflow: visible;
 }
 
 .sec2, .sec3, .sec4, .sec5 {
-	width: 85%;
-	margin-left: 15%;
+	width: 80%;
+	margin-left: 20%;
 }
 
 .section {
@@ -186,12 +186,13 @@ a {
 }
 
 .subject {
-    font-size: 36px; /* 글자 크기 */
-    color: #000; /* 글자 색상 */
-    margin-bottom: 0; /* 하단 여백 제거 */
-    white-space: nowrap; /* 텍스트가 줄바꿈되지 않도록 설정 */
-    width: 100%; /* 너비 조정 */
-    text-align: center; /* 가운데 정렬 */
+	font-size: 36px; /* 글자 크기 */
+	color: #000; /* 글자 색상 */
+	margin-top: 50px; /* 상단 여백 추가 (원하는 값으로 조정 가능) */
+	margin-bottom: 0; /* 하단 여백 제거 */
+	white-space: nowrap; /* 텍스트가 줄바꿈되지 않도록 설정 */
+	width: auto; /* 너비 자동 조정 */
+	text-align: left; /* 왼쪽 정렬 */
 }
 
 @keyframes bounce {

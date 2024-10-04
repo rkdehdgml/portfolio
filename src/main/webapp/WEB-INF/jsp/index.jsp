@@ -52,7 +52,7 @@
 					</div>
 					<div class="section sec2">
 						<div class="motion m1">
-							<h2 class="subject">ABOUT ME</h2>
+							<h2 class="subject">Q&A</h2>
 						</div>
 						<div class="motion m2">
 							<c:import url="/WEB-INF/jsp/aboutMe.jsp" />
