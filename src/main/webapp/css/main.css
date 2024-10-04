@@ -206,3 +206,86 @@ a {
 		transform: translateY(-5px);
 	}
 }
+
+#container #fullpage .motion {
+	opacity: 0;
+	display: block;
+	padding-top: 50px;
+}
+
+#container #fullpage .fp-completely .motion {
+	opacity: 1;
+	padding-top: 0;
+	transition: all 0.5s ease;
+}
+
+#container #fullpage .motion.m1 {
+	padding: 100px 0 0;
+}
+
+#container #fullpage .fp-completely .motion.m1 {
+	padding-left: 0px;
+}
+
+#container #fullpage .motion.m2 {
+	padding: 0;
+	padding-right: 200px;
+}
+
+#container #fullpage .fp-completely .motion.m2 {
+	padding-right: 0px;
+}
+
+#container #fullpage .fp-completely .m1 {
+	transition-delay: 0s;
+}
+
+#container #fullpage .fp-completely .m2 {
+	transition-delay: 0.3s;
+}
+
+#container #fullpage .fp-completely .m3 {
+	transition-delay: 0.6s;
+}
+
+#container #fullpage .fp-completely .m4 {
+	transition-delay: 0.9s;
+}
+
+#container #fullpage .fp-completely .m5 {
+	transition-delay: 1.2s;
+}
+
+#container #fullpage .fp-completely .m6 {
+	transition-delay: 1.5s;
+}
+
+#container #fullpage .fp-completely .m7 {
+	transition-delay: 1.8s;
+}
+
+#container #fullpage .fp-completely .m8 {
+	transition-delay: 2.1s;
+}
+
+#container #fullpage .fp-completely .m9 {
+	transition-delay: 2.4s;
+}
+
+#container #fullpage .fp-completely .m10 {
+	transition-delay: 2.7s;
+}
+
+#container #fullpage .fp-completely .m11 {
+	transition-delay: 3.0s;
+}
+
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100px !important;
+	padding: 0;
+	background: #000;
+}
