@@ -8,7 +8,7 @@ $(document).ready(function() {
 		lazyLoading: true,
 		autoScrolling: true,
 		scrollOverflow: true,
-		scrollOverflowReset: false,
+		scrollOverflowReset: true,
 		afterLoad: function(origin, destination, direction) {
 			const header = document.getElementById('mainHeader');
 
