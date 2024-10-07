@@ -13,7 +13,6 @@
 <!-- aboutMe.css 추가 -->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/scrolloverflow.min.js"></script>
-<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.1/jquery.fullPage.js"></script> -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/typeWriter.js"></script>
@@ -36,12 +35,13 @@
 			</header>
 			<main>
 				<div id="fullpage">
-					<div class="section sec1 body">
+					<section class="section sec1 body">
 						<p>저는</p>
-						<b> <span class="span1">풀스택 개발자 입니다.<br />
-								책임감 있는 개발자입니다.<br /> 발전을 위해 노력하는 개발자 입니다.<br /> 미래를 꿈꾸는 개발자 입니다.<br />
+						<b> <span class="span1">풀스택 개발자 강동희<br />
+								책임감 있는 개발자<br /> 발전을 위해 노력하는 개발자<br /> 미래를 꿈꾸는 개발자<br />
 						</span>
 						</b>
+						<p>입니다.</p>
 						<div class="scroll-down">
 							Scroll down
 							<div class="arrow">
@@ -50,25 +50,25 @@
 								</svg>
 							</div>
 						</div>
-					</div>
-					<div class="section sec2">
+					</section>
+					<section class="section sec2">
 						<div class="motion m1">
 							<h2 class="subject">Q&A</h2>
 						</div>
 						<div class="motion m2">
 							<c:import url="/WEB-INF/jsp/aboutMe.jsp" />
 						</div>
-					</div>
-					<div class="section sec3">
+					</section>
+					<section class="section sec3">
 						<h2 class="motion m1">SKILS</h2>
-					</div>
-					<div class="section sec4">
+					</section>
+					<section class="section sec4">
 						<h2 class="motion m1">CAREER</h2>
-					</div>
-					<div class="section sec5">
+					</section>
+					<section class="section sec5">
 						<h2 class="motion m1">PROJECT</h2>
-					</div>
-					<div class="section footer">ⓒcopyright</div>
+					</section>
+					<footer class="section footer">ⓒcopyright</footer>
 				</div>
 			</main>
 		</div>
