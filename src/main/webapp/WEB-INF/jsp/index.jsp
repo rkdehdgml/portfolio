@@ -18,9 +18,6 @@
 <script src="/js/typeWriter.js"></script>
 </head>
 <body>
-	<%
-	String currentUrl = request.getRequestURI(); //관리자페이지용도
-	%>
 	<div id="wrap">
 		<div id="container">
 			<header class="header" id="mainHeader">
