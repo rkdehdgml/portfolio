@@ -30,23 +30,25 @@
 		<p><strong>이메일:</strong> example@example.com</p>
 	</div>
 
-	<h1>Q&A</h1>
+	<h1 class="subject">Q&A</h1>
 	<!-- 기존 박스들 -->
-	<div class="box">
-		<h3>Box 1</h3>
-		<p>이곳은 첫 번째 박스의 내용입니다.</p>
-	</div>
-	<div class="box">
-		<h3>Box 2</h3>
-		<p>이곳은 두 번째 박스의 내용입니다.</p>
-	</div>
-	<div class="box">
-		<h3>Box 3</h3>
-		<p>이곳은 세 번째 박스의 내용입니다.</p>
-	</div>
-	<div class="box">
-		<h3>Box 4</h3>
-		<p>이곳은 네 번째 박스의 내용입니다.</p>
+	<div class="interview">
+		<div class="box">
+			<h3>Box 1</h3>
+			<p>이곳은 첫 번째 박스의 내용입니다.</p>
+		</div>
+		<div class="box">
+			<h3>Box 2</h3>
+			<p>이곳은 두 번째 박스의 내용입니다.</p>
+		</div>
+		<div class="box">
+			<h3>Box 3</h3>
+			<p>이곳은 세 번째 박스의 내용입니다.</p>
+		</div>
+		<div class="box">
+			<h3>Box 4</h3>
+			<p>이곳은 네 번째 박스의 내용입니다.</p>
+		</div>
 	</div>
 </div>
 </body>
