@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>ABOUT ME</title>
 <link rel="stylesheet" type="text/css" href="/css/aboutMe.css">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.1/vendors/scrolloverflow.js"></script>
 </head>
 <body>
 <div class="container">

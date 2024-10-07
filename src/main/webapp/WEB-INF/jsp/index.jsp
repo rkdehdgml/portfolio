@@ -12,9 +12,9 @@
 <link rel="stylesheet" type="text/css" href="/css/textAnimation.css">
 <!-- aboutMe.css 추가 -->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.1/jquery.fullPage.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/scrolloverflow.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.1/jquery.fullPage.js"></script> -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.1/vendors/scrolloverflow.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/typeWriter.js"></script>
 </head>
