@@ -12,8 +12,8 @@
 <link rel="stylesheet" type="text/css" href="/css/textAnimation.css">
 <!-- aboutMe.css 추가 -->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/scrolloverflow.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/scrolloverflow.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/typeWriter.js"></script>
 </head>
@@ -30,8 +30,8 @@
 					</ul>
 				</nav>
 			</header>
-			<main>
-				<div id="fullpage">
+			<div id="fullpage">
+				<main>
 					<section class="section sec1 body">
 						<p>저는</p>
 						<b> <span class="span1">풀스택 개발자 강동희<br />
@@ -50,9 +50,6 @@
 					</section>
 					<section class="section sec2">
 						<div class="motion m1">
-							<h2 class="subject">Q&A</h2>
-						</div>
-						<div class="motion m2">
 							<c:import url="/WEB-INF/jsp/aboutMe.jsp" />
 						</div>
 					</section>
@@ -65,9 +62,9 @@
 					<section class="section sec5">
 						<h2 class="motion m1">PROJECT</h2>
 					</section>
-					<footer class="section footer">ⓒcopyright</footer>
-				</div>
-			</main>
+				</main>
+				<footer class="section footer">ⓒcopyright</footer>
+			</div>
 		</div>
 	</div>
 </body>

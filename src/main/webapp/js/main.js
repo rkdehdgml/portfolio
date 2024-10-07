@@ -4,9 +4,11 @@ $(document).ready(function() {
 		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'footer'],
 		verticalCentered: false,
 		keyboardScrolling: true,
-		css3: false,
+		css3: true,
+		lazyLoading: true,
 		autoScrolling: true,
 		scrollOverflow: true,
+		scrollOverflowReset: false,
 		afterLoad: function(origin, destination, direction) {
 			const header = document.getElementById('mainHeader');
 
