@@ -75,7 +75,7 @@ body, html {
 .sec2 {
   background-color: white;
   color: black;
-  padding-top: 100px; /* 위쪽 여백 추가하여 첫 번째 섹션과 간격을 확보 */
+  padding-top: 100px; /* 위쪽 여백 추가하여 첫 번째 섹션과 간격을 확보 */ 
   height: auto;
 }
 
