@@ -10,7 +10,6 @@
 </head>
 <body>
 	<div class="container">
-		<div class="motion m1"></div>
 		<!-- 이미지 추가 및 해쉬태그 -->
 		<div class="profile">
 			<img src="/img/JSimage.png" alt="Profile Image" class="profile-image">
