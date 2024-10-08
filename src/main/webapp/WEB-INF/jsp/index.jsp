@@ -48,7 +48,9 @@
 	</section>
 
 	<section id="page3" class="section sec3">
-		<div class="motion m1">SKILLS</div>
+		<div class="motion m1">
+			<c:import url="/WEB-INF/jsp/skills.jsp" />
+		</div>
 	</section>
 
 	<section id="page4" class="section sec4">
@@ -75,7 +77,7 @@
 	// 두 번째 섹션 애니메이션
 	gsap.from(".sec2 .motion", {
 		scrollTrigger : {
-			trigger : ".motion",
+			trigger : ".sec2",
 			start : "top center", // 스크롤 시 화면 중앙에서 시작
 			toggleActions : "play none none reverse" // 재생 및 반전 설정
 		},
@@ -94,7 +96,7 @@
 		},
 		y : 100,
 		opacity : 0,
-		duration : 1.5,
+		duration : 3,
 		ease : "power3.out"
 	});
 
