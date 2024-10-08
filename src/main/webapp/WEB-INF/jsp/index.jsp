@@ -11,12 +11,11 @@
 <link rel="stylesheet" type="text/css" href="/css/aboutMe.css">
 <link rel="stylesheet" type="text/css" href="/css/main.css">
 <script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 <script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollTrigger.min.js"></script>
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 <script src="/js/typeWriter.js"></script>
 <script src="/js/main.js"></script>
-
 </head>
 <body>
 	<header class="header" id="mainHeader">
@@ -61,4 +60,68 @@
 	</section>
 
 </body>
+<script>
+	// GSAP & ScrollTrigger를 활용한 애니메이션 설정
+	gsap.registerPlugin(ScrollTrigger);
+
+	// 첫 번째 섹션 애니메이션
+	gsap.from(".sec1 .span1", {
+		y : 100,
+		opacity : 0,
+		duration : 1.5,
+		ease : "power3.out"
+	});
+
+	// 두 번째 섹션 애니메이션
+	gsap.from(".sec2 .motion", {
+		scrollTrigger : {
+			trigger : ".sec2",
+			start : "top center", // 스크롤 시 화면 중앙에서 시작
+			toggleActions : "play none none reverse" // 재생 및 반전 설정
+		},
+		y : 100,
+		opacity : 0,
+		duration : 2,
+		ease : "power3.out"
+	});
+
+	// 세 번째 섹션 애니메이션
+	gsap.from(".sec3 .motion", {
+		scrollTrigger : {
+			trigger : ".sec3",
+			start : "top center",
+			toggleActions : "play none none reverse"
+		},
+		y : 100,
+		opacity : 0,
+		duration : 1.5,
+		ease : "power3.out"
+	});
+
+	// 네 번째 섹션 애니메이션
+	gsap.from(".sec4 .motion", {
+		scrollTrigger : {
+			trigger : ".sec4",
+			start : "top center",
+			toggleActions : "play none none reverse"
+		},
+		y : 100,
+		opacity : 0,
+		duration : 1.5,
+		ease : "power3.out"
+	});
+
+	// 다섯 번째 섹션 애니메이션
+	gsap.from(".sec5 .motion", {
+		scrollTrigger : {
+			trigger : ".sec5",
+			start : "top center",
+			toggleActions : "play none none reverse"
+		},
+		y : 100,
+		opacity : 0,
+		duration : 1.5,
+		ease : "power3.out"
+	});
+</script>
 </html>
