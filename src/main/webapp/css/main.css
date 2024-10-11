@@ -8,22 +8,29 @@ body, html {
 .header {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -20%; /* 기본적으로 왼쪽 밖으로 나가도록 설정 */
     height: 100%;
     width: 20%;
-    color: #000; /* 기본 글자 색상 */
-    background-color: rgba(255, 255, 255, 0); /* 배경을 투명으로 설정 */
+    color: #000;
+    background-color: rgba(255, 255, 255, 0);
     z-index: 10000;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease, left 0.5s ease; /* left 속성에 전환 효과 추가 */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 80px 0; /* 메뉴 위치를 위쪽으로 이동 */
+    padding: 80px 0;
     font-weight: bold;
-    font-size: 30px; /* 글자 크기 설정 */
-    transform: translateY(-100%); /* 기본적으로 숨김 */
+    font-size: 30px;
     opacity: 0; /* 기본적으로 투명 */
 }
+
+/* 헤더가 나타날 때의 상태 */
+.header.visible {
+    left: 0; /* 왼쪽에서 나타나게 설정 */
+    opacity: 1; /* 나타날 때 불투명하게 */
+    transform: translateY(0); /* Y축으로 이동 없애기 */
+}
+
 
 
 /* 메뉴 스타일 추가 */
@@ -79,7 +86,12 @@ body, html {
   height: auto;
 }
 
-.sec3, .sec4, .sec5 {
+.sec3 {
+	background-color: white;
+	color: black;
+	height: auto;
+}
+.sec4, .sec5 {
   background-color: white;
   color: black;
 }
