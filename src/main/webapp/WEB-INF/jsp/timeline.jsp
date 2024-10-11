@@ -6,106 +6,92 @@
 <meta charset="UTF-8">
 <title>timeline</title>
 <style type="text/css">
-/* body { */
-/*     font-family: Arial, sans-serif; */
-/*     background-color: #f4f4f4; */
-/*     margin: 0; */
-/* /*     padding: 20px; */
-/* } */
-
 .timeline-container {
-    width: 800px; /* 원하는 넓이 유지 */
-    margin: auto;
-    padding: 20px;
-    background: none; /* 배경색 제거 */
-    box-shadow: none; /* 그림자 제거 */
-    border-radius: 0; /* 모서리 둥글기 제거 */
-    height: 100vh;
+	width: 800px; /* 원하는 넓이 유지 */
+	margin: auto;
+	padding: 20px;
+	background: none; /* 배경색 제거 */
+	box-shadow: none; /* 그림자 제거 */
+	border-radius: 0; /* 모서리 둥글기 제거 */
+	margin-bottom: 50px; /* 타임라인과 다음 섹션 사이의 간격 추가 */
 }
 
 .timeline-title {
-    text-align: center;
-    font-size: 2rem; /* 글자 크기를 조금 더 작게 수정 */
-    margin-bottom: 20px;
+	text-align: center;
+	font-size: 2rem; /* 글자 크기를 조금 더 작게 수정 */
+	margin-bottom: 20px;
 }
 
 .timeline {
-    position: relative;
-    padding: 20px 0;
+	position: relative;
+	padding: 20px 0;
 }
 
-/* 타임라인 중앙 선 */
 .timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #008fdb; /* 타임라인 중앙선 색상 */
-    transform: translateX(-50%);
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background-color: #008fdb; /* 타임라인 중앙선 색상 */
+	transform: translateX(-50%);
 }
 
 .timeline-event {
-    position: relative;
-    width: 50%;
-    padding: 20px;
-    box-sizing: border-box;
+	position: relative;
+	width: 50%;
+	padding: 20px;
+	box-sizing: border-box;
+	margin-bottom: 40px; /* 이벤트 간의 간격 추가 */
 }
 
-/* 왼쪽에 위치하는 이벤트 */
 .timeline-event.left {
-    left: 0;
-    text-align: right;
-    padding-right: 30px;
+	left: 0;
+	text-align: right;
+	padding-right: 30px;
 }
 
-/* 오른쪽에 위치하는 이벤트 */
 .timeline-event.right {
-    left: 50%;
-    text-align: left;
-    padding-left: 30px;
+	left: 50%;
+	text-align: left;
+	padding-left: 30px;
 }
 
-/* 타임라인 콘텐츠 스타일 */
 .timeline-content {
-    background-color: #e6f7ff; /* 이벤트 내용의 배경색 */
-    border-radius: 5px;
-    padding: 15px;
-    position: relative;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 0.9rem; /* 이벤트 콘텐츠의 글자 크기를 작게 수정 */
+	background-color: #e6f7ff; /* 이벤트 내용의 배경색 */
+	border-radius: 5px;
+	padding: 15px;
+	position: relative;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	font-size: 0.9rem; /* 이벤트 콘텐츠의 글자 크기를 작게 수정 */
 }
 
-/* 지그재그 연결하는 선 포인트 */
 .timeline-event.left::before, .timeline-event.right::before {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background-color: #008fdb;
-    border-radius: 50%;
-    top: 25px;
+	content: '';
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	background-color: #008fdb;
+	border-radius: 50%;
+	top: 25px;
 }
 
-/* 왼쪽과 오른쪽의 선 포인트 위치 조정 */
 .timeline-event.left::before {
-    right: -6px;
+	right: -6px;
 }
 
 .timeline-event.right::before {
-    left: -6px;
+	left: -6px;
 }
 
-/* 날짜 스타일 */
 .timeline-date {
-    font-size: 1rem; /* 날짜 글자 크기를 조금 더 작게 수정 */
-    color: #555;
-    display: block;
-    margin-top: 10px;
-    text-align: inherit; /* 이벤트 위치에 맞게 정렬 */
+	font-size: 1rem; /* 날짜 글자 크기를 조금 더 작게 수정 */
+	color: #555;
+	display: block;
+	margin-top: 10px;
+	text-align: inherit; /* 이벤트 위치에 맞게 정렬 */
 }
-
 </style>
 </head>
 <body>
