@@ -22,7 +22,7 @@
 			<ul id="fullmenu">
 				<li><a href="#page2">ABOUT ME</a></li>
 				<li><a href="#page3">SKILLS</a></li>
-				<li><a href="#page4">CAREER</a></li>
+				<li><a href="#page4">TIMELINE</a></li>
 				<li><a href="#page5">PROJECT</a></li>
 			</ul>
 		</nav>
@@ -53,11 +53,15 @@
 	</section>
 
 	<section id="page4" class="section sec4">
-		<div class="motion m1">CAREER</div>
+		<div class="motion m1">
+			<c:import url="/WEB-INF/jsp/timeline.jsp" />
+		</div>
 	</section>
 
 	<section id="page5" class="section sec5">
-		<div class="motion m1">PROJECT</div>
+		<div class="motion m1">
+			<c:import url="/WEB-INF/jsp/project.jsp" />
+		</div>
 	</section>
 
 </body>
