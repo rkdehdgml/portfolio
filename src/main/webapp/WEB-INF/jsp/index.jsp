@@ -7,63 +7,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio</title>
-<link rel="stylesheet" type="text/css" href="/css/textAnimation.css">
-<link rel="stylesheet" type="text/css" href="/css/aboutMe.css">
 <link rel="stylesheet" type="text/css" href="/css/main.css">
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-<script src="/js/typeWriter.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+<script src="/js/main.js"></script>
 </head>
 <body>
-	<header class="header" id="mainHeader">
-		<nav>
+	<div id="wrap">
+		<div id="container">
 			<ul id="fullmenu">
-				<li><a href="#page2">ABOUT ME</a></li>
-				<li><a href="#page3">SKILLS</a></li>
-				<li><a href="#page4">TIMELINE</a></li>
-				<li><a href="#page5">PROJECT</a></li>
+				<li data-menuanchor="page1"><a href="#page1">첫번째 페이지</a></li>
+				<li data-menuanchor="page2"><a href="#page2">두번째 페이지</a></li>
+				<li data-menuanchor="page3"><a href="#page3">세번째 페이지</a></li>
+				<li data-menuanchor="page4"><a href="#page4">네번째 페이지</a></li>
+				<li data-menuanchor="page5"><a href="#page5">다섯번째 페이지</a></li>
+				<li data-menuanchor="footer"><a href="#footer">FOOTER</a></li>
 			</ul>
-		</nav>
-	</header>
 
-	<section class="section sec1">
-		<p>저는</p>
-		<b><span class="span1">풀스택 개발자 강동희<br>책임감 있는 개발자<br>발전을
-				위해 노력하는 개발자<br>미래를 꿈꾸는 개발자<br></span></b>
-		<p>입니다.</p>
-		<div class="scroll-down">
-			Scroll down
-			<div class="arrow">↓</div>
-			<!-- 아래 방향 화살표 추가 -->
+			<div id="fullpage">
+				<div class="section sec1">
+					<h2 class="motion m1">1번 타이틀입니다</h2>
+					<h2 class="motion m2">1번 타이틀입니다</h2>
+					<h2 class="motion m3">1번 타이틀입니다</h2>
+				</div>
+				<div class="section sec2">
+					<h2 class="motion m1">2번 타이틀입니다</h2>
+					<h2 class="motion m2">2번 타이틀입니다</h2>
+					<h2 class="motion m3">2번 타이틀입니다</h2>
+					<h2 class="motion m4">2번 타이틀입니다</h2>
+					<h2 class="motion m5">2번 타이틀입니다</h2>
+				</div>
+				<div class="section sec3">
+					<h2 class="motion m1">3번 타이틀입니다</h2>
+					<h2 class="motion m2">3번 타이틀입니다</h2>
+				</div>
+				<div class="section sec4">
+					<h2 class="motion m1">4번 타이틀입니다</h2>
+					<h2 class="motion m2">4번 타이틀입니다</h2>
+				</div>
+				<div class="section sec5">
+					<h2 class="motion m1">5번 타이틀입니다</h2>
+					<h2 class="motion m2">5번 타이틀입니다</h2>
+					<h2 class="motion m3">5번 타이틀입니다</h2>
+				</div>
+				<div class="section footer">FOOTER</div>
+			</div>
 		</div>
-	</section>
-
-	<section id="page2" class="section sec2">
-		<div class="motion m1">
-			<c:import url="/WEB-INF/jsp/aboutMe.jsp" />
-		</div>
-	</section>
-
-	<section id="page3" class="section sec3">
-		<div class="motion m1">
-			<c:import url="/WEB-INF/jsp/skills.jsp" />
-		</div>
-	</section>
-
-	<section id="page4" class="section sec4">
-		<div class="motion m1">
-			<c:import url="/WEB-INF/jsp/timeline.jsp" />
-		</div>
-	</section>
-
-	<section id="page5" class="section sec5">
-		<div class="motion m1">
-			<c:import url="/WEB-INF/jsp/project.jsp" />
-		</div>
-	</section>
-
+	</div>
 </body>
-<script src="/js/main.js"></script>
 </html>
