@@ -14,3 +14,11 @@
     margin: 10px; /* 터미널 간 여백 추가 */
     margin-top:50%;
 }
+
+.skills-title {
+    text-align: center; /* 텍스트 가운데 정렬 */
+    margin: 20px 0; /* 위아래 여백 */
+    font-size: 2em; /* 글자 크기 조정 */
+    font-weight: bold; /* 글자 두께 */
+    color: #333; /* 글자 색상 */
+}
