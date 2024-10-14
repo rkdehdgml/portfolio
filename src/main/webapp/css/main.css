@@ -55,87 +55,34 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #333; /* Background color of the terminal window */
-}
-
-/* Terminal Style */
-.terminal {
-	width: 80%;
-	max-width: 800px;
-	height: 400px;
-	margin: 0 auto;
 	background-color: #333;
-	border-radius: 10px;
-	overflow: hidden;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-	display: flex;
-	flex-direction: column;
 }
 
-.terminal-header {
-	background-color: #444;
-	padding: 10px;
-	display: flex;
-	justify-content: flex-start;
-	border-bottom: 2px solid #222;
-}
-
-.terminal-header span {
-	display: inline-block;
-	width: 15px;
-	height: 15px;
-	margin-right: 10px;
-	border-radius: 50%;
-}
-
-.btn-close {
-	background-color: #ff5c5c;
-}
-
-.btn-minimize {
-	background-color: #ffbd4a;
-}
-
-.btn-maximize {
-	background-color: #00ca4e;
-}
-
-.terminal-body {
-	padding: 20px;
-	color: #fff;
-	font-family: 'Courier New', Courier, monospace;
-	background-color: #1e1e1e;
-	height: 100%;
-	overflow-y: auto;
-}
-
-#typed-output {
-	color: #00ff00;
-	font-size:20px;
-	letter-spacing: 2px;
-	line-height:1.7;
-}
-
-
-@keyframes blink {
-	0%, 100% { opacity: 1; }
-	50% { opacity: 0; }
+.sec1 .terminal {
+	margin: 0 auto;
+	width: 50%; /* sec1에서 terminal의 너비 */
+	height: 400px; /* sec1에서 terminal의 높이 */
+	position: relative; /* sec1에서 위치 관련 설정 */
+	top: 50px; /* 세션마다 다른 위치 적용 */
 }
 
 .sec2 {
-	background: #333
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #333;
 }
 
 .sec3 {
-	background: #555
+	background: #555;
 }
 
 .sec4 {
-	background: #666
+	background: #666;
 }
 
 .sec5 {
-	background: #999
+	background: #999;
 }
 
 /* motion */
@@ -158,6 +105,7 @@ body {
 
 #container #fullpage .fp-completely .motion.m1 {
 	padding-left: 0px;
+	width:50%;
 }
 
 #container #fullpage .motion.m2 {
@@ -167,6 +115,8 @@ body {
 
 #container #fullpage .fp-completely .motion.m2 {
 	padding-right: 0px;
+	width:50%;
+	height:100vh;
 }
 
 #container #fullpage .fp-completely .m1 {

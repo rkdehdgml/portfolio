@@ -8,11 +8,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio</title>
 <link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<link rel="stylesheet" type="text/css" href="/css/aboutMe.css">
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 <script src="/js/main.js"></script>
 </head>
 <body>
@@ -38,18 +38,14 @@
 							<span class="btn-maximize"></span>
 						</div>
 						<div class="terminal-body">
-							<h3>user@portfolio:~$ 
-								<span id="typed-output"></span>
+							<h3>
+								user@portfolio:~$ <span id="typed-output"></span>
 							</h3>
 						</div>
 					</div>
 				</div>
 				<div class="section sec2">
-					<h2 class="motion m1">2번 타이틀입니다</h2>
-					<h2 class="motion m2">2번 타이틀입니다</h2>
-					<h2 class="motion m3">2번 타이틀입니다</h2>
-					<h2 class="motion m4">2번 타이틀입니다</h2>
-					<h2 class="motion m5">2번 타이틀입니다</h2>
+					<jsp:include page="aboutMe.jsp"></jsp:include>
 				</div>
 				<div class="section sec3">
 					<h2 class="motion m1">3번 타이틀입니다</h2>

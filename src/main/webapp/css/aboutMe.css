@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+.sec2 .terminal {
+	width: 80%; /* sec1에서 terminal의 너비 */
+	height: 400px; /* sec1에서 terminal의 높이 */
+	position: relative; /* sec1에서 위치 관련 설정 */
+	top: 50px; /* 세션마다 다른 위치 적용 */
+	margin-top: 100px;
+}
+
+.picture img {
+	width: 100%; /* 100%는 부모 요소의 크기에 맞추어 조정 */
+	max-width: 300px; /* 원하는 최대 너비를 설정 */
+	height: auto; /* 비율 유지 */
+	display: block;
+	margin: 0 auto; /* 이미지 가운데 정렬 */
+}
+
+/* 해시태그 스타일 */
+.hashtags {
+	margin-top: 10px; /* 이미지와 해시태그 사이 간격 */
+	text-align: center; /* 해시태그 가운데 정렬 */
+}
+
+.hashtags span {
+	display: inline-block;
+	background-color: #333;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 15px;
+	margin: 5px;
+	font-size: 14px; /* 해시태그 글자 크기 */
+}
+
+#typed-about {
+	color: #00ff00;
+	font-size: 20px;
+	letter-spacing: 2px;
+	line-height: 1.7;
+}
