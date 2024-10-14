@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.terminal-container {
+    display: flex; /* Flexbox 사용 */
+    flex-direction: row; /* 수평 방향으로 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    margin-top: 200px; /* 필요한 상단 여백 */
+}
+
+.sec3 .terminal {
+    width: 80%; /* 3줄로 배치하면서 여백 고려 */
+    height: 400px; /* 터미널의 높이 설정 */
+    position: relative; /* 위치 관련 설정 */
+    margin: 10px; /* 터미널 간 여백 추가 */
+    margin-top:50%;
+}

@@ -1,20 +1,32 @@
 @charset "UTF-8";
 
-.sec2 .terminal {
-	width: 80%; /* sec1에서 terminal의 너비 */
-	height: 400px; /* sec1에서 terminal의 높이 */
-	position: relative; /* sec1에서 위치 관련 설정 */
-	top: 50px; /* 세션마다 다른 위치 적용 */
-	margin-top: 100px;
+.about-me-container {
+    display: flex; /* Flexbox 사용 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: flex-start; /* 상단 정렬 */
+    margin-top: 20px; /* 상단 여백 추가 */
+    width:100%
+}
+
+.motion {
+    width: 45%; /* 각 요소의 너비 조정 */
+    margin: 10px; /* 요소 간 여백 추가 */
 }
 
 .picture img {
-	width: 100%; /* 100%는 부모 요소의 크기에 맞추어 조정 */
-	max-width: 300px; /* 원하는 최대 너비를 설정 */
-	height: auto; /* 비율 유지 */
-	display: block;
-	margin: 0 auto; /* 이미지 가운데 정렬 */
+    width: 100%; /* 부모 요소의 크기에 맞추어 조정 */
+    max-width: 300px; /* 원하는 최대 너비를 설정 */
+    height: auto; /* 비율 유지 */
+    display: block;
+    margin: 0 auto; /* 이미지 가운데 정렬 */
 }
+
+/* 터미널 스타일 조정 */
+.sec2 .terminal {
+    width: 100%; /* 부모 요소에 맞춤 */
+    height: 400px; /* 원하는 높이 설정 */
+}
+
 
 /* 해시태그 스타일 */
 .hashtags {

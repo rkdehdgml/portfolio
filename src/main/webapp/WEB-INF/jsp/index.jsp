@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="/css/main.css">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
 <link rel="stylesheet" type="text/css" href="/css/aboutMe.css">
+<link rel="stylesheet" type="text/css" href="/css/skills.css">
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
@@ -45,11 +46,10 @@
 					</div>
 				</div>
 				<div class="section sec2">
-					<jsp:include page="aboutMe.jsp"></jsp:include>
+					<c:import url="/WEB-INF/jsp/aboutMe.jsp"></c:import>
 				</div>
 				<div class="section sec3">
-					<h2 class="motion m1">3번 타이틀입니다</h2>
-					<h2 class="motion m2">3번 타이틀입니다</h2>
+					<c:import url="/WEB-INF/jsp/skills.jsp"></c:import>
 				</div>
 				<div class="section sec4">
 					<h2 class="motion m1">4번 타이틀입니다</h2>
