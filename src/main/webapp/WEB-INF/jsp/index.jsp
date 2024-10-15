@@ -12,6 +12,8 @@
 <link rel="stylesheet" type="text/css" href="/css/common.css">
 <link rel="stylesheet" type="text/css" href="/css/aboutMe.css">
 <link rel="stylesheet" type="text/css" href="/css/skills.css">
+<link rel="stylesheet" type="text/css" href="/css/timeline.css">
+<link rel="stylesheet" type="text/css" href="/css/project.css">
 
 <!-- script -->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>

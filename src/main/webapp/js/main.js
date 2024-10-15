@@ -7,8 +7,7 @@ $(function() {
 		css3: false,
 		autoScrolling: true,
 		afterLoad: function(anchorLink, index) {
-			if (index == 2) { // 두 번째 세션에 도달할 때
-				// 이전에 초기화된 타이핑 인스턴스를 모두 제거하고 새로 시작
+			if (index === 2) { // 두 번째 세션에 도달할 때
 				$('#typed-about').html(''); // 기존 텍스트를 초기화
 				new TypeIt("#typed-about", {
 					strings: [
@@ -20,7 +19,7 @@ $(function() {
 					speed: 50,
 					loop: false
 				}).go();
-			} else if (index == 3) {
+			} else if (index === 3) {
 				$('#typed-frontEnd').html(''); // 기존 텍스트를 초기화
 				new TypeIt("#typed-frontEnd", {
 					strings: [
