@@ -5,48 +5,59 @@ ul, li {
 body {
 	width: 100%;
 	height: 100%;
-	background: #1e1e1e;
 	margin: 0;
-	color: #dcdcdc; /* 터미널처럼 밝은 회색 글씨 */
-	font-family: 'Courier New', Courier, monospace; /* 터미널 느낌을 주는 고정폭 폰트 사용 */
+	background-color: #f0f0f0; /* 전체 배경을 밝은 회색으로 설정 */
 }
 
 #wrap, #container {
 	height: 100%;
 }
 
+/* 헤더 스타일 */
+#header {
+    background-color: #424242; /* 흰색 배경 (약간의 투명도 추가) */
+    position: fixed; /* 고정 위치 */
+    left: 50%; /* 왼쪽에서 중앙으로 이동 */
+    transform: translateX(-50%); /* 정확한 중앙 정렬을 위해 이동 */
+    border-radius: 0 0 25px 25px; /* 모서리를 둥글게 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    z-index: 100; /* 다른 요소 위에 위치 */
+    width: 35%; /* 헤더의 너비를 조정 (예: 80%) */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    align-items: center;
+}
+
 #fullmenu {
-	z-index: 10;
-	position: fixed;
-	right: 20px;
-	top: 40%;
+	list-style: none;
+	display: flex; /* 가로 정렬 */
+	justify-content: center; /* 중앙 정렬 */
+	padding:0;
 }
 
 #fullmenu li {
-	margin-bottom: 10px;
+	margin: 0 20px; /* 좌우 여백 */
 }
 
 #fullmenu li a {
-	opacity: 0.7;
-	display: block;
-	width: 15px;
-	height: 15px;
-	border-radius: 15px;
-	font-size: 0;
-	text-indent: -999px;
-	background: #3c3c3c;
+	text-decoration: none; /* 링크 밑줄 제거 */
+	color: #fff; /* 흰색 글자 */
+	font-weight: normal; /* 기본 글자 두께 */
+	transition: all 0.3s ease; /* 부드러운 전환 효과 */
+	
 }
 
-#fullmenu li.active a {
-	opacity: 1;
-	background: #6cc644; /* 활성화된 항목은 녹색으로, 터미널의 강조색 느낌 */
+/* 현재 페이지 강조 및 호버 효과 */
+#fullmenu li a.active, #fullmenu li a:hover {
+	font-weight: bold; /* 글자 굵게 */
+	color: #ffcc00; /* 강조 색상으로 금색 추가 */
+	transform: scale(1.1); /* 마우스 오버 시 약간 커지는 효과 */
 }
 
 .section {
 	width: 100%;
 	height: 100%;
-	color: #dcdcdc;
-/* 	padding-top: 100px; */
+	color: #fff;
+	padding-top: 100px;
 }
 
 .section h2 {
@@ -54,40 +65,24 @@ body {
 	text-align: center;
 }
 
+/* 모든 섹션의 배경색을 통일 */
 .sec1 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #2e2e2e;
+	background:#000;
 }
-
-.sec1 .terminal {
-	margin: 0 auto;
-	width: 50%; /* sec1에서 terminal의 너비 */
-	height: 400px; /* sec1에서 terminal의 높이 */
-	position: relative; /* sec1에서 위치 관련 설정 */
-	top: 50px; /* 세션마다 다른 위치 적용 */
-}
-
-.sec2 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #2e2e2e;
-}
-
-.sec3 {
-	background: #2e2e2e;
-}
-
-.sec4 {
-	justify-content: center;
-	align-items: center;
-	background: #2e2e2e;
-}
-
+.sec2,
+.sec3,
+.sec4,
 .sec5 {
-	background: #2e2e2e;
+	background: #333; /* 동일한 어두운 회색으로 설정 */
+}
+
+/* 글자 색상 설정 */
+#main-writer {
+	color: white; /* 텍스트 색상을 흰색으로 설정 */
+	font-size: 48px; /* 글자 크기를 크게 설정 */
+	font-weight: bold; 
+	text-align: center; /* 가운데 정렬 */
+	margin-top: 35vh; /* 상단 여백 조정 (전체 화면의 30%) */
 }
 
 /* motion */
@@ -100,7 +95,7 @@ body {
 #container #fullpage .fp-completely .motion {
 	opacity: 1;
 	padding-top: 0;
-	transition: all 0.5s ease
+	transition: all 0.5s ease;
 }
 
 #container #fullpage .motion.m1 {
@@ -110,7 +105,6 @@ body {
 
 #container #fullpage .fp-completely .motion.m1 {
 	padding-left: 0px;
-
 }
 
 #container #fullpage .motion.m2 {
@@ -120,69 +114,27 @@ body {
 
 #container #fullpage .fp-completely .motion.m2 {
 	padding-right: 0px;
-
 }
 
-#container #fullpage .fp-completely .m1 {
-	transition-delay: 0s;
-}
+/* 각 모션의 지연 설정 */
+#container #fullpage .fp-completely .m1 { transition-delay: 0s; }
+#container #fullpage .fp-completely .m2 { transition-delay: 0.3s; }
+#container #fullpage .fp-completely .m3 { transition-delay: 0.6s; }
+#container #fullpage .fp-completely .m4 { transition-delay: 0.9s; }
+#container #fullpage .fp-completely .m5 { transition-delay: 1.2s; }
+#container #fullpage .fp-completely .m6 { transition-delay: 1.5s; }
+#container #fullpage .fp-completely .m7 { transition-delay: 1.8s; }
+#container #fullpage .fp-completely .m8 { transition-delay: 2.1s; }
+#container #fullpage .fp-completely .m9 { transition-delay: 2.4s; }
+#container #fullpage .fp-completely .m10 { transition-delay: 2.7s; }
+#container #fullpage .fp-completely .m11 { transition-delay: 3.0s; }
 
-#container #fullpage .fp-completely .m2 {
-	transition-delay: 0.3s
-}
+#container #fullpage .sec1.fp-completely .m1 { transition-delay: 0.4s; }
+#container #fullpage .sec1.fp-completely .m2 { transition-delay: 0.8s; }
+#container #fullpage .sec1.fp-completely .m3 { transition-delay: 1.1s; }
+#container #fullpage .sec1.fp-completely .m4 { transition-delay: 1.4s; }
 
-#container #fullpage .fp-completely .m3 {
-	transition-delay: 0.6s
-}
-
-#container #fullpage .fp-completely .m4 {
-	transition-delay: 0.9s
-}
-
-#container #fullpage .fp-completely .m5 {
-	transition-delay: 1.2s
-}
-
-#container #fullpage .fp-completely .m6 {
-	transition-delay: 1.5s
-}
-
-#container #fullpage .fp-completely .m7 {
-	transition-delay: 1.8s
-}
-
-#container #fullpage .fp-completely .m8 {
-	transition-delay: 2.1s
-}
-
-#container #fullpage .fp-completely .m9 {
-	transition-delay: 2.4s
-}
-
-#container #fullpage .fp-completely .m10 {
-	transition-delay: 2.7s
-}
-
-#container #fullpage .fp-completely .m11 {
-	transition-delay: 3.0s
-}
-
-#container #fullpage .sec1.fp-completely .m1 {
-	transition-delay: 0.4s;
-}
-
-#container #fullpage .sec1.fp-completely .m2 {
-	transition-delay: 0.8s;
-}
-
-#container #fullpage .sec1.fp-completely .m3 {
-	transition-delay: 1.1s;
-}
-
-#container #fullpage .sec1.fp-completely .m4 {
-	transition-delay: 1.4s;
-}
-
+/* 푸터 스타일 */
 .footer {
 	display: flex;
 	align-items: center;
@@ -190,5 +142,6 @@ body {
 	width: 100%;
 	height: 200px !important;
 	padding: 0;
-	background: #2e2e2e;
+	background: #333; /* 어두운 회색 */
+	color: white; /* 흰색 글자 */
 }

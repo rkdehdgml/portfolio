@@ -9,7 +9,6 @@
 <title>Portfolio</title>
 <!--  css  -->
 <link rel="stylesheet" type="text/css" href="/css/main.css">
-<link rel="stylesheet" type="text/css" href="/css/common.css">
 <link rel="stylesheet" type="text/css" href="/css/aboutMe.css">
 <link rel="stylesheet" type="text/css" href="/css/skills.css">
 <link rel="stylesheet" type="text/css" href="/css/timeline.css">
@@ -17,9 +16,12 @@
 
 <!-- script -->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typeit@8.6.1/dist/index.umd.js"></script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/typeit@8.6.1/dist/index.umd.js"></script>
 <script src="/js/main.js"></script>
 </head>
 <body>
@@ -28,28 +30,18 @@
 
 		<!-- [s] container -->
 		<div id="container">
-			<ul id="fullmenu">
-				<li data-menuanchor="page1"><a href="#page1">첫번째 페이지</a></li>
-				<li data-menuanchor="page2"><a href="#page2">두번째 페이지</a></li>
-				<li data-menuanchor="page3"><a href="#page3">세번째 페이지</a></li>
-				<li data-menuanchor="page4"><a href="#page4">네번째 페이지</a></li>
-				<li data-menuanchor="page5"><a href="#page5">다섯번째 페이지</a></li>
-				<li data-menuanchor="footer"><a href="#footer">FOOTER</a></li>
-			</ul>
-
+			<header id="header">
+				<ul id="fullmenu">
+					<li data-menuanchor="page1"><a href="#page1">About Me</a></li>
+					<li data-menuanchor="page2"><a href="#page2">History</a></li>
+					<li data-menuanchor="page3"><a href="#page3">Skills</a></li>
+					<li data-menuanchor="page4"><a href="#page4">Project</a></li>
+					<li data-menuanchor="page5"><a href="#page5">Career</a></li>
+				</ul>
+			</header>
 			<div id="fullpage">
 				<div class="section sec1">
-					<div class="terminal">
-						<div class="terminal-header">
-							<span class="btn-close"></span> <span class="btn-minimize"></span>
-							<span class="btn-maximize"></span>
-						</div>
-						<div class="terminal-body">
-							<h3>
-								user@portfolio:~$ <span id="typed-output"></span>
-							</h3>
-						</div>
-					</div>
+					<div id="main-writer"></div>
 				</div>
 				<div class="section sec2">
 					<c:import url="/WEB-INF/jsp/aboutMe.jsp"></c:import>
