@@ -3,7 +3,7 @@
 /* common.css */
 /* Terminal 공통 스타일 */
 .terminal {
-/*     background-color: #1e1e1e; */
+    background-color: #1e1e1e;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 터미널 창에 살짝 그림자 */
@@ -13,19 +13,17 @@
 }
 
 .terminal-header {
-	background-color: #4a4a4a !important;
-    padding: 10px;
-    display: flex;
-    justify-content: flex-start;
-    border-bottom: 2px solid #222;
+	background-color: #4a4a4a; /* 헤더 배경색 */
+	padding: 10px; /* 패딩 설정 */
+	display: flex; /* 버튼 정렬을 위해 flex 사용 */
+	align-items: center; /* 중앙 정렬 */
 }
 
 .terminal-header span {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    margin-right: 10px;
-    border-radius: 50%;
+	width: 10px; /* 버튼 너비 설정 */
+	height: 10px; /* 버튼 높이 설정 */
+	border-radius: 50%; /* 버튼 둥글게 */
+	margin-right: 5px; /* 버튼 간 여백 */
 }
 
 .btn-close {
@@ -41,12 +39,26 @@
 }
 
 .terminal-body {
-    padding: 20px;
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #1e1e1e;
-    height: 100%;
-    overflow-y: auto;
+	padding: 20px; /* 패딩 설정 */
+	color: #dcdcdc; /* 글자색 */
+/* 	font-family: 'Courier New', Courier, monospace; 고정폭 폰트 사용 */
+	font-size: 18px; /* 글자 크기 */
+	line-height: 1.5; /* 줄 간격 */
+	overflow-y: auto; /* 세로 스크롤 활성화 */
+}
+
+.terminal-body h2 {
+	margin: 0 0 10px 0; /* 제목 마진 설정 */
+	font-size: 24px; /* 제목 크기 조정 */
+	color: #6cc644; /* 제목 색상 */
+}
+
+.terminal-body ul {
+	padding-left: 20px; /* 리스트 패딩 설정 */
+}
+
+.terminal-body li {
+	margin: 5px 0; /* 리스트 아이템 간 여백 설정 */
 }
 
 #typed-output {
