@@ -1,3 +1,4 @@
+//fullpage.js
 $(function() {
 	$('#fullpage').fullpage({
 		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'footer'],
@@ -5,9 +6,55 @@ $(function() {
 		verticalCentered: false,
 		css3: false,
 		autoScrolling: true,
+		afterLoad: function(anchorLink, index) {
+			if (index == 2) { // 두 번째 세션에 도달할 때
+				// 이전에 초기화된 타이핑 인스턴스를 모두 제거하고 새로 시작
+				$('#typed-about').html(''); // 기존 텍스트를 초기화
+				new TypeIt("#typed-about", {
+					strings: [
+						"이름 : 홍길동",
+						"주소 : 서울특별시 서구 둔산동",
+						"전화번호 : 010-0000-0000",
+						"이메일 : example@example.com"
+					],
+					speed: 50,
+					loop: false
+				}).go();
+			} else if (index == 3) {
+				$('#typed-frontEnd').html(''); // 기존 텍스트를 초기화
+				new TypeIt("#typed-frontEnd", {
+					strings: [
+						"JavaScript",
+						"HTML & CSS"
+					],
+					speed: 50,
+					loop: false
+				}).go();
+				$('#typed-backEnd').html(''); // 기존 텍스트를 초기화
+				new TypeIt("#typed-backEnd", {
+					strings: [
+						"Java",
+						"Spring"
+					],
+					speed: 50,
+					loop: false
+				}).go();
+				$('#typed-other').html(''); // 기존 텍스트를 초기화
+				new TypeIt("#typed-other", {
+					strings: [
+						"Mysql",
+						"Linux"
+					],
+					speed: 50,
+					loop: false
+				}).go();
+			}
+		}
 	});
 });
 
+
+// 첫번째 페이지 
 document.addEventListener('DOMContentLoaded', function() {
 	const commands = [
 		"ssh kdh.portfolio.com", // 변형 필요

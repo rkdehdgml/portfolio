@@ -5,8 +5,10 @@ ul, li {
 body {
 	width: 100%;
 	height: 100%;
-	background: #000;
+	background: #1e1e1e;
 	margin: 0;
+	color: #dcdcdc; /* 터미널처럼 밝은 회색 글씨 */
+	font-family: 'Courier New', Courier, monospace; /* 터미널 느낌을 주는 고정폭 폰트 사용 */
 }
 
 #wrap, #container {
@@ -25,24 +27,25 @@ body {
 }
 
 #fullmenu li a {
-	opacity: 0.5;
+	opacity: 0.7;
 	display: block;
 	width: 15px;
 	height: 15px;
 	border-radius: 15px;
 	font-size: 0;
 	text-indent: -999px;
-	background: #fff;
+	background: #3c3c3c;
 }
 
 #fullmenu li.active a {
 	opacity: 1;
+	background: #6cc644; /* 활성화된 항목은 녹색으로, 터미널의 강조색 느낌 */
 }
 
 .section {
 	width: 100%;
 	height: 100%;
-	color: #fff;
+	color: #dcdcdc;
 /* 	padding-top: 100px; */
 }
 
@@ -55,7 +58,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #333;
+	background-color: #2e2e2e;
 }
 
 .sec1 .terminal {
@@ -70,19 +73,19 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #333;
+	background: #2e2e2e;
 }
 
 .sec3 {
-	background: #555;
+	background: #2e2e2e;
 }
 
 .sec4 {
-	background: #666;
+	background: #2e2e2e;
 }
 
 .sec5 {
-	background: #999;
+	background: #2e2e2e;
 }
 
 /* motion */
@@ -185,5 +188,5 @@ body {
 	width: 100%;
 	height: 200px !important;
 	padding: 0;
-	background: #333
+	background: #2e2e2e;
 }

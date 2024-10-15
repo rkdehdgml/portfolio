@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <div class="terminal-container">
-<h1 class="skills-title">SKILLS</h1> <!-- 상단 가운데에 추가된 글자 -->
 	<div class="motion m1">
 		<div class="terminal">
 			<div class="terminal-header">
@@ -9,7 +8,8 @@
 					class="btn-maximize"></span>
 			</div>
 			<div class="terminal-body">
-				<!-- 터미널 내용 -->
+				<h2>Front-End</h2>
+				<div id="typed-frontEnd"></div>
 			</div>
 		</div>
 	</div>
@@ -20,7 +20,8 @@
 					class="btn-maximize"></span>
 			</div>
 			<div class="terminal-body">
-				<!-- 터미널 내용 -->
+				<h2>Projects</h2>
+					<div id="typed-backEnd"></div>
 			</div>
 		</div>
 	</div>
@@ -31,7 +32,8 @@
 					class="btn-maximize"></span>
 			</div>
 			<div class="terminal-body">
-				<!-- 터미널 내용 -->
+				<h2>Certifications</h2>
+				<div id="typed-other"></div>
 			</div>
 		</div>
 	</div>
