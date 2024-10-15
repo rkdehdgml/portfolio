@@ -56,13 +56,10 @@
 					<c:import url="/WEB-INF/jsp/skills.jsp"></c:import>
 				</div>
 				<div class="section sec4">
-					<h2 class="motion m1">4번 타이틀입니다</h2>
-					<h2 class="motion m2">4번 타이틀입니다</h2>
+					<c:import url="/WEB-INF/jsp/timeline.jsp"></c:import>
 				</div>
 				<div class="section sec5">
-					<h2 class="motion m1">5번 타이틀입니다</h2>
-					<h2 class="motion m2">5번 타이틀입니다</h2>
-					<h2 class="motion m3">5번 타이틀입니다</h2>
+					<c:import url="/WEB-INF/jsp/project.jsp"></c:import>
 				</div>
 				<div class="section footer">FOOTER</div>
 			</div>
