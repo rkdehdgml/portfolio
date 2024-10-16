@@ -27,7 +27,9 @@
 <body>
 	<!-- [s] wrap -->
 	<div id="wrap">
-
+		<div id="intro">
+			<span id="intro-text"></span>
+		</div>
 		<!-- [s] container -->
 		<div id="container">
 			<header id="header">
@@ -41,7 +43,7 @@
 			</header>
 			<div id="fullpage">
 				<div class="section sec1">
-					<div id="main-writer"></div>
+					<h4 class="motion m1">안녕하세요.</h4>
 				</div>
 				<div class="section sec2">
 					<c:import url="/WEB-INF/jsp/aboutMe.jsp"></c:import>
