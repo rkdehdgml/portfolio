@@ -34,11 +34,10 @@
 		<div id="container">
 			<header id="header">
 				<ul id="fullmenu">
-					<li data-menuanchor="page1"><a href="#page1">About Me</a></li>
-					<li data-menuanchor="page2"><a href="#page2">History</a></li>
+					<li data-menuanchor="page2"><a href="#page2">About Me</a></li>
 					<li data-menuanchor="page3"><a href="#page3">Skills</a></li>
-					<li data-menuanchor="page4"><a href="#page4">Project</a></li>
-					<li data-menuanchor="page5"><a href="#page5">Career</a></li>
+					<li data-menuanchor="page4"><a href="#page4">Timeline</a></li>
+					<li data-menuanchor="page5"><a href="#page5">Project</a></li>
 				</ul>
 			</header>
 			<div id="fullpage">

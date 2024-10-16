@@ -22,7 +22,8 @@ body {
     border-radius: 0 0 25px 25px; /* 모서리를 둥글게 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
     z-index: 100; /* 다른 요소 위에 위치 */
-    width: 35%; /* 헤더의 너비를 조정 (예: 80%) */
+    width: 30%; /* 헤더의 너비를 조정 (예: 80%) */
+    height: 65px;
     text-align: center; /* 텍스트 가운데 정렬 */
     align-items: center;
 }
