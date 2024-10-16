@@ -68,9 +68,14 @@ body {
 
 /* 모든 섹션의 배경색을 통일 */
 .sec1 {
-	background:#222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 화면 전체 높이 */
+    position: relative; /* 하단 요소를 절대 위치시키기 위해 상대적으로 설정 */
+	background:#333;
 }
-
 #intro {
     position: fixed; /* 고정 위치 */
     top: 0; /* 상단 정렬 */
@@ -96,20 +101,55 @@ body {
     display: none; /* 처음에는 숨김 */
 }
 
+.text-container {
+    text-align: center; /* 중앙 정렬 */
+    color: white; /* 글자 색상 */
+}
+
+.text-container h4 {
+    font-size: 2rem; /* 작은 문구 크기 */
+    margin: 0.5rem 0; /* 여백 */
+}
+
+.text-container h2 {
+    font-size: 3rem; /* 큰 문구 크기 */
+    margin: 0.5rem 0; /* 여백 */
+}
+
+.text-container p {
+    font-size: 1rem; /* 더 작은 문구 크기 */
+    margin: 0.5rem 0; /* 여백 */
+}
+
+/* 스크롤 애니메이션 */
+.scroll-down {
+    position: absolute;
+    bottom: 20px; /* 하단 여백 */
+    left: 50%;
+    transform: translateX(-50%); /* 수평 중앙 정렬 */
+    text-align: center;
+}
+
+.scroll-down svg {
+    animation: bounce 1.5s infinite; /* 애니메이션 추가 */
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
 .sec2,
 .sec3,
 .sec4,
 .sec5 {
-	background: #333; /* 동일한 어두운 회색으로 설정 */
+    background: #333; /* 동일한 어두운 회색으로 설정 */
 }
 
 /* 글자 색상 설정 */
 #main-writer {
-	color: white; /* 텍스트 색상을 흰색으로 설정 */
-	font-size: 48px; /* 글자 크기를 크게 설정 */
-	font-weight: bold; 
-	text-align: center; /* 가운데 정렬 */
-	margin-top: 35vh; /* 상단 여백 조정 (전체 화면의 30%) */
+    color: white; /* 흰색 글자 */
+    text-align: center; /* 중앙 정렬 */
 }
 
 /* motion */
