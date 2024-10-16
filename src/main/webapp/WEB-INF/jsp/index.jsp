@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
 
 <!-- script -->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript"
+<script
 	src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
@@ -25,20 +25,32 @@
 <script src="/js/main.js"></script>
 </head>
 <body>
-	<!-- [s] wrap -->
 	<div id="wrap">
-		<!-- [s] container -->
+		<!-- 헤더 -->
+		<header id="header">
+			<ul id="fullmenu">
+				<li data-menuanchor="page2"><a href="#page2">About Me</a></li>
+				<li data-menuanchor="page3"><a href="#page3">Skills</a></li>
+				<li data-menuanchor="page4"><a href="#page4">Timeline</a></li>
+				<li data-menuanchor="page5"><a href="#page5">Project</a></li>
+			</ul>
+		</header>
+		
+		<!-- 인트로 추가 -->
+		<div id="intro">
+			<div id="intro-text"></div>
+		</div>
+
+		<!-- 전체 페이지를 감싸는 컨테이너 -->
 		<div id="container">
-			<header id="header">
-				<ul id="fullmenu">
-					<li data-menuanchor="page2"><a href="#page2">About Me</a></li>
-					<li data-menuanchor="page3"><a href="#page3">Skills</a></li>
-					<li data-menuanchor="page4"><a href="#page4">Timeline</a></li>
-					<li data-menuanchor="page5"><a href="#page5">Project</a></li>
-				</ul>
-			</header>
 			<div id="fullpage">
+				<!-- 섹션 1 -->
 				<div class="section sec1">
+					<div class="main-text">
+						<h1 class="first-text">홍길동</h1>
+						<h1 class="secd-text">포트폴리오</h1>
+					</div>
+					<div class="mouse"></div>
 				</div>
 				<div class="section sec2">
 					<c:import url="/WEB-INF/jsp/aboutMe.jsp"></c:import>
@@ -55,9 +67,6 @@
 				<div class="section footer">FOOTER</div>
 			</div>
 		</div>
-		<!-- [e] container -->
-
 	</div>
-	<!-- [e] wrap -->
 </body>
 </html>
