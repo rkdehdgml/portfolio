@@ -15,7 +15,7 @@ body {
 
 /* 헤더 스타일 */
 #header {
-    background-color: #424242; /* 흰색 배경 (약간의 투명도 추가) */
+    background-color: #0B173B; /* 흰색 배경 (약간의 투명도 추가) */
     position: fixed; /* 고정 위치 */
     left: 50%; /* 왼쪽에서 중앙으로 이동 */
     transform: translateX(-50%); /* 정확한 중앙 정렬을 위해 이동 */
@@ -40,16 +40,17 @@ body {
 }
 
 #fullmenu li a {
+	font-size:20px;
     text-decoration: none; /* 링크 밑줄 제거 */
     color: #fff; /* 흰색 글자 */
-    font-weight: normal; /* 기본 글자 두께 */
+    font-weight: bold; /* 기본 글자 두께 */
     transition: all 0.3s ease; /* 부드러운 전환 효과 */
 }
 
 /* 현재 페이지 강조 및 호버 효과 */
 #fullmenu li a.active, #fullmenu li a:hover {
     font-weight: bold; /* 글자 굵게 */
-    color: #ffcc00; /* 강조 색상으로 금색 추가 */
+    color: #000; /* 강조 색상으로 금색 추가 */
     transform: scale(1.1); /* 마우스 오버 시 약간 커지는 효과 */
 }
 
@@ -143,7 +144,12 @@ body {
     }
 }
 
-.sec2,
+.sec2 {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    background:#fff;
+}
 .sec3,
 .sec4,
 .sec5 {

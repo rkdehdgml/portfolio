@@ -13,8 +13,6 @@
 <link rel="stylesheet" type="text/css" href="/css/skills.css">
 <link rel="stylesheet" type="text/css" href="/css/timeline.css">
 <link rel="stylesheet" type="text/css" href="/css/project.css">
-<!-- 폰트 -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 <!-- script -->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -37,12 +35,6 @@
 				<li data-menuanchor="page5"><a href="#page5">Project</a></li>
 			</ul>
 		</header>
-		
-		<!-- 인트로 추가 -->
-<!-- 		<div id="intro"> -->
-<!-- 			<div id="intro-text"></div> -->
-<!-- 		</div> -->
-
 		<!-- 전체 페이지를 감싸는 컨테이너 -->
 		<div id="container">
 			<div id="fullpage">
