@@ -6,7 +6,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
-    background-color: #f0f0f0; /* 전체 배경을 밝은 회색으로 설정 */
+/*     background-color: #f0f0f0; 전체 배경을 밝은 회색으로 설정 */
 }
 
 #wrap, #container {
@@ -72,53 +72,22 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    background: #fff;
+    background: url('/img/sec1Background.jpg') no-repeat center center; /* 이미지 경로 지정 */
+    background-size: cover; /* 이미지가 화면을 꽉 채우도록 설정 */
 /*     padding-top: 100px; */
 }
-
-#intro {
-    position: fixed; /* 고정 위치 */
-    top: 0; /* 상단 정렬 */
-    left: 0; /* 좌측 정렬 */
-    width: 100%; /* 전체 너비 */
-    height: 100%; /* 전체 높이 */
-    display: flex; /* Flexbox 사용 */
-    justify-content: center; /* 수평 중앙 정렬 */
-    align-items: center; /* 수직 중앙 정렬 */
-    font-size: 36px; /* 글자 크기 */
-    color: white; /* 글자 색상 */
-    background-color: black; /* 배경색 */
-    z-index: 200; /* 다른 요소 위에 위치 */
-    opacity: 1; /* 초기 상태 */
-    transition: opacity 1s ease; /* 부드러운 사라짐 효과 */
-}
-
-#intro.hidden {
-    opacity: 0; /* 숨김 상태 */
-}
-
 /* 텍스트 중앙 정렬 및 스타일 */
 .main-text {
-    text-align: left;
-    color: #000; /* 글자 색상 설정 */
-}
-
-.main-text h1 {
-    margin: 10px 0;  /* 두 줄 사이 간격 설정 */
-    line-height: 1.2; /* 줄 간격 설정 */
-}
-
-.main-text .first-text {
-	font-size: 30px;
-}
-.main-text .secd-text{
-	font-size : 48px;
+    text-align: center;	
+    color: #fff; /* 글자 색상 설정 */
+    font-size:40px;
+    font-weight: bold;
 }
 
 .mouse {
 	width: 30px;
-	height: 50px;
-	top:200px;
+	height: 70px;
+	top:35%;
 	border: 3px solid #333;
 	border-radius: 60px;
 	position: relative;
@@ -130,7 +99,7 @@ body {
 		top: 10px;
 		left: 50%;
 		transform: translateX(-50%);
-		background-color: #333;
+		background-color: #fff;
 		border-radius: 50%;
 		opacity: 1;
 		animation: wheel 2s infinite;
@@ -152,11 +121,33 @@ body {
 	}
 }
 
+.scroll-down {
+    position: relative; /* 절대 위치 설정 */
+    top: 20%; /* 마우스 아이콘 아래에 위치시키기 */
+/*     left: 50%; 중앙 정렬을 위한 left 설정 */
+/*     transform: translateX(-50%); 중앙 정렬을 위한 변환 */
+    margin-top: 10px; /* 마우스와의 간격 조정 */
+    color: #fff; /* 글자 색상 (흰색) */
+    font-size: 20px; /* 글자 크기 */
+    text-align: center; /* 가운데 정렬 */
+    opacity: 0.8; /* 약간의 투명도 */
+    animation: fadeIn 1s ease-in-out infinite alternate; /* 애니메이션 추가 */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .sec2,
 .sec3,
 .sec4,
 .sec5 {
-    background: #333; /* 동일한 어두운 회색으로 설정 */
+    background: #fff; /* 동일한 어두운 회색으로 설정 */
 /*     padding-top: 100px; */
 }
 

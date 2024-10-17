@@ -13,6 +13,8 @@
 <link rel="stylesheet" type="text/css" href="/css/skills.css">
 <link rel="stylesheet" type="text/css" href="/css/timeline.css">
 <link rel="stylesheet" type="text/css" href="/css/project.css">
+<!-- 폰트 -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 <!-- script -->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -37,20 +39,20 @@
 		</header>
 		
 		<!-- 인트로 추가 -->
-		<div id="intro">
-			<div id="intro-text"></div>
-		</div>
+<!-- 		<div id="intro"> -->
+<!-- 			<div id="intro-text"></div> -->
+<!-- 		</div> -->
 
 		<!-- 전체 페이지를 감싸는 컨테이너 -->
 		<div id="container">
 			<div id="fullpage">
 				<!-- 섹션 1 -->
 				<div class="section sec1">
-					<div class="main-text">
-						<h1 class="first-text">홍길동</h1>
-						<h1 class="secd-text">포트폴리오</h1>
+					<div class="motion m1">
+						<div class="main-text"></div>
 					</div>
 					<div class="mouse"></div>
+					<div class="scroll-down">Scroll Down</div>
 				</div>
 				<div class="section sec2">
 					<c:import url="/WEB-INF/jsp/aboutMe.jsp"></c:import>

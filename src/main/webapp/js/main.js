@@ -6,27 +6,19 @@ $(function() {
 		verticalCentered: false,
 		css3: false,
 		autoScrolling: true,
+		scrollingSpeed: 700,  // 스크롤 속도
+		easing: 'easeInOutCubic', // 부드러운 스크롤링 효과
 	});
 });
 
 $(document).ready(function() {
-	const introText = "안녕하세요. 개발자 홍길동 포트폴리오 입니다.";
+	const mainText = ["안녕하세요.", "개발자 홍길동 포트폴리오 입니다."];
 
 	// TypeIt으로 인트로 텍스트 타이핑
-	new TypeIt("#intro-text", {
-		strings: introText,
+	new TypeIt(".main-text", {
+		strings: mainText,
 		speed: 50, // 타이핑 속도 조정
 		cursor: true, // 커서 표시
-		afterComplete: function() {
-			// 텍스트 타이핑 완료 후
-			setTimeout(() => {
-				$("#intro").addClass("hidden"); // 인트로 숨기기
-				setTimeout(() => {
-					$("#intro").remove();
-					$("#main-writer").fadeIn(); // 첫 번째 섹션의 텍스트 보이기
-				}, 1800); // 1초 후에 첫 번째 섹션 보이기
-			}, 1800); // 1초 후에 인트로 숨기기
-		}
 	}).go();
 });
 
