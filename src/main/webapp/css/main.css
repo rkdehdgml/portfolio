@@ -56,9 +56,8 @@ body {
 
 .section {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     color: #fff;
-/*     padding-top: 100px; */
 }
 
 .section h2 {
@@ -84,14 +83,21 @@ body {
     font-size:40px;
     font-weight: bold;
 }
+.scroll-container {
+    display: flex;
+    flex-direction: column; /* 수직 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    position: relative; /* 상대 위치 */
+    top: 27%; /* 위에서 15% 아래로 이동 (필요에 따라 조정) */
+}
 
 .mouse {
 	width: 30px;
 	height: 70px;
-	top:35%;
 	border: 3px solid #333;
 	border-radius: 60px;
 	position: relative;
+	margin-top:10px;
 	&::before {
 		content: '';
 		width: 12px;
@@ -123,16 +129,15 @@ body {
 }
 
 .scroll-down {
-    position: relative; /* 절대 위치 설정 */
-    top: 20%; /* 마우스 아이콘 아래에 위치시키기 */
-/*     left: 50%; 중앙 정렬을 위한 left 설정 */
-/*     transform: translateX(-50%); 중앙 정렬을 위한 변환 */
-    margin-top: 10px; /* 마우스와의 간격 조정 */
+    position: absolute;
+     bottom: 100%;
+     margin-top: 10px; /* 마우스와의 간격 조정 */
     color: #fff; /* 글자 색상 (흰색) */
     font-size: 20px; /* 글자 크기 */
     text-align: center; /* 가운데 정렬 */
     opacity: 0.8; /* 약간의 투명도 */
     animation: fadeIn 1s ease-in-out infinite alternate; /* 애니메이션 추가 */
+     white-space: nowrap; /* 줄 바꿈을 방지 */
 }
 
 @keyframes fadeIn {

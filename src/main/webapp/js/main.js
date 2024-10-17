@@ -6,8 +6,6 @@ $(function() {
 		verticalCentered: false,
 		css3: false,
 		autoScrolling: true,
-		scrollingSpeed: 700,  // 스크롤 속도
-		easing: 'easeInOutCubic', // 부드러운 스크롤링 효과
 	});
 });
 

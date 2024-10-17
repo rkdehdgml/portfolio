@@ -43,8 +43,10 @@
 					<div class="motion m1">
 						<div class="main-text"></div>
 					</div>
-					<div class="mouse"></div>
-					<div class="scroll-down">Scroll Down</div>
+					<div class="scroll-container">
+						<div class="mouse"></div>
+						<div class="scroll-down">Scroll Down</div>
+					</div>
 				</div>
 				<div class="section sec2">
 					<c:import url="/WEB-INF/jsp/aboutMe.jsp"></c:import>
