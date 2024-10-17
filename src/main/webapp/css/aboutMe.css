@@ -12,13 +12,13 @@
     display: flex; /* 왼쪽 컨텐츠를 flexbox로 설정 */
     flex-direction: column; /* 세로 방향으로 정렬 */
     align-items: center; /* 수평 중앙 정렬 */
-    margin-right: 20px; /* 오른쪽 여백 */
+    margin-right: 100px; /* 오른쪽 여백 */
 }
 
 .Emoji-img {
-    width: 150px; /* 이미지 크기 조정 */
-    height: 150px; /* 이미지 크기 조정 */
-    border-radius: 50%; /* 원형 이미지 */
+    width: 300px; /* 이미지 크기 조정 */
+    height: 300px; /* 이미지 크기 조정 */
+    border-radius: 30%; /* 원형 이미지 */
 }
 
 .hashtags {
@@ -27,18 +27,25 @@
     text-align: center; /* 가운데 정렬 */
     margin-top: 10px; /* 여백 추가 */
 }
+.hashtags span {
+	font-size:20px;
+	color:#000;
+}
 
 .right-content {
     display: flex; /* 오른쪽 컨텐츠를 flexbox로 설정 */
     flex-direction: column; /* 세로 방향으로 정렬 */
     align-items: flex-start; /* 왼쪽 정렬 */
+    margin-left:100px;
 }
 
 .about-box {
     background: #f9f9f9; /* 박스 배경색 */
+    color:#000;
     padding: 20px; /* 여백 추가 */
     border-radius: 10px; /* 모서리 둥글게 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-    width: 300px; /* 박스 너비 */
+    width: 700px; /* 박스 너비 */
+    height:300px;
 }
 
