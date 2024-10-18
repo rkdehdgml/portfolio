@@ -44,7 +44,7 @@
 		<div class="category-card server">
 			<h3>Server</h3>
 			<div class="skill-item">
-				<img src="/img/aws-icon.png" alt="AWS"> <span>AWS</span>
+				<img src="/img/CSSimage.png" alt="AWS"> <span>AWS</span>
 			</div>
 			<!-- 추가적인 서버 관련 기술들 -->
 		</div>
@@ -53,7 +53,7 @@
 		<div class="category-card others">
 			<h3>Others</h3>
 			<div class="skill-item">
-				<img src="/img/git-icon.png" alt="Git"> <span>Git</span>
+				<img src="/img/CSSimage.png" alt="Git"> <span>Git</span>
 			</div>
 			<!-- 추가적인 기타 기술들 -->
 		</div>
