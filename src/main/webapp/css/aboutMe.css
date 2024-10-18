@@ -62,7 +62,8 @@
 }
 
 button {
-	padding: 10px 20px; /* 버튼 크기 조정 */
+	padding: 15px 30px; /* 버튼 크기 조정 */
+	font-size:17px;
 	background-color: #007bff; /* 버튼 배경색 */
 	color: #fff; /* 버튼 글자색 */
 	border: none;
