@@ -6,6 +6,7 @@ $(function() {
 		verticalCentered: false,
 		css3: false,
 		autoScrolling: true,
+		scrollOverflow: true
 	});
 });
 

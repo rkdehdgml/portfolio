@@ -1,1 +1,71 @@
 @charset "UTF-8";
+
+/* 전체 타임라인 */
+.timeline {
+	position: relative;
+	margin: 0 auto;
+	padding: 40px 0;
+	width: 80%; /* 타임라인의 너비 */
+	max-width: 1200px;
+}
+
+.timeline::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%; /* 타임라인 중앙 정렬 */
+	width: 7px;
+	background-color: #0B173B; /* 타임라인의 선 */
+	z-index: 1;
+}
+
+/* 타임라인 이벤트 */
+.timeline-event {
+	position: relative;
+	margin: 20px 0;
+	width: 40%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.timeline-event:nth-child(odd) {
+	left: 13%; /* 왼쪽 배치 */
+}
+
+.timeline-event:nth-child(even) {
+	left: 47%; /* 오른쪽 배치 */
+	text-align: right;
+}
+
+/* 타임라인 이벤트 내용 */
+.timeline-content {
+	position: relative;
+	background-color: #fff;
+	color : #000;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	z-index: 2;
+}
+
+.timeline-event:nth-child(odd) .timeline-content {
+	transform: translateX(-30%); /* 왼쪽 이벤트 내용 살짝 이동 */
+}
+
+.timeline-event:nth-child(even) .timeline-content {
+	transform: translateX(30%); /* 오른쪽 이벤트 내용 살짝 이동 */
+}
+
+/* 원형 아이콘 */
+.timeline-event::before {
+	content: '';
+	position: absolute;
+	top: 20px;
+	left: calc(50% - 10px);
+	width: 20px;
+	height: 20px;
+	background-color: #0B173B; /* 원형 아이콘 색상 */
+	border-radius: 50%;
+	z-index: 3;
+}
