@@ -61,10 +61,14 @@
 					<c:import url="/WEB-INF/jsp/project.jsp"></c:import>
 				</section>
 				<!-- 다섯번째 세션 -->
-				<section class="section sec5">
+				<section class="section sec5 fp-auto-height-responsive">
 					<c:import url="/WEB-INF/jsp/timeline.jsp"></c:import>
 				</section>
-				<footer class="section footer">FOOTER</footer>
+				<footer class="section footer">
+					<p>강동희</p>
+					<p>강동희</p>
+					<p>강동희</p>
+				</footer>
 			</div>
 		</div>
 	</div>

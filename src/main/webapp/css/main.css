@@ -163,6 +163,7 @@ body {
 }
 .sec5 {
     background: #fff; /* 동일한 어두운 회색으로 설정 */
+    height: 100vh;
 /*     padding-top: 100px; */
 }
 
