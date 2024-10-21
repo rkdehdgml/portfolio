@@ -9,10 +9,10 @@
 				<img src="/img/HTMLimage.png" alt="HTML"> <span>HTML</span>
 			</div>
 			<div class="skill-item">
-				<img src="/img/css-icon.png" alt="CSS"> <span>CSS</span>
+				<img src="/img/HTMLimage.png" alt="CSS"> <span>CSS</span>
 			</div>
 			<div class="skill-item">
-				<img src="/img/js-icon.png" alt="JavaScript"> <span>JavaScript</span>
+				<img src="/img/HTMLimage.png" alt="JavaScript"> <span>JavaScript</span>
 			</div>
 		</div>
 	
@@ -32,10 +32,10 @@
 		<div class="category-card db">
 			<h3>Database</h3>
 			<div class="skill-item">
-				<img src="/img/HTMLimage.png" alt="MySQL"> <span>MySQL</span>
+				<img src="/img/CSSimage.png" alt="MySQL"> <span>MySQL</span>
 			</div>
 			<div class="skill-item">
-				<img src="/img/mongo-icon.png" alt="MongoDB"> <span>MongoDB</span>
+				<img src="/img/CSSimage.png" alt="MongoDB"> <span>MongoDB</span>
 			</div>
 			<!-- 추가적인 DB들 -->
 		</div>

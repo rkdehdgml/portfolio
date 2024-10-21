@@ -1,1 +1,118 @@
-@charset "UTF-8";
+.project {
+	width: 50%; /* 슬라이더의 너비 */
+	margin: auto;
+	top: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.project .slide-content {
+	position: relative; /* 오버레이를 위한 relative 설정 */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 20px;
+	width: 250px;
+	height: 400px;
+	padding: 40px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	overflow: hidden; /* 내용이 오버플로우 되지 않도록 */
+}
+
+.project img {
+	width: 100%; /* 이미지를 슬라이드 너비에 맞춤 */
+	height: 200px; /* 고정된 높이 */
+	object-fit: cover; /* 이미지 비율을 유지하면서 크기 조정 */
+	border-radius: 10px; /* 이미지 모서리를 둥글게 */
+	z-index: 1; /* 오버레이와의 순서를 맞추기 위해 z-index 추가 */
+}
+
+.project-info {
+	text-align: center;
+	margin-top: 80px; /* 이미지와 설명 사이 간격 */
+	z-index: 1; /* 오버레이 아래에 위치 */
+	transition: 0.3s; /* 부드러운 전환 효과 */
+}
+
+.project-info h3 {
+	font-size: 20px;
+	color: #333; /* 제목 색상 */
+	font-weight: bold;
+}
+
+.project-info p {
+	font-size: 16px;
+	color: #666; /* 설명 색상 */
+	margin-top: 5px;
+}
+
+/* 화살표 색상 및 위치 변경 */
+.slick-prev:before, .slick-next:before {
+	color: black !important;
+	opacity: 1;
+	font-size: 40px !important; /* 화살표 크기 변경 */
+}
+
+.slick-prev {
+	/* 	left: 20px !important; */
+	z-index: 9;
+}
+
+.slick-next {
+	/* 	right: 20px !important; */
+	z-index: 9;
+}
+
+/* 슬라이더 내용 가운데 정렬 */
+.slick-slide {
+	display: flex; /* Flexbox 사용 */
+	justify-content: center; /* 슬라이드 내용 중앙 정렬 */
+	align-items: center; /* 세로 가운데 정렬 */
+}
+
+.project .slide-content:hover .project-info {
+	opacity: 0.3; /* 마우스를 올렸을 때 내용 흐리게 */
+}
+
+/* 회색 오버레이 배경 */
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* 반투명 회색 배경 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0; /* 기본적으로 숨김 */
+	transition: opacity 0.3s ease-in-out; /* 오버레이 보이기 전환 효과 */
+	border-radius: 10px; /* 박스의 모서리와 동일하게 설정 */
+}
+
+.project .slide-content:hover .overlay {
+	opacity: 1;
+}
+
+/* 가운데 More 버튼 */
+.more-btn {
+	background-color: #fff; /* 흰색 버튼 */
+	color: #333;
+	padding: 15px 30px; /* 버튼 내부 여백을 더 크게 설정 */
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s ease;
+}
+
+.more-btn:hover {
+	background-color: #0B173B;
+	color:#fff;
+} /* 버튼에 마우스를 올리면 색 변경 */

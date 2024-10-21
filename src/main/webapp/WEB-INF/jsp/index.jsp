@@ -13,7 +13,8 @@
 <link rel="stylesheet" type="text/css" href="/css/skills.css">
 <link rel="stylesheet" type="text/css" href="/css/timeline.css">
 <link rel="stylesheet" type="text/css" href="/css/project.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 
 <!-- script -->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -46,15 +47,19 @@
 						<div class="scroll-down">Scroll Down</div>
 					</div>
 				</section>
+				<!-- 두번째 세션 -->
 				<section class="section sec2">
 					<c:import url="/WEB-INF/jsp/aboutMe.jsp"></c:import>
 				</section>
+				<!-- 세번째 세션 -->
 				<section class="section sec3">
 					<c:import url="/WEB-INF/jsp/skills.jsp"></c:import>
 				</section>
+				<!-- 네번째 세션 -->
 				<section class="section sec4">
 					<c:import url="/WEB-INF/jsp/project.jsp"></c:import>
 				</section>
+				<!-- 다섯번째 세션 -->
 				<section class="section sec5">
 					<c:import url="/WEB-INF/jsp/timeline.jsp"></c:import>
 				</section>

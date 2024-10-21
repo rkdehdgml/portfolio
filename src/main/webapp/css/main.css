@@ -155,8 +155,12 @@ body {
     align-items: center;
     background:#fff;
 }
-.sec3,
-.sec4,
+.sec3 {
+	background: #fff;
+}
+.sec4 {
+	background: #fff;
+}
 .sec5 {
     background: #fff; /* 동일한 어두운 회색으로 설정 */
 /*     padding-top: 100px; */

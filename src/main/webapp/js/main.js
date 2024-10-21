@@ -23,21 +23,18 @@ $(document).ready(function() {
 
 //slick-slider.js
 $(document).ready(function() {
-	$('.project-slider').slick({
-		infinite: true, // 무한 슬라이드
-		slidesToShow: 1, // 한 번에 보여줄 슬라이드 수
-		slidesToScroll: 1, // 한 번에 넘길 슬라이드 수
-		arrows: true, // 이전/다음 버튼 활성화
-		prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-		nextArrow: '<button type="button" class="slick-next">Next</button>',
-		responsive: [
-			{
-				breakpoint: 768, // 화면이 768px 이하일 때
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				}
-			}
-		]
+	$('.project').slick({
+		rows: 1,
+		dots: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		draggable: true,
+		arrows: true,
+		variableWidth: false,
+		centerMode: true,
+		ceneterPadding : '80px',
+		speed: 1000,
 	});
 });
+
+
