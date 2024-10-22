@@ -14,7 +14,7 @@ public class adminController {
 	@RequestMapping(value = "/admin.do")
 	public String admin(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
 
-		return "admin";
+		return "/admin/admin";
 	}
 
 }

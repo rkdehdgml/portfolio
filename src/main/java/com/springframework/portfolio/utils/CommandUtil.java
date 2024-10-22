@@ -22,14 +22,14 @@ import javax.mail.internet.MimeMessage;
  */
 @Component
 public class CommandUtil {
-	
 
 	/**
 	 * 임시 비밀번호 이메일 전송
+	 * 
 	 * @param mberEamil
 	 * @param tempPassword
 	 */
-	public static void sendPasswordEmail(String mberEamil, String tempPassword ) {
+	public static void sendPasswordEmail(String mberEamil, String tempPassword) {
 		// 1. 발신자의 메일 계정과 비밀번호 설정
 		final String user = "pjchapark@gmail.com";
 		final String password = "oxylxzuqrovoenrx";
@@ -75,9 +75,10 @@ public class CommandUtil {
 		}
 
 	}
-	
+
 	/**
 	 * 임시 비밀번호 이메일 전송
+	 * 
 	 * @param mberEamil
 	 * @param tempPassword
 	 */
@@ -126,9 +127,10 @@ public class CommandUtil {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * 예외처리
+	 * 
 	 * @param response
 	 * @param message
 	 * @return
@@ -158,9 +160,10 @@ public class CommandUtil {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * 예외처리 (리다이렉트)
+	 * 
 	 * @param response
 	 * @param message
 	 * @param url
@@ -191,9 +194,10 @@ public class CommandUtil {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * 예외처리 (새로고침)
+	 * 
 	 * @param response
 	 * @param message
 	 * @return

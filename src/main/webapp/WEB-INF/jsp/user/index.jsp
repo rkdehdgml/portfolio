@@ -50,19 +50,19 @@
 				</section>
 				<!-- 두번째 세션 -->
 				<section class="section sec2">
-					<c:import url="/WEB-INF/jsp/aboutMe.jsp"></c:import>
+					<c:import url="/WEB-INF/jsp/user/aboutMe.jsp"></c:import>
 				</section>
 				<!-- 세번째 세션 -->
 				<section class="section sec3">
-					<c:import url="/WEB-INF/jsp/skills.jsp"></c:import>
+					<c:import url="/WEB-INF/jsp/user/skills.jsp"></c:import>
 				</section>
 				<!-- 네번째 세션 -->
 				<section class="section sec4">
-					<c:import url="/WEB-INF/jsp/project.jsp"></c:import>
+					<c:import url="/WEB-INF/jsp/user/project.jsp"></c:import>
 				</section>
 				<!-- 다섯번째 세션 -->
-				<section class="section sec5 fp-auto-height-responsive">
-					<c:import url="/WEB-INF/jsp/timeline.jsp"></c:import>
+				<section class="section sec5">
+					<c:import url="/WEB-INF/jsp/user/timeline.jsp"></c:import>
 				</section>
 				<footer class="section footer">
 					<p>강동희</p>
