@@ -106,6 +106,13 @@ public class adminController {
 		}
 	}
 	
+	/**
+	 * 로그아웃
+	 * @param request
+	 * @param response
+	 * @param commonMap
+	 * @return
+	 */
 	@RequestMapping(value="/logout.do")
 	public String logout (HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
 		HttpSession session = request.getSession(false);

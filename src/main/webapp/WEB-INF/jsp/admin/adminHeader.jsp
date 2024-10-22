@@ -44,6 +44,9 @@
 			<li class="menu-item"><a href="#">푸터 관리</a></li>
 		</ul>
 	</nav>
+	<div class="logout">
+		<a href="/logout.do">로그아웃</a>
+	</div>
 </header>
 
 <script>
@@ -63,4 +66,7 @@
 			$(this).next(".sub-submenu").slideToggle();
 		});
 	});
+	
+	//로그아웃
+	
 </script>

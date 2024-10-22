@@ -48,6 +48,7 @@
 				success : function(data) {
 					if (data.result == 'Y') { // 로그인 성공 후 처리
 						window.location.href = "/admin.do";
+// 						$("#loginForm").attr("action","/admin.do");
 					} else if (data.result == 'N') {
 						alert("관리자 정보가 일치하지 않습니다.");
 					} else if (data.result == 'A') {
