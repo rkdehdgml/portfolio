@@ -10,7 +10,7 @@
 			, MBER_PW
 			, MBER_NAME
 		FROM
-			DH_MBER
+			TB_MBER
 		WHERE
 			MBER_PW = #{mberPw}
 	</select>

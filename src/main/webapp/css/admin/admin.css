@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 /* admin.css */
 * {
 	margin: 0;
@@ -18,7 +16,7 @@ body {
 }
 
 .admin-header {
-	width: 250px; /* 왼쪽 메뉴 고정 너비 */
+	width: 250px;
 	background-color: #0B173B;
 	color: white;
 	padding: 20px;
@@ -26,25 +24,23 @@ body {
 	flex-direction: column;
 	justify-content: flex-start;
 }
+
 .logo-subject {
-	margin-bottom: 30px; /* 제목 아래에 간격 추가 */
-	margin-top : 20px; /*제목 위쪽 간격 추가 */
+	margin-bottom: 30px;
+	margin-top: 20px;
 }
+
 .logo-subject h1 {
-	font-size: 30px; /* 제목 크기 설정 */
+	font-size: 30px;
 }
 
 .logo-subject h3 {
-	font-size : 15px;
-}
-
-.admin-header nav {
-    margin-top: 20px; /* 네비게이션 위쪽 간격 추가 */
+	font-size: 15px;
 }
 
 .admin-header nav ul {
 	list-style-type: none;
-	padding: 0; /* 리스트 패딩 제거 */
+	padding: 0;
 }
 
 .admin-header nav ul li {
@@ -55,14 +51,30 @@ body {
 	color: white;
 	text-decoration: none;
 	font-size: 18px;
+	display: block;
+	padding: 10px;
+	background-color: #0B173B;
 }
 
 .admin-header nav ul li a:hover {
-	text-decoration: underline;
+	background-color: #1F3A93;
+}
+
+.submenu, .sub-submenu {
+	margin-left: 20px; /* 서브 메뉴 들여쓰기 */
+}
+
+.submenu-item a, .sub-submenu li a {
+	background-color: #1F3A93;
+	font-size: 12px;
+}
+
+.submenu-item a:hover, .sub-submenu li a:hover {
+	background-color: #3B5998;
 }
 
 .admin-content {
-	flex: 1; /* 나머지 공간을 차지하는 콘텐츠 */
+	flex: 1;
 	padding: 40px;
 	background-color: #fff;
 }
