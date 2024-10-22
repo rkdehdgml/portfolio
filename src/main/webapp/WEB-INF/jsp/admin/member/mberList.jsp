@@ -5,38 +5,69 @@
 <div class="button-container">
 	<button class="btn register-btn">등록</button>
 </div>
-<table>
-	<colgroup>
-		<col style="width: 15%;">
-		<!-- 회원 ID 열 -->
-		<col style="width: 35%;">
-		<!-- 이름 열 -->
-		<col style="width: 35%;">
-		<!-- 이메일 열 -->
-		<col style="width: 15%;">
-		<!-- 작업 열 -->
-	</colgroup>
-	<thead>
-		<tr>
-			<th>회원 ID</th>
-			<th>이름</th>
-			<th>이메일</th>
-			<th>관리</th>
-			<!-- 버튼을 위한 헤더 추가 -->
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach var="mberList" items="${mberList}">
+<form method="post" id="mberListForm">
+	<table>
+		<colgroup>
+			<col style="width: 15%;">
+			<!-- 회원 ID 열 -->
+			<col style="width: 35%;">
+			<!-- 이름 열 -->
+			<col style="width: 35%;">
+			<!-- 이메일 열 -->
+			<col style="width: 15%;">
+			<!-- 작업 열 -->
+		</colgroup>
+		<thead>
 			<tr>
-				<td>${mberList.MBER_ID}</td>
-				<td>${mberList.MBER_NAME}</td>
-				<td>${mberList.MBER_EMAIL}</td>
-				<td class="button-cell">
-					<button class="btn edit-btn">수정</button>
-					<button class="btn delete-btn">삭제</button>
-				</td>
-
+				<th>회원 ID</th>
+				<th>이름</th>
+				<th>이메일</th>
+				<th>관리</th>
+				<!-- 버튼을 위한 헤더 추가 -->
 			</tr>
-		</c:forEach>
-	</tbody>
-</table>
+		</thead>
+		<tbody>
+			<c:forEach var="mberList" items="${mberList}">
+				<tr>
+					<td>${mberList.MBER_ID}</td>
+					<td>${mberList.MBER_NAME}</td>
+					<td>${mberList.MBER_EMAIL}</td>
+					<td class="button-cell">
+						<button class="btn edit-btn">수정</button>
+						<button class="btn delete-btn">삭제</button>
+					</td>
+	
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+</form>
+
+<script>
+$(document).ready(function(){
+	//등록
+	$('.register-btn').click(function(){
+		$('.mberListForm').attr('action','/mberInsertPage.do').submit();
+	});
+	//수정
+	$('.edit-btn').click(function(){
+		$('.mberListForm').attr('action','/mberUpdatePage.do').submit();
+	});
+	//삭제
+	$('.register-btn').click(function(){
+		$.ajax({
+			type : "POST",
+			url  : "/mberInfoDelete.do",
+			data : $(".mberListForm").serialize(),
+			dataType : "json",
+			suceess : function(data) {
+				
+			},
+			error : function(response) {
+				
+			}
+		})
+	});
+	
+});
+</script>

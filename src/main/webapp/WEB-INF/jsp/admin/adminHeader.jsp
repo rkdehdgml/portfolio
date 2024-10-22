@@ -4,7 +4,7 @@
 <header class="admin-header">
 	<div class="logo-subject">
 		<h3>포트폴리오</h3>
-		<h1>관리자페이지</h1>
+		<h1><a href="/admin.do">관리자페이지</a></h1>
 	</div>
 	<nav>
 		<ul>
@@ -15,16 +15,10 @@
 			</li>
 			<li class="menu-item"><a href="#">메뉴 관리</a>
 				<ul class="submenu">
-					<li class="submenu-item"><a href="#">- 메뉴 추가</a>
+					<li class="submenu-item"><a href="#">- 메뉴 정보</a>
 						<ul class="sub-submenu">
-							<li><a href="#">- 관리자페이지 메뉴 추가</a></li> <!-- 3차메뉴 -->
-							<li><a href="#">- 사용자화면 메뉴 추가</a></li>
-						</ul>
-					</li>
-					<li class="submenu-item"><a href="#">- 메뉴 수정</a>
-						<ul class="sub-submenu">
-							<li><a href="#">- 관리자페이지 메뉴 수정</a></li> <!-- 3차메뉴 -->
-							<li><a href="#">- 사용자화면 메뉴 수정</a></li>
+							<li><a href="#">- 관리자페이지 메뉴 정보</a></li> <!-- 3차메뉴 -->
+							<li><a href="#">- 사용자화면 메뉴 정보</a></li>
 						</ul>
 					</li>
 				</ul>

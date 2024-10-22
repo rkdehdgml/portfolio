@@ -34,6 +34,11 @@ body {
 	font-size: 30px;
 }
 
+.logo-subject h1 a {
+	text-decoration: none; /* 링크에 밑줄 제거 */
+	color: inherit; /* 부모 요소의 색상 상속 */
+}
+
 .logo-subject h3 {
 	font-size: 15px;
 }
@@ -43,8 +48,8 @@ body {
 }
 
 .logout {
-	margin-top:auto;
-	margin-bottom : 30px;
+	margin-top: auto;
+	margin-bottom: 30px;
 }
 
 .logout a {
