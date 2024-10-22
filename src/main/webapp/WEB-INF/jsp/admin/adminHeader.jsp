@@ -45,7 +45,7 @@
 		</ul>
 	</nav>
 	<div class="logout">
-		<a href="/logout.do">로그아웃</a>
+		<button type="button" class="logoutBtn">로그아웃</button>
 	</div>
 </header>
 
