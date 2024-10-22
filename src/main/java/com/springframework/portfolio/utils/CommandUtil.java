@@ -22,6 +22,10 @@ import javax.mail.internet.MimeMessage;
  */
 @Component
 public class CommandUtil {
+	
+	public static String getAdminLayout() {
+		return"/admin/admin";
+	}
 
 	/**
 	 * 임시 비밀번호 이메일 전송

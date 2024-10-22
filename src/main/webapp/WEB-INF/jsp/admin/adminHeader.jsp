@@ -10,13 +10,7 @@
 		<ul>
 			<li class="menu-item"><a href="#">회원 관리</a> <!-- 1차 메뉴 -->
 				<ul class="submenu">
-					<li class="submenu-item"><a href="#">- 회원 목록</a> <!-- 2차메뉴 -->
-						<ul class="sub-submenu">
-							<li><a href="#">- 회원 상세보기</a></li> <!-- 3차메뉴 -->
-							<li><a href="#">- 회원 수정</a></li>
-						</ul>
-					</li>
-					<li class="submenu-item"><a href="#">- 회원 추가</a></li>
+					<li class="submenu-item"><a href="/admin/mberList.do">- 회원 목록</a></li>
 				</ul>
 			</li>
 			<li class="menu-item"><a href="#">메뉴 관리</a>
@@ -55,14 +49,14 @@
 		$(".submenu, .sub-submenu").hide();
 
 		// 1차 메뉴 클릭 시 2차 메뉴 토글
-		$(".menu-item > a").click(function(event) {
-			event.preventDefault();
+		$(".menu-item > a").click(function() {
+// 			event.preventDefault();
 			$(this).next(".submenu").slideToggle();
 		});
 
 		// 2차 메뉴 클릭 시 3차 메뉴 토글
-		$(".submenu-item > a").click(function(event) {
-			event.preventDefault();
+		$(".submenu-item > a").click(function() {
+// 			event.preventDefault();
 			$(this).next(".sub-submenu").slideToggle();
 		});
 	});

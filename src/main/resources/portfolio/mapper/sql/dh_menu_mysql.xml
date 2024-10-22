@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mn_menu">
+	<!-- 회원정보 조회 -->
+	<select id="selectMenuList" resultType="map">
+		SELECT 
+			MBER_SEQ
+			, MBER_ID
+			, MBER_PW
+			, MBER_NAME
+		FROM
+			TB_MBER
+		WHERE
+			MBER_PW = #{mberPw}
+	</select>
+</mapper>

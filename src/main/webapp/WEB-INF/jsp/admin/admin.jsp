@@ -16,9 +16,9 @@
 		<c:import url="/WEB-INF/jsp/admin/adminHeader.jsp"></c:import>
 		<!-- 메인 콘텐츠 영역 -->
 		<main class="admin-content">
-			<h1>관리자 페이지</h1>
-			<p>여기에 메인 콘텐츠가 표시됩니다.</p>
-<%-- 			<c:import url="${content}"></c:import> --%>
+<!-- 			<h1>관리자 페이지</h1> -->
+<!-- 			<p>여기에 메인 콘텐츠가 표시됩니다.</p> -->
+			<c:import url="/WEB-INF/jsp/${content}"></c:import>
 		</main>
 	</div>
 </body>
