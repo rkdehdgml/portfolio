@@ -11,13 +11,16 @@
 	<div class="admin-container">
 		<!-- 왼쪽 메뉴 -->
 		<header class="admin-header">
-			<h1>관리자페이지</h1>
+			<div class="logo-subject">
+				<h3>포트폴리오</h3>
+				<h1>관리자페이지</h1>
+			</div>
 			<nav>
 				<ul>
-					<li><a href="#">대시보드</a></li>
-					<li><a href="#">사용자 관리</a></li>
+					<li><a href="#">회원 관리</a></li>
 					<li><a href="#">게시판 관리</a></li>
-					<li><a href="#">설정</a></li>
+					<li><a href="#">게시물 관리</a></li>
+					<li><a href="#">푸터관리</a></li>
 				</ul>
 			</nav>
 		</header>
