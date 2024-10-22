@@ -1,4 +1,4 @@
-package com.springframework.portfolio.controller;
+package com.springframework.portfolio.controller.ad;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -119,6 +119,6 @@ public class adminController {
 		if(session != null) {
 			session.invalidate();
 		}
-		return"/admin/login";
+		return"redirect:/admin/login.do";
 	}
 }

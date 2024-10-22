@@ -45,7 +45,7 @@
 		</ul>
 	</nav>
 	<div class="logout">
-		<button type="button" class="logoutBtn">로그아웃</button>
+		<a href="/logout.do">로그아웃</a>
 	</div>
 </header>
 
@@ -66,7 +66,4 @@
 			$(this).next(".sub-submenu").slideToggle();
 		});
 	});
-	
-	//로그아웃
-	
 </script>
