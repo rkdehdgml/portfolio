@@ -6,9 +6,19 @@ $(function() {
 		verticalCentered: false,
 		css3: false,
 		autoScrolling: true,
-		scrollOverflow: true
+		scrollOverflow: true,
+		afterLoad: function(anchorLink, index) {
+			// 모든 메뉴에서 active 클래스 제거
+			$('#fullmenu li a').removeClass('active-menu');
+			// 현재 섹션의 메뉴에 active 클래스 추가
+			// 2번째 페이지부터 5번째 페이지에서만 active 클래스 추가
+			if (index >= 2 && index <= 5) {
+				$('#fullmenu li').eq(index - 2).find('a').addClass('active');
+			}
+		}
 	});
 });
+
 
 //typeIt.js
 $(document).ready(function() {
@@ -33,7 +43,7 @@ $(document).ready(function() {
 		arrows: true,
 		variableWidth: false,
 		centerMode: true,
-		ceneterPadding : '80px',
+		ceneterPadding: '80px',
 		speed: 1000,
 	});
 });

@@ -1,7 +1,7 @@
 .project {
 	width: 50%; /* 슬라이더의 너비 */
 	margin: auto;
-	top: 300px;
+	top: 250px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
