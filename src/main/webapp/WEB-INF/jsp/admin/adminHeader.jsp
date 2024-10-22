@@ -8,25 +8,39 @@
 	</div>
 	<nav>
 		<ul>
-			<li class="menu-item"><a href="#">회원 관리</a>
+			<li class="menu-item"><a href="#">회원 관리</a> <!-- 1차 메뉴 -->
 				<ul class="submenu">
-					<li class="submenu-item"><a href="#">회원 목록</a>
+					<li class="submenu-item"><a href="#">- 회원 목록</a> <!-- 2차메뉴 -->
 						<ul class="sub-submenu">
-							<li><a href="#">회원 상세보기</a></li>
-							<li><a href="#">회원 수정</a></li>
-						</ul></li>
-					<li class="submenu-item"><a href="#">회원 추가</a></li>
-				</ul></li>
+							<li><a href="#">- 회원 상세보기</a></li> <!-- 3차메뉴 -->
+							<li><a href="#">- 회원 수정</a></li>
+						</ul>
+					</li>
+					<li class="submenu-item"><a href="#">- 회원 추가</a></li>
+				</ul>
+			</li>
 			<li class="menu-item"><a href="#">메뉴 관리</a>
 				<ul class="submenu">
-					<li class="submenu-item"><a href="#">메뉴 추가</a></li>
-					<li class="submenu-item"><a href="#">메뉴 수정</a></li>
-				</ul></li>
+					<li class="submenu-item"><a href="#">- 메뉴 추가</a>
+						<ul class="sub-submenu">
+							<li><a href="#">- 관리자페이지 메뉴 추가</a></li> <!-- 3차메뉴 -->
+							<li><a href="#">- 사용자화면 메뉴 추가</a></li>
+						</ul>
+					</li>
+					<li class="submenu-item"><a href="#">- 메뉴 수정</a>
+						<ul class="sub-submenu">
+							<li><a href="#">- 관리자페이지 메뉴 수정</a></li> <!-- 3차메뉴 -->
+							<li><a href="#">- 사용자화면 메뉴 수정</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
 			<li class="menu-item"><a href="#">게시판 관리</a>
 				<ul class="submenu">
-					<li class="submenu-item"><a href="#">게시판 추가</a></li>
-					<li class="submenu-item"><a href="#">게시물 수정</a></li>
-				</ul></li>
+					<li class="submenu-item"><a href="#">- 게시판 추가</a></li>
+					<li class="submenu-item"><a href="#">- 게시물 수정</a></li>
+				</ul>
+			</li>
 			<li class="menu-item"><a href="#">푸터 관리</a></li>
 		</ul>
 	</nav>
