@@ -38,5 +38,17 @@ public class MeberController {
 		}
 		return CommandUtil.getAdminLayout();
 	}
+	
+	@RequestMapping(value="/admin/mberInsertPage.do")
+	public String mberinsertPage (HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
+		model.addAttribute("content", "/admin/member/mberInsert.jsp");
+		return CommandUtil.getAdminLayout();
+	}
+	
+	@RequestMapping(value="/admin/mberUpdatePage.do")
+	public String mberUpdatePage (HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
+		model.addAttribute("content", "/admin/member/mberUpdate.jsp");
+		return CommandUtil.getAdminLayout();
+	}
 
 }

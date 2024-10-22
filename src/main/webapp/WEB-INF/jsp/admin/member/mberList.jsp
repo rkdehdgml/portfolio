@@ -6,6 +6,7 @@
 	<button class="btn register-btn">등록</button>
 </div>
 <form method="post" id="mberListForm">
+	<input type="hidden" name="MBER_SEQ"/>
 	<table>
 		<colgroup>
 			<col style="width: 15%;">
@@ -47,27 +48,27 @@
 $(document).ready(function(){
 	//등록
 	$('.register-btn').click(function(){
-		$('.mberListForm').attr('action','/mberInsertPage.do').submit();
+		$('#mberListForm').attr('action','/admin/mberInsertPage.do').submit();
 	});
 	//수정
 	$('.edit-btn').click(function(){
-		$('.mberListForm').attr('action','/mberUpdatePage.do').submit();
+		$('#mberListForm').attr('action','/admin/mberUpdatePage.do').submit();
 	});
 	//삭제
-	$('.register-btn').click(function(){
-		$.ajax({
-			type : "POST",
-			url  : "/mberInfoDelete.do",
-			data : $(".mberListForm").serialize(),
-			dataType : "json",
-			suceess : function(data) {
+// 	$('.register-btn').click(function(){
+// 		$.ajax({
+// 			type : "POST",
+// 			url  : "/mberInfoDelete.do",
+// 			data : $(".mberListForm").serialize(),
+// 			dataType : "json",
+// 			suceess : function(data) {
 				
-			},
-			error : function(response) {
+// 			},
+// 			error : function(response) {
 				
-			}
-		})
-	});
+// 			}
+// 		})
+// 	});
 	
 });
 </script>
