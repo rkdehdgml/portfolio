@@ -20,7 +20,7 @@
 		SELECT
 			MBER_ID
 			,MBER_PW
-			,MBER_NM
+			,MBER_NAME
 		FROM
 			TB_MBER
 	</select>

@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>관리자 페이지</title>
 <link rel="stylesheet" type="text/css" href="/css/admin/admin.css">
+<link rel="stylesheet" type="text/css" href="/css/common/admin_common.css">
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>

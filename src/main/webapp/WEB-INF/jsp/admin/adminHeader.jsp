@@ -10,7 +10,7 @@
 		<ul>
 			<li class="menu-item"><a href="#">회원 관리</a> <!-- 1차 메뉴 -->
 				<ul class="submenu">
-					<li class="submenu-item"><a href="/admin/mberList.do">- 회원 목록</a></li>
+					<li class="submenu-item"><a href="/admin/mberList.do">- 회원 정보</a></li>
 				</ul>
 			</li>
 			<li class="menu-item"><a href="#">메뉴 관리</a>
