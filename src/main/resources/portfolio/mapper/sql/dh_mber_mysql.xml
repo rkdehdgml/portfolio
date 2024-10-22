@@ -9,25 +9,9 @@
 			, MBER_ID
 			, MBER_PW
 			, MBER_NAME
-			, MBER_EMAIL
-			, MBER_AUTH
-			, DATE_FORMAT(MBER_DATE, '%Y.%m.%d %H:%i:%S') AS MBER_DATE
 		FROM
-			TB_MBER
+			DH_MBER
 		WHERE
 			MBER_PW = #{mberPw}
 	</select>
-	
-	<!-- 비밀번호 수정 -->
-	<update id="updateMberPassword">
-		UPDATE
-			TB_MBER
-		SET
-			MBER_PW = #{newMberPw}
-		WHERE
-			MBER_ID = #{mberId}
-	</update>
-	
-	
-
 </mapper>
