@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<h2 style="font-size: 40px; font-weight: bold;">회원 목록</h2>
+<h2 style="font-size: 40px; font-weight: bold;">회원 정보</h2>
 <div class="button-container">
 	<button class="btn register-btn">등록</button>
 </div>
@@ -31,10 +31,11 @@
 				<td>${mberList.MBER_ID}</td>
 				<td>${mberList.MBER_NAME}</td>
 				<td>${mberList.MBER_EMAIL}</td>
-				<td>
+				<td class="button-cell">
 					<button class="btn edit-btn">수정</button>
 					<button class="btn delete-btn">삭제</button>
 				</td>
+
 			</tr>
 		</c:forEach>
 	</tbody>

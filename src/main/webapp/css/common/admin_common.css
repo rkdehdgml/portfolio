@@ -62,6 +62,11 @@ tbody tr:hover {
 	background-color: #1F3A93; /* 마우스 오버 시 배경색 변경 */
 }
 
+/* 버튼이 포함된 셀 스타일 */
+.button-cell {
+    text-align: center; /* 버튼을 가운데 정렬 */
+}
+
 /* 수정 버튼 스타일 */
 .edit-btn {
 	background-color: #28a745; /* 수정 버튼 색상 (초록색) */
