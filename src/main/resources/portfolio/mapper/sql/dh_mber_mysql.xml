@@ -4,7 +4,7 @@
 <mapper namespace="mb_mber">
 	<!-- 회원정보 조회 -->
 	<select id="selectMberInfo" resultType="map">
-		SELECT 
+		SELECT
 			MBER_SEQ
 			, MBER_ID
 			, MBER_PW
@@ -14,14 +14,50 @@
 		WHERE
 			MBER_PW = #{mberPw}
 	</select>
-	
+
 	<!-- 회원정보 리스트 조회 -->
 	<select id="selectMberAllList" resultType="map">
 		SELECT
-			MBER_ID
+			MBER_SEQ
+			,MBER_ID
 			,MBER_PW
 			,MBER_NAME
 		FROM
 			TB_MBER
 	</select>
+	
+	<!-- 회원정보 수정페이지 리스트 -->
+	<select id="selectMberUpdateInfo" resultType="map">
+		SELECT
+			MBER_SEQ
+			,MBER_ID
+			,MBER_PW
+			,MBER_NAME
+		FROM
+			TB_MBER
+		WHERE
+			MBER_SEQ = #{mberSeq}
+	</select>
+	
+	<insert id="insertMberInfo">
+		INSERT INTO TB_MBER (
+			MBER_SEQ
+			, MBER_ID
+			, MBER_PW
+			, MBER_NAME
+			, MBER_EMAIL
+			, MBER_AUTH
+			, MBER_DATE
+			)
+			VALUES (
+			#{mberSeq}
+			, #{mberId}
+			, #{mberPw}
+			, #{mberName}
+			, #{mberEmail}
+			, #{mberAuth}
+			, Now()
+			)
+	</insert>
+	
 </mapper>

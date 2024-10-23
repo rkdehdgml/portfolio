@@ -6,7 +6,7 @@
 	<button class="btn register-btn">등록</button>
 </div>
 <form method="post" id="mberListForm">
-	<input type="hidden" name="MBER_SEQ"/>
+	<input type="hidden" name="mberSeq" id="mberSeq" value=""/>
 	<table>
 		<colgroup>
 			<col style="width: 15%;">
@@ -34,7 +34,7 @@
 					<td>${mberList.MBER_NAME}</td>
 					<td>${mberList.MBER_EMAIL}</td>
 					<td class="button-cell">
-						<button class="btn edit-btn">수정</button>
+						<button class="btn edit-btn" data-id="<c:out value="${mberList.MBER_SEQ}"/>">수정</button>
 						<button class="btn delete-btn">삭제</button>
 					</td>
 	
@@ -52,6 +52,8 @@ $(document).ready(function(){
 	});
 	//수정
 	$('.edit-btn').click(function(){
+		const mberSeq = $(this).attr("data-id");
+		$("#mberSeq").val(mberSeq);
 		$('#mberListForm').attr('action','/admin/mberUpdatePage.do').submit();
 	});
 	//삭제
