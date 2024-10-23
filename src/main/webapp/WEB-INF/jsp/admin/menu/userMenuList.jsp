@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="/css/admin/menuMange.css">
 <h2 style="font-size: 40px; font-weight: bold;">사용자페이지 메뉴 정보</h2>
 <div class="button-container">
-	<button class="btn register-btn">등록</button>
+	<button id="insert" class="btn register-btn">등록</button>
 	<button id="saveBtn" class="btn list-btn">적용</button>
 </div>
 <form method="post" id="mberListForm">
@@ -57,7 +57,6 @@
 				order.push(id);
 			});
 
-			// AJAX로 순서 전송
 			$.ajax({
 				type : "POST",
 				url : "/admin/adminMenuInsert.do",
@@ -73,5 +72,6 @@
 				}
 			});
 		});
+
 	});
 </script>

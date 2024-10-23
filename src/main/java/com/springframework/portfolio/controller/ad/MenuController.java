@@ -36,8 +36,7 @@ public class MenuController {
 	
 	@RequestMapping(value="/admin/adminMenuInsertPage.do")
 	public String adminMenuInsertPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
-		model.addAttribute("content", "/admin/menu/adminMenuInsert.jsp");
-		return CommandUtil.getAdminLayout();
+		return "/admin/menu/adminMenuInsert";
 	}
 	
 	@RequestMapping(value="/admin/adminMenuInsert.do")

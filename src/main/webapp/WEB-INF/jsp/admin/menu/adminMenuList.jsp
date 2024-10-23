@@ -7,39 +7,37 @@
 	<button class="btn register-btn">등록</button>
 	<button id="saveBtn" class="btn list-btn">적용</button>
 </div>
-<form method="post" id="mberListForm">
+<form method="post" id="insertMenuForm">
 	<input type="hidden" name="menuSeq" id="menuSeq" value="" />
 	<ul id="sortable-menu" class="menu-list">
-		<li class="menu-item" data-id="1">
-			<span class="menu-title">메뉴 1</span>
+		<li class="menu-item" data-id="1"><span class="menu-title">메뉴
+				1</span>
 			<div class="menu-buttons">
 				<button class="btn edit-btn">수정</button>
 				<button class="btn delete-btn">삭제</button>
-			</div>
-		</li>
-		<li class="menu-item" data-id="2">
-			<span class="menu-title">메뉴 2</span>
+			</div></li>
+		<li class="menu-item" data-id="2"><span class="menu-title">메뉴
+				2</span>
 			<div class="menu-buttons">
 				<button class="btn edit-btn">수정</button>
 				<button class="btn delete-btn">삭제</button>
-			</div>
-		</li>
-		<li class="menu-item" data-id="3">
-			<span class="menu-title">메뉴 3</span>
+			</div></li>
+		<li class="menu-item" data-id="3"><span class="menu-title">메뉴
+				3</span>
 			<div class="menu-buttons">
 				<button class="btn edit-btn">수정</button>
 				<button class="btn delete-btn">삭제</button>
-			</div>
-		</li>
-		<li class="menu-item" data-id="4">
-			<span class="menu-title">메뉴 4</span>
+			</div></li>
+		<li class="menu-item" data-id="4"><span class="menu-title">메뉴
+				4</span>
 			<div class="menu-buttons">
 				<button class="btn edit-btn">수정</button>
 				<button class="btn delete-btn">삭제</button>
-			</div>
-		</li>
+			</div></li>
 	</ul>
 </form>
+
+<div id="insertPopup"></div>
 
 <script>
 	$(function() {
@@ -70,6 +68,36 @@
 				},
 				error : function(response) {
 					alert("저장 실패: ");
+				}
+			});
+		});
+		
+		// 등록 버튼 클릭 시 모달 열기
+		$('.register-btn').click(function() {
+			$.ajax({
+				type: 'POST',
+				url: '/admin/adminMenuInsertPage.do',
+				data: $('#insertMenuForm').serialize(),
+				dataType: 'html',
+				success: function(data) {
+					console.log(data);
+					$("#insertPopup").html(data);
+					
+					// 올바른 ID 사용
+					$("#insertPopup").dialog({
+						modal: true,
+						width: 400,
+						height: 300,
+						buttons: {
+							"닫기": function() {
+								$(this).dialog("close");
+							}
+						}
+					});
+				},
+				error: function(data) {
+					console.log(data);
+					alert("모달 로드 실패");
 				}
 			});
 		});
