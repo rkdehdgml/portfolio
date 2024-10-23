@@ -23,8 +23,12 @@ import javax.mail.internet.MimeMessage;
 @Component
 public class CommandUtil {
 	
+	/**
+	 * 관리자 레이아웃페이지 return
+	 * @return
+	 */
 	public static String getAdminLayout() {
-		return"/admin/admin";
+		return"/admin/adminLayout";
 	}
 
 	/**

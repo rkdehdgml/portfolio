@@ -42,7 +42,7 @@ public class adminController {
 //		if (session == null || session.getAttribute("adminInfo") == null) {
 //			return CommandUtil.alertUrlException(response, "로그인 정보가 없습니다.", "/admin/login.do");
 //		} else {
-		return "/admin/admin";
+		return "/admin/adminLayout";
 //		}
 	}
 
