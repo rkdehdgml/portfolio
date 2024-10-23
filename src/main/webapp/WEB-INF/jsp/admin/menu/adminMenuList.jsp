@@ -10,20 +10,20 @@
 	<table>
 		<colgroup>
 			<col style="width: 15%;">
-			<!-- 회원 ID 열 -->
-			<col style="width: 35%;">
-			<!-- 이름 열 -->
-			<col style="width: 35%;">
-			<!-- 이메일 열 -->
 			<col style="width: 15%;">
-			<!-- 작업 열 -->
+			<col style="width: 15%;">
+			<col style="width: 15%;">
+			<col style="width: 15%;">
+			<col style="width: 15%;">
 		</colgroup>
 		<thead>
 			<tr>
-				<th>회원 ID</th>
-				<th>이름</th>
-				<th>이메일</th>
-				<th>관리</th>
+				<th>메뉴 ID</th>
+				<th>메뉴명</th>
+				<th>메뉴레벨</th>
+				<th>메뉴타입</th>
+				<th>메뉴링크</th>
+				<th>메뉴사용여부</th>
 				<!-- 버튼을 위한 헤더 추가 -->
 			</tr>
 		</thead>
@@ -43,33 +43,3 @@
 		</tbody>
 	</table>
 </form>
-
-<script>
-$(document).ready(function(){
-	//등록
-	$('.register-btn').click(function(){
-		$('#mberListForm').attr('action','/admin/mberInsertPage.do').submit();
-	});
-	//수정
-	$('.edit-btn').click(function(){
-		const mberSeq = $(this).attr("data-id");
-		$("#mberSeq").val(mberSeq);
-		$('#mberListForm').attr('action','/admin/mberUpdatePage.do').submit();
-	});
-	//삭제
-// 	$('.register-btn').click(function(){
-// 		$.ajax({
-// 			type : "POST",
-// 			url  : "/mberInfoDelete.do",
-// 			data : $(".mberListForm").serialize(),
-// 			dataType : "json",
-// 			suceess : function(data) {
-				
-// 			},
-// 			error : function(response) {
-				
-// 			}
-// 		})
-// 	});
-});
-</script>

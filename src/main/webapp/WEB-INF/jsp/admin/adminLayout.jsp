@@ -9,7 +9,8 @@
 <link rel="stylesheet" type="text/css" href="/css/admin/admin.css">
 <link rel="stylesheet" type="text/css" href="/css/common/admin_common.css">
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
 </head>
 <body>
 	<div class="admin-container">

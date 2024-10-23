@@ -24,7 +24,24 @@ public class MenuController {
 	
 	@RequestMapping(value= "/admin/adminMenuList.do")
 	public String adminMenuListPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
-		model.addAttribute("content", "/admin/member/mberInsert.jsp");
+		model.addAttribute("content", "/admin/menu/adminMenuList.jsp");
+		return CommandUtil.getAdminLayout();
+	}
+	
+	@RequestMapping(value="/admin/userMenuList.do")
+	public String userMenuListPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
+		model.addAttribute("content", "/admin/menu/userMenuList.jsp");
+		return CommandUtil.getAdminLayout();
+	}
+	
+	@RequestMapping(value="/admin/adminMenuInsertPage.do")
+	public String adminMenuInsertPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
+		model.addAttribute("content", "/admin/menu/adminMenuInsert.jsp");
+		return CommandUtil.getAdminLayout();
+	}
+	@RequestMapping(value="/admin/userMenuInsertPage.do")
+	public String userMenuInsertPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
+		model.addAttribute("content", "/admin/menu/userMenuInsert.jsp");
 		return CommandUtil.getAdminLayout();
 	}
 }

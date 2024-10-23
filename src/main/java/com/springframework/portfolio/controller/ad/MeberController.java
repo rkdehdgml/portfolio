@@ -35,7 +35,6 @@ public class MeberController {
 	@RequestMapping(value="/admin/mberList.do")
 	public String menuList(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
 		try {
-			String abc = "";
 			//회원정보 리스트 조회
 			List<Map<String, Object>> mberList = commandService.selectList("mb_mber.selectMberAllList", null);
 			model.addAttribute("mberList", mberList);
