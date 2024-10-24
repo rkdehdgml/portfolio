@@ -82,7 +82,6 @@
 				dataType: 'html',
 				success: function(data) {
 					$("#insertPopup").html(data);
-					
 					$("#insertPopup").dialog({
 						modal: true,
 						width: 900,
@@ -134,18 +133,21 @@
 		
 		// 수정 버튼 클릭 시 팝업 열기
 		$('.edit-btn').click(function() {
+			event.preventDefault(); // form제출로 인하여 막음
 			$.ajax({
 				type: 'POST',
 				url: '/admin/adminMenuUpdatePage.do',
 				data: $('#menuListForm').serialize(),
 				dataType: 'html',
 				success: function(data) {
-					console.log(data);
+					console.log($("#updatePopup"));
 					$("#updatePopup").html(data);
 					$("#updatePopup").dialog({
 						modal: true,
 						width: 900,
 						height: 700,
+						escapeClose : true,
+						title : '메뉴수정',
 						buttons: {
 							"등록": function() {
 								if($("#menuNm").val() == "") {
