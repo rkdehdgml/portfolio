@@ -7,37 +7,39 @@
 	<button class="btn register-btn">등록</button>
 	<button id="saveBtn" class="btn list-btn">적용</button>
 </div>
-<form method="post" id="insertMenuForm">
+<form method="post" id="menuListForm">
 	<input type="hidden" name="menuSeq" id="menuSeq" value="" />
 	<ul id="sortable-menu" class="menu-list">
-		<li class="menu-item" data-id="1"><span class="menu-title">메뉴
-				1</span>
+		<li class="menu-item" data-id="1"><span class="menu-title">메뉴1</span>
 			<div class="menu-buttons">
 				<button class="btn edit-btn">수정</button>
 				<button class="btn delete-btn">삭제</button>
-			</div></li>
-		<li class="menu-item" data-id="2"><span class="menu-title">메뉴
-				2</span>
+			</div>
+		</li>
+		<li class="menu-item" data-id="2"><span class="menu-title">메뉴2</span>
 			<div class="menu-buttons">
 				<button class="btn edit-btn">수정</button>
 				<button class="btn delete-btn">삭제</button>
-			</div></li>
-		<li class="menu-item" data-id="3"><span class="menu-title">메뉴
-				3</span>
+			</div>
+		</li>
+		<li class="menu-item" data-id="3"><span class="menu-title">메뉴3</span>
 			<div class="menu-buttons">
 				<button class="btn edit-btn">수정</button>
 				<button class="btn delete-btn">삭제</button>
-			</div></li>
-		<li class="menu-item" data-id="4"><span class="menu-title">메뉴
-				4</span>
+			</div>
+		</li>
+		<li class="menu-item" data-id="4"><span class="menu-title">메뉴4</span>
 			<div class="menu-buttons">
 				<button class="btn edit-btn">수정</button>
 				<button class="btn delete-btn">삭제</button>
-			</div></li>
+			</div>
+		</li>
 	</ul>
 </form>
-
+<!-- 메뉴 등록창 -->
 <div id="insertPopup"></div>
+<!-- 메뉴 수정창 -->
+<div id="updatePopup"></div>
 
 <script>
 	$(function() {
@@ -55,7 +57,6 @@
 				order.push(id);
 			});
 
-			// AJAX로 순서 전송
 			$.ajax({
 				type : "POST",
 				url : "/admin/adminMenuInsert.do",
@@ -77,27 +78,113 @@
 			$.ajax({
 				type: 'POST',
 				url: '/admin/adminMenuInsertPage.do',
-				data: $('#insertMenuForm').serialize(),
+				data: $('#menuListForm').serialize(),
 				dataType: 'html',
 				success: function(data) {
-					console.log(data);
 					$("#insertPopup").html(data);
 					
-					// 올바른 ID 사용
 					$("#insertPopup").dialog({
 						modal: true,
-						width: 400,
-						height: 300,
+						width: 900,
+						height: 700,
+						escapeClose : true,
+						title : '메뉴등록',
 						buttons: {
+							"등록": function() {
+								if($("#menuNm").val() == "") {
+									alert("메뉴명을 입력하세요.");
+									$("#menuNm").focus();
+								} else if ($("#menuUrl").val() == "") {
+									alert("메뉴url를 입력하세요");
+									$("#menuUrl").focus();
+								}
+								//등록
+								$.ajax({
+									type : "POST",
+									url  : "/admin/adminMenuInsert.do",
+									data : $('#popInsertForm').serialize(),
+									dataType : "json",
+									success : function(data) {
+										alert("등록 되었습니다.")
+										$("#insertPopup").dialog("close");
+									},
+									error : function (data) {
+										alert("오류가 발생했습니다.")
+									}
+								})
+							},
 							"닫기": function() {
-								$(this).dialog("close");
+								 $("#insertPopup").dialog("close");
 							}
+						},
+						open: function() {
+							// "등록" 버튼만 스타일 적용
+							$(".ui-dialog-buttonpane button:contains('등록')").css({
+								"background-color": "#007bff",
+								"color": "#fff"
+							});
 						}
 					});
 				},
 				error: function(data) {
+					alert("오류가 발생했습니다.");
+				}
+			});
+		});
+		
+		// 수정 버튼 클릭 시 팝업 열기
+		$('.edit-btn').click(function() {
+			$.ajax({
+				type: 'POST',
+				url: '/admin/adminMenuUpdatePage.do',
+				data: $('#menuListForm').serialize(),
+				dataType: 'html',
+				success: function(data) {
 					console.log(data);
-					alert("모달 로드 실패");
+					$("#updatePopup").html(data);
+					$("#updatePopup").dialog({
+						modal: true,
+						width: 900,
+						height: 700,
+						buttons: {
+							"등록": function() {
+								if($("#menuNm").val() == "") {
+									alert("메뉴명을 입력하세요.");
+									$("#menuNm").focus();
+								} else if ($("#menuUrl").val() == "") {
+									alert("메뉴url를 입력하세요");
+									$("#menuUrl").focus();
+								}
+								//등록
+								$.ajax({
+									type : "POST",
+									url  : "/admin/adminMenuUpdate.do",
+									data : $('#popUpdateForm').serialize(),
+									dataType : "json",
+									success : function(data) {
+										alert("수정 되었습니다.")
+										$("#updatePopup").dialog("close");
+									},
+									error : function (data) {
+										alert("오류가 발생했습니다.")
+									}
+								})
+							},
+							"닫기": function() {
+								$("#updatePopup").dialog("close");
+							}
+						},
+						open: function() {
+							// "등록" 버튼만 스타일 적용
+							$(".ui-dialog-buttonpane button:contains('등록')").css({
+								"background-color": "#007bff",
+								"color": "#fff"
+							});
+						}
+					});
+				},
+				error: function(data) {
+					alert("오류가 발생했습니다.");
 				}
 			});
 		});

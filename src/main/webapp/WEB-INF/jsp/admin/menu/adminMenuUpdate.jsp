@@ -2,8 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class="popup">
-	<h2 class="popTitle">메뉴 등록</h2>
-	<form class="popInsertForm">
+	<h2 class="popTitle">메뉴 수정</h2>
+	<form class="popUpdateForm">
 		<table class="form-table">
 			<colgroup>
 				<col style="width: 20%;">
@@ -12,7 +12,7 @@
 			<tr>
 				<th>메뉴명</th>
 				<td>
-					<input type="text" id="menuNm" name="menuNm" placeholder="메뉴 이름을 입력하세요" />
+					<input type="text" name="menuNm" placeholder="메뉴 이름을 입력하세요" />
 				</td>
 			</tr>
 			<tr>
@@ -26,9 +26,9 @@
 				</td>
 			</tr>
 			<tr>
-				<th>메뉴url</th>
+				<th>링크</th>
 				<td>
-					<input type="text" id="menuUrl" name="menuUrl" placeholder="연결할 메뉴 Url를 입력하세요." />
+					<input type="text" name="menuUrl" placeholder="연결할 메뉴 Url를 입력하세요." />
 				</td>
 			</tr>
 			<tr>

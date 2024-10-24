@@ -17,15 +17,15 @@
 	</table>
 
 	<div class="button-container">
-		<button type="submit" id="update" class="btn register-btn">등록</button>
+		<button type="submit" id="insert" class="btn register-btn">등록</button>
 		<button type="button" id="list" class="btn list-btn">목록</button>
 	</div>
 </form>
 
 <script>
 $(document).ready(function(){
-	//수정
-	$('#update').click(function() {
+	//등록
+	$('#insert').click(function() {
 		$.ajax ({
 			type     : "post",
 			url      : "/admin/mberInsert.do",
