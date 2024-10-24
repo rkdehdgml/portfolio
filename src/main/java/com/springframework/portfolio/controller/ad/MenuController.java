@@ -97,7 +97,7 @@ public class MenuController {
 	}
 	
 	/**
-	 * 관리페이지 수정등록
+	 * 관리페이지 메뉴수정
 	 * @param request
 	 * @param response
 	 * @param commonMap
@@ -146,6 +146,9 @@ public class MenuController {
 		return "/admin/menu/adminMenuUpdate";
 	}
 	
+	
+	//---------------------------------------사용자 페이지 메뉴-------------------------------------------------------------------------------
+	
 	/**
 	 * 사용자페이지 메뉴리스트
 	 * @param request
@@ -161,7 +164,7 @@ public class MenuController {
 	}
 	
 	/**
-	 * 사용자페이지 등록페이지
+	 * 사용자페이지 메뉴등록페이지
 	 * @param request
 	 * @param response
 	 * @param commonMap
@@ -170,7 +173,95 @@ public class MenuController {
 	 */
 	@RequestMapping(value="/admin/userMenuInsertPage.do")
 	public String userMenuInsertPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
-		model.addAttribute("content", "/admin/menu/userMenuInsert.jsp");
-		return CommandUtil.getAdminLayout();
+		return "/admin/menu/userMenuInsert";
+	}
+	
+	/**
+	 * 사용자페이지 메뉴등록
+	 * @param request
+	 * @param response
+	 * @param commonMap
+	 */
+	@RequestMapping(value="/admin/userMenuInsert.do")
+	public void userMenuInsert(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
+		try {
+			Map<String, Object> resultMap = new HashMap<>();
+			int insert = 0;
+			insert += commandService.insert("mn_menu.insertMberInfo", commonMap.getMap());
+			if(insert > 0) {
+				resultMap.put("result","Y");
+			} else {
+				resultMap.put("result", "N");
+			}
+			Gson gson = new Gson();
+			PrintWriter out = null;
+
+			try {
+				response.setCharacterEncoding("utf-8");
+				String json = gson.toJson(resultMap);
+				out = response.getWriter();
+				out.print(json);
+			} catch (IOException e) {
+				CommandLogger.debug(e, this.getClass(), "userMenuInsert");
+			} finally {
+				if (out != null) {
+					out.flush();
+					out.close();
+				}
+			}
+		} catch (Exception e) {
+			CommandLogger.debug(e, this.getClass(), "userMenuInsert");
+		}
+	}
+	
+	/**
+	 * 사용자페이지 메뉴수정페이지
+	 * @param request
+	 * @param response
+	 * @param commonMap
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="/admin/userMenuUpdatePage.do")
+	public String userMenuUpdatePage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
+		return "/admin/menu/userMenuUpdate";
+	}
+	
+	/**
+	 * 사용자페이지 메뉴수정
+	 * @param request
+	 * @param response
+	 * @param commonMap
+	 */
+	@RequestMapping(value="/admin/userMenuUpdate.do")
+	public void userMenuUpdate(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
+		try {
+			Map<String, Object> resultMap = new HashMap<>();
+			int insert = 0;
+			insert += commandService.insert("mn_menu.insertMberInfo", commonMap.getMap());
+			if(insert > 0) {
+				resultMap.put("result","Y");
+			} else {
+				resultMap.put("result", "N");
+			}
+			Gson gson = new Gson();
+			PrintWriter out = null;
+
+			try {
+				response.setCharacterEncoding("utf-8");
+				String json = gson.toJson(resultMap);
+				out = response.getWriter();
+				out.print(json);
+			} catch (IOException e) {
+				CommandLogger.debug(e, this.getClass(), "userMenuUpdate");
+			} finally {
+				if (out != null) {
+					out.flush();
+					out.close();
+				}
+			}
+		} catch (Exception e) {
+			CommandLogger.debug(e, this.getClass(), "userMenuUpdate");
+		}
 	}
 }
