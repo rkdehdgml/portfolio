@@ -26,7 +26,7 @@
 			<li class="menu-item"><a href="#">게시판/게시물 관리</a>
 				<ul class="submenu">
 					<li class="submenu-item"><a href="/admin/boardListPage.do">- 게시판 정보</a></li>
-					<li class="submenu-item"><a href="#">- 게시물 정보</a></li>
+					<li class="submenu-item"><a href="/admin/postListPage.do">- 게시물 정보</a></li>
 				</ul>
 			</li>
 			<li class="menu-item"><a href="#">푸터 관리</a></li>

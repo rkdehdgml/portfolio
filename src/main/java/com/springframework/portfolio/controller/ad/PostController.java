@@ -15,17 +15,16 @@ import com.springframework.portfolio.common.CommandService;
 import com.springframework.portfolio.utils.CommandUtil;
 
 @Controller
-public class BoardController {
+public class PostController {
 	
-	Logger logger = LoggerFactory.getLogger(BoardController.class);
+	Logger logger = LoggerFactory.getLogger(PostController.class);
 
 	@Autowired
 	private CommandService commandService;
 	
-	@RequestMapping(value= "/admin/boardListPage.do")
+	@RequestMapping(value= "/admin/postListPage.do")
 	public String boardListPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
-		model.addAttribute("content", "/admin/board/boardList.jsp");
+		model.addAttribute("content", "/admin/post/postList.jsp");
 		return CommandUtil.getAdminLayout();
 	}
-
 }

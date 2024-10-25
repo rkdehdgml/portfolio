@@ -11,9 +11,9 @@
 		<colgroup>
 			<col style="width: 15%;">
 			<!-- 회원 ID 열 -->
-			<col style="width: 35%;">
+			<col style="width: 20%;">
 			<!-- 이름 열 -->
-			<col style="width: 35%;">
+			<col style="width: 20%;">
 			<!-- 이메일 열 -->
 			<col style="width: 15%;">
 			<!-- 작업 열 -->
