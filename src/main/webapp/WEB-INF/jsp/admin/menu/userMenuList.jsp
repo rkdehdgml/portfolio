@@ -5,7 +5,7 @@
 <h2 style="font-size: 40px; font-weight: bold;">사용자페이지 메뉴 정보</h2>
 <div class="button-container">
 	<button id="insert" class="btn register-btn">등록</button>
-	<button id="saveBtn" class="btn list-btn">적용</button>
+	<button id="saveBtn" class="btn list-btn">순서적용</button>
 </div>
 <form method="post" id="mberListForm">
 	<input type="hidden" name="menuSeq" id="menuSeq" value="" />
@@ -41,6 +41,11 @@
 	</ul>
 </form>
 
+<!-- 메뉴 등록창 -->
+<div id="insertPopup"></div>
+<!-- 메뉴 수정창 -->
+<div id="updatePopup"></div>
+
 <script>
 	$(function() {
 		// jQuery UI의 sortable 기능 적용
@@ -59,7 +64,7 @@
 
 			$.ajax({
 				type : "POST",
-				url : "/admin/adminMenuInsert.do",
+				url : "/admin/menuInsert.do",
 				data : {
 					order : order
 				},
@@ -77,7 +82,7 @@
 		$('.register-btn').click(function() {
 			$.ajax({
 				type: 'POST',
-				url: '/admin/userMenuInsertPage.do',
+				url: '/admin/menuInsertPage.do',
 				data: $('#menuListForm').serialize(),
 				dataType: 'html',
 				success: function(data) {
@@ -100,7 +105,7 @@
 								//등록
 								$.ajax({
 									type : "POST",
-									url  : "/admin/userMenuInsert.do",
+									url  : "/admin/menuInsert.do",
 									data : $('#popInsertForm').serialize(),
 									dataType : "json",
 									success : function(data) {
@@ -136,7 +141,7 @@
 			event.preventDefault(); // form제출로 인하여 막음
 			$.ajax({
 				type: 'POST',
-				url: '/admin/adminMenuUpdatePage.do',
+				url: '/admin/menuUpdatePage.do',
 				data: $('#menuListForm').serialize(),
 				dataType: 'html',
 				success: function(data) {
@@ -160,7 +165,7 @@
 								//등록
 								$.ajax({
 									type : "POST",
-									url  : "/admin/userMenuUpdate.do",
+									url  : "/admin/menuUpdate.do",
 									data : $('#popUpdateForm').serialize(),
 									dataType : "json",
 									success : function(data) {

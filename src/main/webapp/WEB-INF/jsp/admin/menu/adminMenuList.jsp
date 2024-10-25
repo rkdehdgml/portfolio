@@ -5,10 +5,10 @@
 <h2 style="font-size: 40px; font-weight: bold;">관리자페이지 메뉴 정보</h2>
 <div class="button-container">
 	<button class="btn register-btn">등록</button>
-	<button id="saveBtn" class="btn list-btn">적용</button>
+	<button id="saveBtn" class="btn list-btn">순서적용</button>
 </div>
 <form method="post" id="menuListForm">
-	<input type="hidden" name="menuSeq" id="menuSeq" value="" />
+	<input type="hidden" name="menuId" id="menuId" value="" />
 	<ul id="sortable-menu" class="menu-list">
 		<li class="menu-item" data-id="1">
 			<div class="menuBox">
@@ -174,7 +174,7 @@
 		$('.register-btn').click(function() {
 			$.ajax({
 				type: 'POST',
-				url: '/admin/adminMenuInsertPage.do',
+				url: '/admin/menuInsertPage.do',
 				data: $('#menuListForm').serialize(),
 				dataType: 'html',
 				success: function(data) {
@@ -193,21 +193,22 @@
 								} else if ($("#menuUrl").val() == "") {
 									alert("메뉴url를 입력하세요");
 									$("#menuUrl").focus();
+								} else {
+									//등록
+									$.ajax({
+										type : "POST",
+										url  : "/admin/adminMenuInsert.do",
+										data : $('#popInsertForm').serialize(),
+										dataType : "json",
+										success : function(data) {
+											alert("등록 되었습니다.")
+											$("#insertPopup").dialog("close");
+										},
+										error : function (data) {
+											alert("오류가 발생했습니다.")
+										}
+									})
 								}
-								//등록
-								$.ajax({
-									type : "POST",
-									url  : "/admin/adminMenuInsert.do",
-									data : $('#popInsertForm').serialize(),
-									dataType : "json",
-									success : function(data) {
-										alert("등록 되었습니다.")
-										$("#insertPopup").dialog("close");
-									},
-									error : function (data) {
-										alert("오류가 발생했습니다.")
-									}
-								})
 							},
 							"닫기": function() {
 								 $("#insertPopup").dialog("close");
@@ -233,7 +234,7 @@
 			event.preventDefault(); // form제출로 인하여 막음
 			$.ajax({
 				type: 'POST',
-				url: '/admin/adminMenuUpdatePage.do',
+				url: '/admin/menuUpdatePage.do',
 				data: $('#menuListForm').serialize(),
 				dataType: 'html',
 				success: function(data) {
@@ -253,21 +254,22 @@
 								} else if ($("#menuUrl").val() == "") {
 									alert("메뉴url를 입력하세요");
 									$("#menuUrl").focus();
+								} else {
+									//등록
+									$.ajax({
+										type : "POST",
+										url  : "/admin/adminMenuUpdate.do",
+										data : $('#popUpdateForm').serialize(),
+										dataType : "json",
+										success : function(data) {
+											alert("수정 되었습니다.")
+											$("#updatePopup").dialog("close");
+										},
+										error : function (data) {
+											alert("오류가 발생했습니다.")
+										}
+									})
 								}
-								//등록
-								$.ajax({
-									type : "POST",
-									url  : "/admin/adminMenuUpdate.do",
-									data : $('#popUpdateForm').serialize(),
-									dataType : "json",
-									success : function(data) {
-										alert("수정 되었습니다.")
-										$("#updatePopup").dialog("close");
-									},
-									error : function (data) {
-										alert("오류가 발생했습니다.")
-									}
-								})
 							},
 							"닫기": function() {
 								$("#updatePopup").dialog("close");

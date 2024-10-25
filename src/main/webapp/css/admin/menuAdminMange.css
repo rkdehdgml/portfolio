@@ -59,3 +59,17 @@
 .submm .submenu-item .menuBox:hover {
 	background-color: #e5e5e5; /* 서브메뉴 호버 시 색상 */
 }
+
+#saveBtn {
+	background-color: #28a745; /* 저장 버튼 색상 */
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#saveBtn:hover {
+	background-color: #218838; /* 호버 시 배경색 */
+}
