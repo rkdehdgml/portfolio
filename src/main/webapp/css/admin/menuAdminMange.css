@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+/* 메뉴 스타일링 시작 */
+
+
+.menu-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu-list .menu-item {
+
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	background-color: #ffffff;
+	cursor: pointer;
+}
+
+.menu-title {
+	font-size: 16px;
+	color: #333;
+}
+
+/* 메뉴 호버 시 색상 */
+.menu-list .menu-item .menuBox:hover {
+	background-color: #f5f5f5;
+}
+
+.menu-list .menu-item .menuBox {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width:100%;
+	padding: 10px 15px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.submm .submenu-item .menuBox {
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+/* 서브메뉴 스타일 */
+.submm {
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 20px; /* 서브메뉴가 메뉴 박스 아래에 위치하도록 상단 마진 설정 */
+	background-color: #ffffff;
+	display: none; /* 기본적으로 숨김 */
+}
+
+.submm .submenu-item {
+	padding: 10px 15px;
+	margin-bottom: 5px;
+}
+
+.submm .submenu-item .menuBox:hover {
+	background-color: #e5e5e5; /* 서브메뉴 호버 시 색상 */
+}

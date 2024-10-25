@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" type="text/css" href="/css/admin/menuMange.css">
+<link rel="stylesheet" type="text/css" href="/css/admin/menuAdminMange.css">
 <h2 style="font-size: 40px; font-weight: bold;">관리자페이지 메뉴 정보</h2>
 <div class="button-container">
 	<button class="btn register-btn">등록</button>
@@ -10,43 +10,121 @@
 <form method="post" id="menuListForm">
 	<input type="hidden" name="menuSeq" id="menuSeq" value="" />
 	<ul id="sortable-menu" class="menu-list">
-		<li class="menu-item" data-id="1"><span class="menu-title">메뉴1</span>
-			<div class="menu-buttons">
-				<button class="btn edit-btn">수정</button>
-				<button class="btn delete-btn">삭제</button>
-			</div>
-			<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
-				<li class="menu-item"><span class="menu-title">서브메뉴1</span>
+		<li class="menu-item" data-id="1">
+			<div class="menuBox">
+				<span class="menu-title">메뉴1</span>
 				<div class="menu-buttons">
 					<button class="btn edit-btn">수정</button>
 					<button class="btn delete-btn">삭제</button>
 				</div>
+			</div>
+			<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
+				<li class="submenu-item">
+					<div class="menuBox">
+						<span class="menu-title">서브메뉴1</span>
+						<div class="menu-buttons">
+							<button class="btn edit-btn">수정</button>
+							<button class="btn delete-btn">삭제</button>
+						</div>
+					</div>
 				</li>
-				<li class="menu-item"><span class="menu-title">서브메뉴2</span>
-					<div class="menu-buttons">
-						<button class="btn edit-btn">수정</button>
-						<button class="btn delete-btn">삭제</button>
+				<li class="submenu-item">
+					<div class="menuBox">
+						<span class="menu-title">서브메뉴2</span>
+						<div class="menu-buttons">
+							<button class="btn edit-btn">수정</button>
+							<button class="btn delete-btn">삭제</button>
+						</div>
 					</div>
 				</li>
 			</ul>
 		</li>
-		<li class="menu-item" data-id="2"><span class="menu-title">메뉴2</span>
-			<div class="menu-buttons">
-				<button class="btn edit-btn">수정</button>
-				<button class="btn delete-btn">삭제</button>
+		<li class="menu-item" data-id="1">
+			<div class="menuBox">
+				<span class="menu-title">메뉴1</span>
+				<div class="menu-buttons">
+					<button class="btn edit-btn">수정</button>
+					<button class="btn delete-btn">삭제</button>
+				</div>
 			</div>
+			<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
+				<li class="submenu-item">
+					<div class="menuBox">
+						<span class="menu-title">서브메뉴1</span>
+						<div class="menu-buttons">
+							<button class="btn edit-btn">수정</button>
+							<button class="btn delete-btn">삭제</button>
+						</div>
+					</div>
+				</li>
+				<li class="submenu-item">
+					<div class="menuBox">
+						<span class="menu-title">서브메뉴2</span>
+						<div class="menu-buttons">
+							<button class="btn edit-btn">수정</button>
+							<button class="btn delete-btn">삭제</button>
+						</div>
+					</div>
+				</li>
+			</ul>
 		</li>
-		<li class="menu-item" data-id="3"><span class="menu-title">메뉴3</span>
-			<div class="menu-buttons">
-				<button class="btn edit-btn">수정</button>
-				<button class="btn delete-btn">삭제</button>
+		<li class="menu-item" data-id="1">
+			<div class="menuBox">
+				<span class="menu-title">메뉴1</span>
+				<div class="menu-buttons">
+					<button class="btn edit-btn">수정</button>
+					<button class="btn delete-btn">삭제</button>
+				</div>
 			</div>
+			<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
+				<li class="submenu-item">
+					<div class="menuBox">
+						<span class="menu-title">서브메뉴1</span>
+						<div class="menu-buttons">
+							<button class="btn edit-btn">수정</button>
+							<button class="btn delete-btn">삭제</button>
+						</div>
+					</div>
+				</li>
+				<li class="submenu-item">
+					<div class="menuBox">
+						<span class="menu-title">서브메뉴2</span>
+						<div class="menu-buttons">
+							<button class="btn edit-btn">수정</button>
+							<button class="btn delete-btn">삭제</button>
+						</div>
+					</div>
+				</li>
+			</ul>
 		</li>
-		<li class="menu-item" data-id="4"><span class="menu-title">메뉴4</span>
-			<div class="menu-buttons">
-				<button class="btn edit-btn">수정</button>
-				<button class="btn delete-btn">삭제</button>
+		<li class="menu-item" data-id="1">
+			<div class="menuBox">
+				<span class="menu-title">메뉴1</span>
+				<div class="menu-buttons">
+					<button class="btn edit-btn">수정</button>
+					<button class="btn delete-btn">삭제</button>
+				</div>
 			</div>
+			<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
+				<li class="submenu-item">
+					<div class="menuBox">
+						<span class="menu-title">서브메뉴1</span>
+						<div class="menu-buttons">
+							<button class="btn edit-btn">수정</button>
+							<button class="btn delete-btn">삭제</button>
+						</div>
+					</div>
+				</li>
+				<li class="submenu-item">
+					<div class="menuBox">
+						<span class="menu-title">서브메뉴2</span>
+						<div class="menu-buttons">
+							<button class="btn edit-btn">수정</button>
+							<button class="btn delete-btn">삭제</button>
+						</div>
+					</div>
+				</li>
+			</ul>
 		</li>
 	</ul>
 </form>
@@ -63,7 +141,7 @@
 		
 		// 메뉴 제목 클릭 시 서브메뉴 보이기/숨기기
 		$(".menu-title").click(function() {
-			$(this).siblings(".submm").slideToggle(); // 해당 서브메뉴 보이기/숨기기
+			 $(this).closest(".menu-item").find(".submm").slideToggle(); // 해당 서브메뉴 보이기/숨기기
 		});
 
 		// 저장 버튼 클릭 시
