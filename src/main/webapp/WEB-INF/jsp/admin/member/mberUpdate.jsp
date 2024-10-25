@@ -26,31 +26,31 @@
 </form>
 
 <script>
-$(doucment).ready(function() {
-	//수정
+$(document).ready(function() {
+	// 수정
 	$.ajax({
-		type : "post",
-		url : "/admin/mberUpdate.do",
-		data : $("#insertForm").serialize(),
-		dataType : "json",
-		success : function (data) {
-			if(data.result == 'Y') {
+		type: "post",
+		url: "/admin/mberUpdate.do",
+		data: $("#insertForm").serialize(),
+		dataType: "json",
+		success: function(data) {
+			if (data.result == 'Y') {
 				alert("수정되었습니다.");
-				window.location.href = '/admin/mberList.do',
+				window.location.href = '/admin/mberList.do'; // 세미콜론 수정
 			} else if (data.result == 'N') {
 				alert("오류가 발생했습니다.");
 			}
 		},
-		error : function (response) {
+		error: function(response) {
 			alert("오류가 발생했습니다.");
 		}
-	})
+	});
 	
-	//목록
-	$('#list').click(function(){
+	// 목록
+	$('#list').click(function() {
 		window.location.href = '/admin/mberList.do';
 	});
 });
-
 </script>
+
 
