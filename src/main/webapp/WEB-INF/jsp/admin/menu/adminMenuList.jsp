@@ -15,6 +15,20 @@
 				<button class="btn edit-btn">수정</button>
 				<button class="btn delete-btn">삭제</button>
 			</div>
+			<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
+				<li class="menu-item"><span class="menu-title">서브메뉴1</span>
+				<div class="menu-buttons">
+					<button class="btn edit-btn">수정</button>
+					<button class="btn delete-btn">삭제</button>
+				</div>
+				</li>
+				<li class="menu-item"><span class="menu-title">서브메뉴2</span>
+					<div class="menu-buttons">
+						<button class="btn edit-btn">수정</button>
+						<button class="btn delete-btn">삭제</button>
+					</div>
+				</li>
+			</ul>
 		</li>
 		<li class="menu-item" data-id="2"><span class="menu-title">메뉴2</span>
 			<div class="menu-buttons">
@@ -46,6 +60,11 @@
 		// jQuery UI의 sortable 기능 적용
 		$("#sortable-menu").sortable();
 		$("#sortable-menu").disableSelection();
+		
+		// 메뉴 제목 클릭 시 서브메뉴 보이기/숨기기
+		$(".menu-title").click(function() {
+			$(this).siblings(".submm").slideToggle(); // 해당 서브메뉴 보이기/숨기기
+		});
 
 		// 저장 버튼 클릭 시
 		$("#saveBtn").click(function() {
