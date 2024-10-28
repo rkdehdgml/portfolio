@@ -11,41 +11,42 @@
 	<input type="hidden" name="menuId" id="menuId" value="" />
 	<ul id="sortable-menu" class="menu-list">
 		<c:forEach var="menuList" items="${adminMenuList}">
-			<li class="menu-item" data-id="1">
-				<c:if test="${menuList.menuLev eq '1'}">
-					<div class="menuBox">
-						<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
-						<div class="menu-buttons">
-							<button class="btn edit-btn">수정</button>
-							<button class="btn delete-btn">삭제</button>
+			<c:choose>
+				<c:when test="${menuList empty}">
+					<p>메뉴가 없습니다.</p>
+				</c:when>
+				<c:otherwise>
+					<li class="menu-item" data-id="1">
+						<div class="menuBox">
+							<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
+							<div class="menu-buttons">
+								<button class="btn edit-btn">수정</button>
+								<button class="btn delete-btn">삭제</button>
+							</div>
 						</div>
-					</div>
-				</c:if>
-				<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
-					<c:if test="${menuList.menuLev eq '2'}">
-						<li class="submenu-item">
-							<div class="menuBox">
-								<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
-								<div class="menu-buttons">
-									<button class="btn edit-btn">수정</button>
-									<button class="btn delete-btn">삭제</button>
+						<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
+							<li class="submenu-item">
+								<div class="menuBox">
+									<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
+									<div class="menu-buttons">
+										<button class="btn edit-btn">수정</button>
+										<button class="btn delete-btn">삭제</button>
+									</div>
 								</div>
-							</div>
-						</li>
-					</c:if>
-					<c:if test="${menuList.menuLev eq '3'}">
-						<li class="submenu-item">
-							<div class="menuBox">
-								<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
-								<div class="menu-buttons">
-									<button class="btn edit-btn">수정</button>
-									<button class="btn delete-btn">삭제</button>
+							</li>
+							<li class="submenu-item">
+								<div class="menuBox">
+									<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
+									<div class="menu-buttons">
+										<button class="btn edit-btn">수정</button>
+										<button class="btn delete-btn">삭제</button>
+									</div>
 								</div>
-							</div>
-						</li>
-					</c:if>
-				</ul>
-			</li>
+							</li>
+						</ul>
+					</li>
+				</c:otherwise>
+			</c:choose>
 		</c:forEach>
 <!-- 		<li class="menu-item" data-id="1"> -->
 <!-- 			<div class="menuBox"> -->

@@ -44,6 +44,15 @@ public class MenuController {
 		//테스트용 메뉴리스트 
 		List<Map<String, Object>> adminMenuList = TestData.menuList();
 		
+		for(int i =0; i < adminMenuList.size(); i++) {
+			Map<String, Object> menuMap = adminMenuList.get(i);
+			String lev = menuMap.get("menuLev").toString();
+			
+			if(lev.equals("1")) {
+				
+			}
+		}
+		
 		//테스트용 메뉴리스트
 //		List<Map<String, Object>> adminMenuList = commandService.selectList("", null);
 		model.addAttribute("adminMenuList",adminMenuList);
