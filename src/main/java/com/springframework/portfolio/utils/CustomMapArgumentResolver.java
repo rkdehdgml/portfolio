@@ -1,4 +1,4 @@
-package com.springframework.portfolio.common;
+package com.springframework.portfolio.utils;
 
 import java.util.Enumeration;
 
@@ -11,6 +11,8 @@ import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
+
+import com.springframework.portfolio.common.CommandMap;
 
 public class CustomMapArgumentResolver implements HandlerMethodArgumentResolver {
 	 Logger logger = LoggerFactory.getLogger(CustomMapArgumentResolver.class);

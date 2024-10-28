@@ -30,7 +30,7 @@
 		<tbody>
 			<c:forEach var="mberList" items="${mberList}">
 				<tr>
-					<td>${mberList.MBER_ID}</td>
+					<td>${mberList.mberId}</td>
 					<td>${mberList.MBER_NAME}</td>
 					<td>${mberList.MBER_EMAIL}</td>
 					<td class="button-cell">

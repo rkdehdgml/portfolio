@@ -16,7 +16,7 @@
 	<mvc:annotation-driven>
 		<mvc:argument-resolvers>
 			<beans:bean
-				class="com.springframework.portfolio.common.CustomMapArgumentResolver" />
+				class="com.springframework.portfolio.utils.CustomMapArgumentResolver" />
 		</mvc:argument-resolvers>
 	</mvc:annotation-driven>
 
