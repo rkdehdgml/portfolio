@@ -37,15 +37,36 @@ public class TestData {
 		//리스트 생성
 		List<Map<String, Object>> list = new ArrayList<>();
 		//리스트에 담을 맵
-		Map<String, Object> map = new HashMap<>();
-		map.put("mberSeq", 1);
-		map.put("menuId", "MN1");
-		map.put("menuNm", "회원관리");
-		map.put("menuLev", "1");
-		map.put("menuType", "A");
-		map.put("menuUrl", "/admin/mberList.do");
-		map.put("menuYn", "Y");
-		list.add(map);
+		Map<String, Object> map1 = new HashMap<>();
+		map1.put("mberSeq", 1);
+		map1.put("menuId", "MN1");
+		map1.put("menuNm", "회원관리");
+		map1.put("menuLev", "1");
+		map1.put("menuType", "A");
+		map1.put("menuUrl", "/admin/mberList.do");
+		map1.put("menuYn", "Y");
+		list.add(map1);
+		//리스트에 담을 맵
+		Map<String, Object> map2 = new HashMap<>();
+		map2.put("mberSeq", 1);
+		map2.put("menuId", "MN2");
+		map2.put("menuNm", "두번째 메뉴");
+		map2.put("menuLev", "2");
+		map2.put("menuType", "A");
+		map2.put("menuUrl", "/admin/mberList.do");
+		map2.put("menuYn", "Y");
+		list.add(map2);
+		//리스트에 담을 맵
+		Map<String, Object> map3 = new HashMap<>();
+		map3.put("mberSeq", 1);
+		map3.put("menuId", "MN3");
+		map3.put("menuNm", "세번째 메뉴");
+		map3.put("menuLev", "3");
+		map3.put("menuType", "A");
+		map3.put("menuUrl", "/admin/mberList.do");
+		map3.put("menuYn", "Y");
+		list.add(map3);
+		
 		return list;
 	}
 	

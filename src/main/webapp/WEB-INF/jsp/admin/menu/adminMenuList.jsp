@@ -12,18 +12,20 @@
 	<ul id="sortable-menu" class="menu-list">
 		<c:forEach var="menuList" items="${adminMenuList}">
 			<li class="menu-item" data-id="1">
-				<div class="menuBox">
-					<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
-					<div class="menu-buttons">
-						<button class="btn edit-btn">수정</button>
-						<button class="btn delete-btn">삭제</button>
+				<c:if test="${menuList.menuLev eq '1'}">
+					<div class="menuBox">
+						<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
+						<div class="menu-buttons">
+							<button class="btn edit-btn">수정</button>
+							<button class="btn delete-btn">삭제</button>
+						</div>
 					</div>
-				</div>
+				</c:if>
 				<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
 					<c:if test="${menuList.menuLev eq '2'}">
 						<li class="submenu-item">
 							<div class="menuBox">
-								<span class="menu-title">서브메뉴1</span>
+								<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
 								<div class="menu-buttons">
 									<button class="btn edit-btn">수정</button>
 									<button class="btn delete-btn">삭제</button>
@@ -34,7 +36,7 @@
 					<c:if test="${menuList.menuLev eq '3'}">
 						<li class="submenu-item">
 							<div class="menuBox">
-								<span class="menu-title">서브메뉴2</span>
+								<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
 								<div class="menu-buttons">
 									<button class="btn edit-btn">수정</button>
 									<button class="btn delete-btn">삭제</button>
