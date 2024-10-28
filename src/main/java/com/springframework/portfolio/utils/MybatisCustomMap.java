@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import org.springframework.jdbc.support.JdbcUtils;
 
-public class MybatisMap extends HashMap {
+public class MybatisCustomMap extends HashMap {
 	private static final long serialVersionUID = -7700790403928325865L;
 	
 	@SuppressWarnings("unchecked")

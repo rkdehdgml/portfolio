@@ -9,6 +9,6 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias alias="utilMap" type="com.springframework.portfolio.utils.MybatisMap"/>
+		<typeAlias alias="utilMap" type="com.springframework.portfolio.utils.MybatisCustomMap"/>
 	</typeAliases>
 </configuration>

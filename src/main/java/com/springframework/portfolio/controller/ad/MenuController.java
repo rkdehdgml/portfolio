@@ -21,6 +21,7 @@ import com.springframework.portfolio.common.CommandLogger;
 import com.springframework.portfolio.common.CommandMap;
 import com.springframework.portfolio.common.CommandService;
 import com.springframework.portfolio.utils.CommandUtil;
+import com.springframework.portfolio.utils.TestData;
 
 @Controller
 public class MenuController {
@@ -40,8 +41,12 @@ public class MenuController {
 	 */
 	@RequestMapping(value= "/admin/adminMenuList.do")
 	public String adminMenuListPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
+		//테스트용 메뉴리스트 
+		List<Map<String, Object>> adminMenuList = TestData.menuList();
+		
+		//테스트용 메뉴리스트
 //		List<Map<String, Object>> adminMenuList = commandService.selectList("", null);
-		model.addAttribute("adminMenuList","adminMenuList");
+		model.addAttribute("adminMenuList",adminMenuList);
 		model.addAttribute("content", "/admin/menu/adminMenuList.jsp");
 		return CommandUtil.getAdminLayout();
 	}

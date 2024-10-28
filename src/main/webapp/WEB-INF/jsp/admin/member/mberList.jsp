@@ -31,10 +31,10 @@
 			<c:forEach var="mberList" items="${mberList}">
 				<tr>
 					<td>${mberList.mberId}</td>
-					<td>${mberList.MBER_NAME}</td>
-					<td>${mberList.MBER_EMAIL}</td>
+					<td>${mberList.mberName}</td>
+					<td>${mberList.mberEmail}</td>
 					<td class="button-cell">
-						<button class="btn edit-btn" data-id="<c:out value="${mberList.MBER_SEQ}"/>">수정</button>
+						<button class="btn edit-btn" data-id="<c:out value="${mberList.mberSeq}"/>">수정</button>
 						<button class="btn delete-btn">삭제</button>
 					</td>
 	

@@ -10,122 +10,128 @@
 <form method="post" id="menuListForm">
 	<input type="hidden" name="menuId" id="menuId" value="" />
 	<ul id="sortable-menu" class="menu-list">
-		<li class="menu-item" data-id="1">
-			<div class="menuBox">
-				<span class="menu-title">메뉴1</span>
-				<div class="menu-buttons">
-					<button class="btn edit-btn">수정</button>
-					<button class="btn delete-btn">삭제</button>
+		<c:forEach var="menuList" items="${adminMenuList}">
+			<li class="menu-item" data-id="1">
+				<div class="menuBox">
+					<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
+					<div class="menu-buttons">
+						<button class="btn edit-btn">수정</button>
+						<button class="btn delete-btn">삭제</button>
+					</div>
 				</div>
-			</div>
-			<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
-				<li class="submenu-item">
-					<div class="menuBox">
-						<span class="menu-title">서브메뉴1</span>
-						<div class="menu-buttons">
-							<button class="btn edit-btn">수정</button>
-							<button class="btn delete-btn">삭제</button>
-						</div>
-					</div>
-				</li>
-				<li class="submenu-item">
-					<div class="menuBox">
-						<span class="menu-title">서브메뉴2</span>
-						<div class="menu-buttons">
-							<button class="btn edit-btn">수정</button>
-							<button class="btn delete-btn">삭제</button>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</li>
-		<li class="menu-item" data-id="1">
-			<div class="menuBox">
-				<span class="menu-title">메뉴1</span>
-				<div class="menu-buttons">
-					<button class="btn edit-btn">수정</button>
-					<button class="btn delete-btn">삭제</button>
-				</div>
-			</div>
-			<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
-				<li class="submenu-item">
-					<div class="menuBox">
-						<span class="menu-title">서브메뉴1</span>
-						<div class="menu-buttons">
-							<button class="btn edit-btn">수정</button>
-							<button class="btn delete-btn">삭제</button>
-						</div>
-					</div>
-				</li>
-				<li class="submenu-item">
-					<div class="menuBox">
-						<span class="menu-title">서브메뉴2</span>
-						<div class="menu-buttons">
-							<button class="btn edit-btn">수정</button>
-							<button class="btn delete-btn">삭제</button>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</li>
-		<li class="menu-item" data-id="1">
-			<div class="menuBox">
-				<span class="menu-title">메뉴1</span>
-				<div class="menu-buttons">
-					<button class="btn edit-btn">수정</button>
-					<button class="btn delete-btn">삭제</button>
-				</div>
-			</div>
-			<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
-				<li class="submenu-item">
-					<div class="menuBox">
-						<span class="menu-title">서브메뉴1</span>
-						<div class="menu-buttons">
-							<button class="btn edit-btn">수정</button>
-							<button class="btn delete-btn">삭제</button>
-						</div>
-					</div>
-				</li>
-				<li class="submenu-item">
-					<div class="menuBox">
-						<span class="menu-title">서브메뉴2</span>
-						<div class="menu-buttons">
-							<button class="btn edit-btn">수정</button>
-							<button class="btn delete-btn">삭제</button>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</li>
-		<li class="menu-item" data-id="1">
-			<div class="menuBox">
-				<span class="menu-title">메뉴1</span>
-				<div class="menu-buttons">
-					<button class="btn edit-btn">수정</button>
-					<button class="btn delete-btn">삭제</button>
-				</div>
-			</div>
-			<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
-				<li class="submenu-item">
-					<div class="menuBox">
-						<span class="menu-title">서브메뉴1</span>
-						<div class="menu-buttons">
-							<button class="btn edit-btn">수정</button>
-							<button class="btn delete-btn">삭제</button>
-						</div>
-					</div>
-				</li>
-				<li class="submenu-item">
-					<div class="menuBox">
-						<span class="menu-title">서브메뉴2</span>
-						<div class="menu-buttons">
-							<button class="btn edit-btn">수정</button>
-							<button class="btn delete-btn">삭제</button>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</li>
+				<ul class="submm" style="display: none;"> <!-- 서브메뉴 추가 -->
+					<c:if test="${menuList.menuLev eq '2'}">
+						<li class="submenu-item">
+							<div class="menuBox">
+								<span class="menu-title">서브메뉴1</span>
+								<div class="menu-buttons">
+									<button class="btn edit-btn">수정</button>
+									<button class="btn delete-btn">삭제</button>
+								</div>
+							</div>
+						</li>
+					</c:if>
+					<c:if test="${menuList.menuLev eq '3'}">
+						<li class="submenu-item">
+							<div class="menuBox">
+								<span class="menu-title">서브메뉴2</span>
+								<div class="menu-buttons">
+									<button class="btn edit-btn">수정</button>
+									<button class="btn delete-btn">삭제</button>
+								</div>
+							</div>
+						</li>
+					</c:if>
+				</ul>
+			</li>
+		</c:forEach>
+<!-- 		<li class="menu-item" data-id="1"> -->
+<!-- 			<div class="menuBox"> -->
+<!-- 				<span class="menu-title">메뉴1</span> -->
+<!-- 				<div class="menu-buttons"> -->
+<!-- 					<button class="btn edit-btn">수정</button> -->
+<!-- 					<button class="btn delete-btn">삭제</button> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<ul class="submm" style="display: none;"> 서브메뉴 추가 -->
+<!-- 				<li class="submenu-item"> -->
+<!-- 					<div class="menuBox"> -->
+<!-- 						<span class="menu-title">서브메뉴1</span> -->
+<!-- 						<div class="menu-buttons"> -->
+<!-- 							<button class="btn edit-btn">수정</button> -->
+<!-- 							<button class="btn delete-btn">삭제</button> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</li> -->
+<!-- 				<li class="submenu-item"> -->
+<!-- 					<div class="menuBox"> -->
+<!-- 						<span class="menu-title">서브메뉴2</span> -->
+<!-- 						<div class="menu-buttons"> -->
+<!-- 							<button class="btn edit-btn">수정</button> -->
+<!-- 							<button class="btn delete-btn">삭제</button> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</li> -->
+<!-- 			</ul> -->
+<!-- 		</li> -->
+<!-- 		<li class="menu-item" data-id="1"> -->
+<!-- 			<div class="menuBox"> -->
+<!-- 				<span class="menu-title">메뉴1</span> -->
+<!-- 				<div class="menu-buttons"> -->
+<!-- 					<button class="btn edit-btn">수정</button> -->
+<!-- 					<button class="btn delete-btn">삭제</button> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<ul class="submm" style="display: none;"> 서브메뉴 추가 -->
+<!-- 				<li class="submenu-item"> -->
+<!-- 					<div class="menuBox"> -->
+<!-- 						<span class="menu-title">서브메뉴1</span> -->
+<!-- 						<div class="menu-buttons"> -->
+<!-- 							<button class="btn edit-btn">수정</button> -->
+<!-- 							<button class="btn delete-btn">삭제</button> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</li> -->
+<!-- 				<li class="submenu-item"> -->
+<!-- 					<div class="menuBox"> -->
+<!-- 						<span class="menu-title">서브메뉴2</span> -->
+<!-- 						<div class="menu-buttons"> -->
+<!-- 							<button class="btn edit-btn">수정</button> -->
+<!-- 							<button class="btn delete-btn">삭제</button> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</li> -->
+<!-- 			</ul> -->
+<!-- 		</li> -->
+<!-- 		<li class="menu-item" data-id="1"> -->
+<!-- 			<div class="menuBox"> -->
+<!-- 				<span class="menu-title">메뉴1</span> -->
+<!-- 				<div class="menu-buttons"> -->
+<!-- 					<button class="btn edit-btn">수정</button> -->
+<!-- 					<button class="btn delete-btn">삭제</button> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<ul class="submm" style="display: none;"> 서브메뉴 추가 -->
+<!-- 				<li class="submenu-item"> -->
+<!-- 					<div class="menuBox"> -->
+<!-- 						<span class="menu-title">서브메뉴1</span> -->
+<!-- 						<div class="menu-buttons"> -->
+<!-- 							<button class="btn edit-btn">수정</button> -->
+<!-- 							<button class="btn delete-btn">삭제</button> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</li> -->
+<!-- 				<li class="submenu-item"> -->
+<!-- 					<div class="menuBox"> -->
+<!-- 						<span class="menu-title">서브메뉴2</span> -->
+<!-- 						<div class="menu-buttons"> -->
+<!-- 							<button class="btn edit-btn">수정</button> -->
+<!-- 							<button class="btn delete-btn">삭제</button> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</li> -->
+<!-- 			</ul> -->
+<!-- 		</li> -->
 	</ul>
 </form>
 <!-- 메뉴 등록창 -->

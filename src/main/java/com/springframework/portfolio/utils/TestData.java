@@ -24,6 +24,7 @@ public class TestData {
 		map.put("MBER_ID", "admin");
 		map.put("MBER_PW", "admin");
 		map.put("MBER_NM", "관리자");
+		list.add(map);
 		return list;
 	}
 	
@@ -37,13 +38,14 @@ public class TestData {
 		List<Map<String, Object>> list = new ArrayList<>();
 		//리스트에 담을 맵
 		Map<String, Object> map = new HashMap<>();
-		map.put("MBER_SEQ", 1);
-		map.put("MENU_ID", "MN1");
-		map.put("MENU_NM", "회원관리");
-		map.put("MENU_LEV", "1");
-		map.put("MENU_TYPE", "A");
-		map.put("MENU_URL", "/admin/mberList.do");
-		map.put("MENU_YN", "Y");
+		map.put("mberSeq", 1);
+		map.put("menuId", "MN1");
+		map.put("menuNm", "회원관리");
+		map.put("menuLev", "1");
+		map.put("menuType", "A");
+		map.put("menuUrl", "/admin/mberList.do");
+		map.put("menuYn", "Y");
+		list.add(map);
 		return list;
 	}
 	
@@ -61,6 +63,7 @@ public class TestData {
 		map.put("MENU_SEQ", 1);
 		map.put("BOARD_ID", "BD1");
 		map.put("BOARD_NM", "자기소개");
+		list.add(map);
 		return list;
 	}
 	
@@ -84,6 +87,7 @@ public class TestData {
 		map.put("POST_CR_DT", "");
 		map.put("POST_UP_DT", "");
 		map.put("IMG_PATH", "");
+		list.add(map);
 		return list;
 	}
 
