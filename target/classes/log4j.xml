@@ -11,8 +11,8 @@
 			<param name="ConversionPattern" value="%d %5p [%c] %m%n" />
 		</layout>
 	</appender>
-	
-	
+
+
 
 	<appender name="console-infolog"
 		class="org.apache.log4j.ConsoleAppender">
@@ -20,8 +20,8 @@
 			<param name="ConversionPattern" value="%d %5p %m%n" />
 		</layout>
 	</appender>
-	
-	
+
+
 
 	<!-- Application Loggers -->
 	<logger name="com.springframework.chapark" additivity="false">
@@ -46,6 +46,29 @@
 		<appender-ref ref="file" />
 	</logger>
 	<logger name="org.springframework.web">
+		<level value="DEBUG" />
+	</logger>
+
+	<!-- MyBatis 로그 설정 -->
+	<logger name="org.mybatis">
+		<level value="DEBUG" />
+	</logger>
+
+	<!-- SQL 실행 로그를 보기 위한 추가 설정 -->
+	<logger name="java.sql">
+		<level value="DEBUG" />
+	</logger>
+
+	<logger name="javax.sql">
+		<level value="DEBUG" />
+	</logger>
+
+	<!-- 필요시 MyBatis 스프링 통합 로그 설정 -->
+	<logger name="org.mybatis.spring">
+		<level value="DEBUG" />
+	</logger>
+
+	<logger name="com.springframework.portfolio.mapper">
 		<level value="DEBUG" />
 	</logger>
 

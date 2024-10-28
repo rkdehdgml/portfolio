@@ -22,6 +22,7 @@ import com.springframework.portfolio.common.CommandLogger;
 import com.springframework.portfolio.common.CommandMap;
 import com.springframework.portfolio.common.CommandService;
 import com.springframework.portfolio.utils.CommandUtil;
+import com.springframework.portfolio.utils.TestData;
 
 @Controller
 public class MeberController {
@@ -31,12 +32,22 @@ public class MeberController {
 	@Autowired
 	private CommandService commandService;
 	
+	/**
+	 * 회원리스트
+	 * @param request
+	 * @param response
+	 * @param commonMap
+	 * @param model
+	 * @return
+	 */
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/admin/mberList.do")
 	public String menuList(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
 		try {
 			//회원정보 리스트 조회
 			List<Map<String, Object>> mberList = commandService.selectList("mb_mber.selectMberAllList", null);
+			//테스트용 회원리스트 조회
+//			List<Map<String, Object>> mberList = TestData.mberList();
 			model.addAttribute("mberList", mberList);
 			model.addAttribute("content", "/admin/member/mberList.jsp");
 		} catch (Exception e) {
