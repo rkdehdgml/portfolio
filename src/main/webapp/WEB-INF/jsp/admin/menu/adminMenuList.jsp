@@ -1,8 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" type="text/css"
-	href="/css/admin/menuAdminMange.css">
+<link rel="stylesheet" type="text/css" href="/css/admin/menuAdminMange.css">
+<style>
+/* 기본적으로 하위 메뉴를 숨기기 */
+.sub-menu, .sub-sub-menu {
+	display: none;
+}
+</style>
 <h2 style="font-size: 40px; font-weight: bold;">관리자페이지 메뉴 정보</h2>
 <div class="button-container">
 	<button class="btn register-btn">등록</button>
@@ -11,141 +16,48 @@
 <form method="post" id="menuListForm">
 	<input type="hidden" name="menuId" id="menuId" value="" />
 	<ul id="sortable-menu" class="menu-list">
-		<c:forEach var="menu" items="${adminMenuList}">
-			<!-- 1차 메뉴 -->
-			<c:if test="${menu.menuLev == '1'}">
-				<li class="menu-item" data-id="${menu.menuId}">
-					<div class="menuBox">
-						<span class="menu-title">${menu.menuNm}</span>
-						<div class="menu-buttons">
-							<button class="btn edit-btn">수정</button>
-							<button class="btn delete-btn">삭제</button>
+		<c:forEach var="menuList" items="${adminMenuList}">
+			<c:choose>
+				<c:when test="${empty menuList}">
+					<p>메뉴가 없습니다.</p>
+				</c:when>
+				<c:otherwise>
+					<li class="menu-item" data-id="1">
+						<!-- 1차 메뉴 -->
+						<div class="menuBox">
+							<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
+							<div class="menu-buttons">
+								<button class="btn edit-btn">수정</button>
+								<button class="btn delete-btn">삭제</button>
+							</div>
 						</div>
-					</div> <!-- 2차 메뉴 (secMenuList) --> 
-					<c:if test="${not empty secMenuList}">
-						<ul class="sub-menu">
-							<c:forEach var="secMenu" items="${secMenuList}">
-								<c:if test="${secMenu.mberSeq == menu.mberSeq}">
-									<li class="submenu-item">
-										<div class="menuBox">
-											<span class="menu-title">${secMenu.menuNm}</span>
-											<div class="menu-buttons">
-												<button class="btn edit-btn">수정</button>
-												<button class="btn delete-btn">삭제</button>
-											</div>
-										</div> <!-- 3차 메뉴 (tirdMenuList) -->
-										 <c:if test="${not empty tirdMenuList}">
-											<ul class="sub-sub-menu">
-												<c:forEach var="tirdMenu" items="${tirdMenuList}">
-													<c:if test="${tirdMenu.mberSeq == secMenu.mberSeq}">
-														<li class="submenu-item">
-															<div class="menuBox">
-																<span class="menu-title">${tirdMenu.menuNm}</span>
-																<div class="menu-buttons">
-																	<button class="btn edit-btn">수정</button>
-																	<button class="btn delete-btn">삭제</button>
-																</div>
-															</div>
-														</li>
-													</c:if>
-												</c:forEach>
-											</ul>
-										</c:if>
-									</li>
-								</c:if>
-							</c:forEach>
+						<!-- 서브메뉴 시작 -->
+						<ul class="submm" style="display: none;">
+							<!-- 2차메뉴 -->
+							<li class="submenu-item">
+								<div class="menuBox">
+									<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
+									<div class="menu-buttons">
+										<button class="btn edit-btn">수정</button>
+										<button class="btn delete-btn">삭제</button>
+									</div>
+								</div>
+							</li>
+							<!-- 3차메뉴 -->
+							<li class="submenu-item">
+								<div class="menuBox">
+									<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
+									<div class="menu-buttons">
+										<button class="btn edit-btn">수정</button>
+										<button class="btn delete-btn">삭제</button>
+									</div>
+								</div>
+							</li>
 						</ul>
-					</c:if>
-				</li>
-			</c:if>
+					</li>
+				</c:otherwise>
+			</c:choose>
 		</c:forEach>
-		<!-- 		<li class="menu-item" data-id="1"> -->
-		<!-- 			<div class="menuBox"> -->
-		<!-- 				<span class="menu-title">메뉴1</span> -->
-		<!-- 				<div class="menu-buttons"> -->
-		<!-- 					<button class="btn edit-btn">수정</button> -->
-		<!-- 					<button class="btn delete-btn">삭제</button> -->
-		<!-- 				</div> -->
-		<!-- 			</div> -->
-		<!-- 			<ul class="submm" style="display: none;"> 서브메뉴 추가 -->
-		<!-- 				<li class="submenu-item"> -->
-		<!-- 					<div class="menuBox"> -->
-		<!-- 						<span class="menu-title">서브메뉴1</span> -->
-		<!-- 						<div class="menu-buttons"> -->
-		<!-- 							<button class="btn edit-btn">수정</button> -->
-		<!-- 							<button class="btn delete-btn">삭제</button> -->
-		<!-- 						</div> -->
-		<!-- 					</div> -->
-		<!-- 				</li> -->
-		<!-- 				<li class="submenu-item"> -->
-		<!-- 					<div class="menuBox"> -->
-		<!-- 						<span class="menu-title">서브메뉴2</span> -->
-		<!-- 						<div class="menu-buttons"> -->
-		<!-- 							<button class="btn edit-btn">수정</button> -->
-		<!-- 							<button class="btn delete-btn">삭제</button> -->
-		<!-- 						</div> -->
-		<!-- 					</div> -->
-		<!-- 				</li> -->
-		<!-- 			</ul> -->
-		<!-- 		</li> -->
-		<!-- 		<li class="menu-item" data-id="1"> -->
-		<!-- 			<div class="menuBox"> -->
-		<!-- 				<span class="menu-title">메뉴1</span> -->
-		<!-- 				<div class="menu-buttons"> -->
-		<!-- 					<button class="btn edit-btn">수정</button> -->
-		<!-- 					<button class="btn delete-btn">삭제</button> -->
-		<!-- 				</div> -->
-		<!-- 			</div> -->
-		<!-- 			<ul class="submm" style="display: none;"> 서브메뉴 추가 -->
-		<!-- 				<li class="submenu-item"> -->
-		<!-- 					<div class="menuBox"> -->
-		<!-- 						<span class="menu-title">서브메뉴1</span> -->
-		<!-- 						<div class="menu-buttons"> -->
-		<!-- 							<button class="btn edit-btn">수정</button> -->
-		<!-- 							<button class="btn delete-btn">삭제</button> -->
-		<!-- 						</div> -->
-		<!-- 					</div> -->
-		<!-- 				</li> -->
-		<!-- 				<li class="submenu-item"> -->
-		<!-- 					<div class="menuBox"> -->
-		<!-- 						<span class="menu-title">서브메뉴2</span> -->
-		<!-- 						<div class="menu-buttons"> -->
-		<!-- 							<button class="btn edit-btn">수정</button> -->
-		<!-- 							<button class="btn delete-btn">삭제</button> -->
-		<!-- 						</div> -->
-		<!-- 					</div> -->
-		<!-- 				</li> -->
-		<!-- 			</ul> -->
-		<!-- 		</li> -->
-		<!-- 		<li class="menu-item" data-id="1"> -->
-		<!-- 			<div class="menuBox"> -->
-		<!-- 				<span class="menu-title">메뉴1</span> -->
-		<!-- 				<div class="menu-buttons"> -->
-		<!-- 					<button class="btn edit-btn">수정</button> -->
-		<!-- 					<button class="btn delete-btn">삭제</button> -->
-		<!-- 				</div> -->
-		<!-- 			</div> -->
-		<!-- 			<ul class="submm" style="display: none;"> 서브메뉴 추가 -->
-		<!-- 				<li class="submenu-item"> -->
-		<!-- 					<div class="menuBox"> -->
-		<!-- 						<span class="menu-title">서브메뉴1</span> -->
-		<!-- 						<div class="menu-buttons"> -->
-		<!-- 							<button class="btn edit-btn">수정</button> -->
-		<!-- 							<button class="btn delete-btn">삭제</button> -->
-		<!-- 						</div> -->
-		<!-- 					</div> -->
-		<!-- 				</li> -->
-		<!-- 				<li class="submenu-item"> -->
-		<!-- 					<div class="menuBox"> -->
-		<!-- 						<span class="menu-title">서브메뉴2</span> -->
-		<!-- 						<div class="menu-buttons"> -->
-		<!-- 							<button class="btn edit-btn">수정</button> -->
-		<!-- 							<button class="btn delete-btn">삭제</button> -->
-		<!-- 						</div> -->
-		<!-- 					</div> -->
-		<!-- 				</li> -->
-		<!-- 			</ul> -->
-		<!-- 		</li> -->
 	</ul>
 </form>
 <!-- 메뉴 등록창 -->
@@ -159,9 +71,16 @@
 		$("#sortable-menu").sortable();
 		$("#sortable-menu").disableSelection();
 
-		// 메뉴 제목 클릭 시 서브메뉴 보이기/숨기기
-		$(".menu-title").click(function() {
-			$(this).closest(".menu-item").find(".submm").slideToggle(); // 해당 서브메뉴 보이기/숨기기
+
+	// 1차 메뉴 클릭 시 2차 메뉴 보이기/숨기기
+		$(".menu-item > .menuBox .menu-title").click(function() {
+			$(this).closest(".menu-item").find(".sub-menu").slideToggle();
+		});
+
+		// 2차 메뉴 클릭 시 3차 메뉴 보이기/숨기기
+		$(".submenu-item > .menuBox .menu-title").click(function(e) {
+			e.stopPropagation(); // 이벤트 버블링 방지
+			$(this).closest(".submenu-item").find(".sub-sub-menu").slideToggle();
 		});
 
 		// 저장 버튼 클릭 시
@@ -258,8 +177,7 @@
 																						"close");
 																	}
 																},
-																open : function() {
-																	// "등록" 버튼만 스타일 적용
+																open : function() {// "등록" 버튼만 스타일 적용
 																	$(
 																			".ui-dialog-buttonpane button:contains('등록')")
 																			.css(

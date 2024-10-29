@@ -10,19 +10,17 @@
 	<table>
 		<colgroup>
 			<col style="width: 15%;">
-			<!-- 회원 ID 열 -->
 			<col style="width: 20%;">
-			<!-- 이름 열 -->
-			<col style="width: 20%;">
-			<!-- 이메일 열 -->
 			<col style="width: 15%;">
-			<!-- 작업 열 -->
+			<col style="width: 20%;">
+			<col style="width: 15%;">
 		</colgroup>
 		<thead>
 			<tr>
 				<th>회원 ID</th>
 				<th>이름</th>
-				<th>이메일</th>
+				<th>권한</th>
+				<th>가입시간</th>
 				<th>관리</th>
 				<!-- 버튼을 위한 헤더 추가 -->
 			</tr>
@@ -32,7 +30,8 @@
 				<tr>
 					<td>${mberList.mberId}</td>
 					<td>${mberList.mberName}</td>
-					<td>${mberList.mberEmail}</td>
+					<td>${mberList.mberAuth}</td>
+					<td>${mberList.mberDate}</td>
 					<td class="button-cell">
 						<button class="btn edit-btn" data-id="<c:out value="${mberList.mberSeq}"/>">수정</button>
 						<button class="btn delete-btn">삭제</button>
