@@ -95,7 +95,15 @@
 			// 서브 메뉴가 있는 경우 이곳에 추가
 			};
 			// 서브 메뉴 추가 로직 (예시)
-			if (item.subMenuYn === "Y") {
+			if (item.menuLev === "1") {
+				node.children.push({
+					id : item.menuId,
+					text : item.menuNm,
+					a_attr : {
+						href : item.menuUrl
+					}
+				});
+			} else if (item.menuLev === "2") {
 				node.children.push({
 					id : item.menuId,
 					text : item.menuNm,
