@@ -1,31 +1,76 @@
 @charset "UTF-8";
 
 
-/* 박스 스타일 추가 */
-.itemBox {
-	display: flex; /* flexbox 사용으로 수평 정렬 */
-	justify-content: space-between; /* 양쪽 끝 정렬 */
+/* 메뉴 트리의 스타일 설정 */
+#menuTree {
+	width: 80%; /* 전체 너비의 80% 사용 */
+	margin: 20px auto; /* 수평 중앙 정렬 및 위쪽에 20px 여백 추가 */
+	padding: 10px; /* 패딩 추가 (선택 사항) */
+	border: 1px solid #ddd; /* 경계선 추가 (선택 사항) */
+	border-radius: 5px; /* 모서리 둥글게 (선택 사항) */
+}
+
+/* 메뉴 항목 스타일 조정 */
+.jstree .jstree-anchor {
+	padding: 25px 20px; /* 패딩 조정 */
+	font-size: 20px; /* 폰트 크기 조정 */
+	margin-bottom: 15px; /* 메뉴 항목 간의 간격 추가 */
+	display: flex; /* flexbox 사용 */
 	align-items: center; /* 세로 중앙 정렬 */
-	height: 60px;
-	width: 85%;
-	padding: 10px;
-	margin: 5px;
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	background-color: #f9f9f9;
-	cursor: pointer;
+	transition: background-color 0.3s; /* 배경색 변화에 대한 부드러운 전환 추가 */
+	border: 1px solid #ddd; /* 노드 테두리 추가 */
+	border-radius: 4px; /* 테두리 둥글게 */
+	margin-bottom: 22px; /* 노드 간의 간격 추가 */
 }
 
-.treeview-black li {
-    position: relative; /* position 속성을 relative로 설정 */
+/* hover 시 스타일 설정 */
+.jstree .jstree-anchor:hover {
+	background-color: #e0e0e0 !important; /* 원하는 배경색 */
+	color: #000 !important; /* 글자색 변경 */
 }
 
-.sortable-placeholder {
-    background-color: #f0f0f0; /* 자리 표시자 색상 */
-    border: 1px dashed #ccc; /* 자리 표시자 테두리 */
-    height: 40px; /* 원래 요소의 높이와 일치 */
-    margin: 5px 0; /* 원래 요소의 여백과 일치 */
-    padding: 10px; /* 원래 요소의 여백과 일치 */
-    visibility: visible; /* 자리 표시자를 보이도록 설정 */
+/* jsTree의 기본 아이콘을 숨김 */
+.jstree .jstree-icon {
+	display: none; /* 기본 아이콘을 숨김 */
+}
+
+/* 작대기 아이콘 추가 */
+.jstree .jstree-anchor::before {
+	content: '≡'; /* 작대기 세 개 기호 */
+	font-size: 20px; /* 크기 조정 */
+	margin-right: 10px; /* 아이콘과 텍스트 사이의 간격 */
+	color: #000; /* 아이콘 색상 */
+	vertical-align: middle; /* 텍스트와 아이콘을 수직 정렬 */
+}
+
+/* 선택된 노드에 대한 기본 스타일 오버라이드 */
+.jstree .jstree-wholerow.jstree-clicked {
+	background-color: transparent !important; /* 선택된 노드 배경색 제거 */
+	border: none; /* 테두리 제거 */
+}
+.jstree-wholerow {
+background-color: transparent !important; /* 기본 배경색 제거 */
+}
+/* wholerow 플러그인 hover 스타일 덮어쓰기 */
+.jstree .jstree-wholerow-hover {
+    background-color: transparent !important; /* 기본 hover 배경 제거 */
+}
+
+.jstree-hovered {
+	background-color: #e0e0e0 !important; /* 원하는 배경색으로 지정 */
+}
+
+/* 각 노드에 있는 버튼 컨테이너 스타일 */
+.menu-buttons {
+	margin-left: auto; /* 오른쪽 끝으로 정렬 */
+	display: flex; /* 버튼을 flexbox로 정렬 */
+	gap: 10px; /* 버튼 간의 간격 추가 */
+}
+
+.menu-buttons button {
+	padding: 8px 12px; /* 버튼 패딩 조정 */
+	font-size: 14px; /* 버튼 폰트 크기 조정 */
+	border-radius: 4px; /* 버튼 모서리 둥글게 */
+	cursor: pointer; /* 커서 포인터 변경 */
 }
 
