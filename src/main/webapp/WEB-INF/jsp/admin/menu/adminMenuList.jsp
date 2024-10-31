@@ -8,6 +8,33 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
 
 <style>
+    /* 메뉴 트리의 스타일 설정 */
+    #menuTree {
+        width: 80%; /* 전체 너비의 80% 사용 */
+        height:auto;
+        max-width: 800px; /* 최대 너비를 800px로 제한 */
+        margin: 20px auto; /* 수평 중앙 정렬 및 위쪽에 20px 여백 추가 */
+        padding: 10px; /* 패딩 추가 (선택 사항) */
+        border: 1px solid #ddd; /* 경계선 추가 (선택 사항) */
+        border-radius: 5px; /* 모서리 둥글게 (선택 사항) */
+    }
+
+    /* 메뉴 항목 스타일 조정 */
+    .jstree .jstree-anchor {
+        padding: 10px 15px; /* 상하 및 좌우 패딩 조정 */
+        font-size: 18px; /* 폰트 크기 조정 */
+        margin-bottom: 10px; /* 메뉴 항목 간의 간격 추가 */
+        display: flex; /* flexbox 사용 */
+        align-items: center; /* 세로 중앙 정렬 */
+        transition: background-color 0.3s; /* 배경색 변화에 대한 부드러운 전환 추가 */
+    }
+
+    /* hover 시 스타일 설정 */
+    .jstree .jstree-anchor:hover {
+        background-color: #e0e0e0; /* hover 시 배경색 변경 */
+        color: #000; /* hover 시 글자색 변경 */
+    }
+
     /* jsTree의 기본 아이콘을 숨김 */
     .jstree .jstree-icon {
         display: none; /* 기본 아이콘을 숨김 */
