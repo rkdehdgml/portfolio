@@ -33,7 +33,7 @@ public class MenuController {
 	private CommandService commandService;
 
 	/**
-	 * 관리자페이지 메뉴리스트
+	 * 관리자페이지 메뉴리스트 페이지
 	 * 
 	 * @param request
 	 * @param response
@@ -41,35 +41,36 @@ public class MenuController {
 	 * @param model
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/admin/adminMenuList.do")
-	public String adminMenuListPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap,
-			Model model) {
-		// 테스트용 메뉴 리스트
-		List<Map<String, Object>> adminMenuList = TestData.menuList();
-
-		// 2차 및 3차 메뉴를 담을 리스트
-		List<Map<String, Object>> secMenuList = new ArrayList<>();
-		List<Map<String, Object>> tirdMenuList = new ArrayList<>();
-
-		// 1차 메뉴를 순회하면서 하위 메뉴를 계층 구조로 설정
-		for (Map<String, Object> menuMap : adminMenuList) {
-			String menuLev = menuMap.get("menuLev").toString();
-
-			if (menuLev.equals("2")) { // 2차 메뉴일 경우
-				secMenuList.add(menuMap);
-			} else if (menuLev.equals("3")) { // 3차 메뉴일 경우
-				tirdMenuList.add(menuMap);
-			}
-		}
-
-		// 최종 메뉴 구조 설정
-		model.addAttribute("adminMenuList", adminMenuList);
-		model.addAttribute("secMenuList", secMenuList);
-		model.addAttribute("tirdMenuList", tirdMenuList);
+	public String adminMenuListPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
 		model.addAttribute("content", "/admin/menu/adminMenuList.jsp");
 
 		return CommandUtil.getAdminLayout();
+	}
+	
+	@RequestMapping(value="/admin/adminMenuJson.do")
+	public void adminMenuList(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
+		try {
+			List<Map<String,Object>> menuList = TestData.menuList();
+			Gson gson = new Gson();
+			PrintWriter out = null;
+
+			try {
+				response.setCharacterEncoding("utf-8");
+				String json = gson.toJson(menuList);
+				out = response.getWriter();
+				out.print(json);
+			} catch (IOException e) {
+				CommandLogger.debug(e, this.getClass(), "adminMenuInsert");
+			} finally {
+				if (out != null) {
+					out.flush();
+					out.close();
+				}
+			}
+		} catch (Exception e) {
+			CommandLogger.debug(e, this.getClass(), "adminMenuInsert");
+		}
 	}
 
 	/**
