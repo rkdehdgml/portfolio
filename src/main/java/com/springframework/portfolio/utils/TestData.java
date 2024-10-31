@@ -45,6 +45,7 @@ public class TestData {
 		map1.put("menuType", "A");
 		map1.put("menuUrl", "/admin/mberList.do");
 		map1.put("menuYn", "Y");
+		map1.put("subMenuYn", "Y");
 		list.add(map1);
 		//리스트에 담을 맵
 		Map<String, Object> map2 = new HashMap<>();
@@ -55,6 +56,7 @@ public class TestData {
 		map2.put("menuType", "A");
 		map2.put("menuUrl", "/admin/mberList.do");
 		map2.put("menuYn", "Y");
+		map2.put("subMenuYn", "Y");
 		list.add(map2);
 		//리스트에 담을 맵
 		Map<String, Object> map3 = new HashMap<>();

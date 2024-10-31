@@ -1,285 +1,95 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" type="text/css" href="/css/admin/menuAdminMange.css">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<!-- CSS (jsTree 스타일 적용) -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css">
+
+<!-- JavaScript (jQuery 및 jsTree 로드) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
+
 <style>
-/* 기본적으로 하위 메뉴를 숨기기 */
-.sub-menu, .sub-sub-menu {
-	display: none;
-}
+    /* jsTree의 기본 아이콘을 숨김 */
+    .jstree .jstree-icon {
+        display: none; /* 기본 아이콘을 숨김 */
+    }
+
+    /* 작대기 아이콘 추가 */
+    .jstree .jstree-anchor::before {
+        content: '≡'; /* 작대기 세 개 기호 */
+        font-size: 16px; /* 크기 조정 */
+        margin-right: 5px; /* 아이콘과 텍스트 사이의 간격 */
+        color: #000; /* 아이콘 색상 */
+        vertical-align: middle; /* 텍스트와 아이콘을 수직 정렬 */
+    }
 </style>
+
 <h2 style="font-size: 40px; font-weight: bold;">관리자페이지 메뉴 정보</h2>
 <div class="button-container">
-	<button class="btn register-btn">등록</button>
-	<button id="saveBtn" class="btn list-btn">순서적용</button>
+    <button class="btn register-btn">등록</button>
+    <button id="saveBtn" class="btn list-btn">순서적용</button>
 </div>
-<form method="post" id="menuListForm">
-	<input type="hidden" name="menuId" id="menuId" value="" />
-	<ul id="sortable-menu" class="menu-list">
-		<c:forEach var="menuList" items="${adminMenuList}">
-			<c:choose>
-				<c:when test="${empty menuList}">
-					<p>메뉴가 없습니다.</p>
-				</c:when>
-				<c:otherwise>
-					<li class="menu-item" data-id="1">
-						<!-- 1차 메뉴 -->
-						<div class="menuBox">
-							<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
-							<div class="menu-buttons">
-								<button class="btn edit-btn">수정</button>
-								<button class="btn delete-btn">삭제</button>
-							</div>
-						</div>
-						<!-- 서브메뉴 시작 -->
-						<ul class="submm" style="display: none;">
-							<!-- 2차메뉴 -->
-							<li class="submenu-item">
-								<div class="menuBox">
-									<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
-									<div class="menu-buttons">
-										<button class="btn edit-btn">수정</button>
-										<button class="btn delete-btn">삭제</button>
-									</div>
-								</div>
-							</li>
-							<!-- 3차메뉴 -->
-							<li class="submenu-item">
-								<div class="menuBox">
-									<span class="menu-title"><c:out value="${menuList.menuNm}"/></span>
-									<div class="menu-buttons">
-										<button class="btn edit-btn">수정</button>
-										<button class="btn delete-btn">삭제</button>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</li>
-				</c:otherwise>
-			</c:choose>
-		</c:forEach>
-	</ul>
-</form>
-<!-- 메뉴 등록창 -->
-<div id="insertPopup"></div>
-<!-- 메뉴 수정창 -->
-<div id="updatePopup"></div>
+
+<div id="menuTree">
+    <ul>
+        <!-- 첫 번째 메뉴 -->
+        <li id="menu1">메뉴1
+            <ul>
+                <li id="menu1-1">메뉴1-1
+                    <ul>
+                        <li id="menu1-1-1">메뉴1-1-1</li>
+                    </ul>
+                </li>
+                <li id="menu1-2">메뉴1-2
+                    <ul>
+                        <li id="menu1-2-1">메뉴1-2-1</li>
+                    </ul>
+                </li>
+                <li id="menu1-3">메뉴1-3</li>
+            </ul>
+        </li>
+        <!-- 두 번째 메뉴 -->
+        <li id="menu2">메뉴2
+            <ul>
+                <li id="menu2-1">메뉴2-1
+                    <ul>
+                        <li id="menu2-1-1">메뉴2-1-1</li>
+                    </ul>
+                </li>
+                <li id="menu2-2">메뉴2-2</li>
+                <li id="menu2-3">메뉴2-3</li>
+            </ul>
+        </li>
+    </ul>
+</div>
 
 <script>
-	$(function() {
-		// jQuery UI의 sortable 기능 적용
-		$("#sortable-menu").sortable();
-		$("#sortable-menu").disableSelection();
+    $(document).ready(function() {
+        // jsTree 초기화
+        $('#menuTree').jstree({
+            "core": {
+                "check_callback": true, // 트리 구조 변경 가능하게 설정
+                "themes": {
+                    "responsive": true // 반응형 설정
+                }
+            },
+            "plugins": ["dnd", "contextmenu", "state", "wholerow"], // 드래그 앤 드롭, 컨텍스트 메뉴, 전체 행 선택 플러그인 추가
+            "types": {
+                "default": {
+                    "icon": false // 기본 아이콘 숨김
+                }
+            }
+        });
 
+        // 클릭 시 노드 접히거나 펼치기
+        $('#menuTree').on("select_node.jstree", function (e, data) {
+            // 선택한 노드가 열려있다면 닫고, 닫혀있다면 연다
+            $('#menuTree').jstree().toggle_node(data.node);
+        });
 
-	// 1차 메뉴 클릭 시 2차 메뉴 보이기/숨기기
-		$(".menu-item > .menuBox .menu-title").click(function() {
-			$(this).closest(".menu-item").find(".sub-menu").slideToggle();
-		});
-
-		// 2차 메뉴 클릭 시 3차 메뉴 보이기/숨기기
-		$(".submenu-item > .menuBox .menu-title").click(function(e) {
-			e.stopPropagation(); // 이벤트 버블링 방지
-			$(this).closest(".submenu-item").find(".sub-sub-menu").slideToggle();
-		});
-
-		// 저장 버튼 클릭 시
-		$("#saveBtn").click(function() {
-			var order = [];
-
-			// 현재 메뉴의 순서를 배열로 저장
-			$("#sortable-menu .menu-item").each(function() {
-				var id = $(this).data("id");
-				order.push(id);
-			});
-
-			$.ajax({
-				type : "POST",
-				url : "/admin/adminMenuInsert.do",
-				data : {
-					order : order
-				},
-				traditional : true,
-				success : function(response) {
-					alert("메뉴 순서가 저장되었습니다!");
-				},
-				error : function(response) {
-					alert("저장 실패: ");
-				}
-			});
-		});
-
-		// 등록 버튼 클릭 시 모달 열기
-		$('.register-btn')
-				.click(
-						function() {
-							$
-									.ajax({
-										type : 'POST',
-										url : '/admin/menuInsertPage.do',
-										data : $('#menuListForm').serialize(),
-										dataType : 'html',
-										success : function(data) {
-											$("#insertPopup").html(data);
-											$("#insertPopup")
-													.dialog(
-															{
-																modal : true,
-																width : 900,
-																height : 700,
-																escapeClose : true,
-																title : '메뉴등록',
-																buttons : {
-																	"등록" : function() {
-																		if ($(
-																				"#menuNm")
-																				.val() == "") {
-																			alert("메뉴명을 입력하세요.");
-																			$(
-																					"#menuNm")
-																					.focus();
-																		} else if ($(
-																				"#menuUrl")
-																				.val() == "") {
-																			alert("메뉴url를 입력하세요");
-																			$(
-																					"#menuUrl")
-																					.focus();
-																		} else {
-																			//등록
-																			$
-																					.ajax({
-																						type : "POST",
-																						url : "/admin/adminMenuInsert.do",
-																						data : $(
-																								'#popInsertForm')
-																								.serialize(),
-																						dataType : "json",
-																						success : function(
-																								data) {
-																							alert("등록 되었습니다.")
-																							$(
-																									"#insertPopup")
-																									.dialog(
-																											"close");
-																						},
-																						error : function(
-																								data) {
-																							alert("오류가 발생했습니다.")
-																						}
-																					})
-																		}
-																	},
-																	"닫기" : function() {
-																		$(
-																				"#insertPopup")
-																				.dialog(
-																						"close");
-																	}
-																},
-																open : function() {// "등록" 버튼만 스타일 적용
-																	$(
-																			".ui-dialog-buttonpane button:contains('등록')")
-																			.css(
-																					{
-																						"background-color" : "#007bff",
-																						"color" : "#fff"
-																					});
-																}
-															});
-										},
-										error : function(data) {
-											alert("오류가 발생했습니다.");
-										}
-									});
-						});
-
-		// 수정 버튼 클릭 시 팝업 열기
-		$('.edit-btn')
-				.click(
-						function() {
-							event.preventDefault(); // form제출로 인하여 막음
-							$
-									.ajax({
-										type : 'POST',
-										url : '/admin/menuUpdatePage.do',
-										data : $('#menuListForm').serialize(),
-										dataType : 'html',
-										success : function(data) {
-											console.log($("#updatePopup"));
-											$("#updatePopup").html(data);
-											$("#updatePopup")
-													.dialog(
-															{
-																modal : true,
-																width : 900,
-																height : 700,
-																escapeClose : true,
-																title : '메뉴수정',
-																buttons : {
-																	"등록" : function() {
-																		if ($(
-																				"#menuNm")
-																				.val() == "") {
-																			alert("메뉴명을 입력하세요.");
-																			$(
-																					"#menuNm")
-																					.focus();
-																		} else if ($(
-																				"#menuUrl")
-																				.val() == "") {
-																			alert("메뉴url를 입력하세요");
-																			$(
-																					"#menuUrl")
-																					.focus();
-																		} else {
-																			//등록
-																			$
-																					.ajax({
-																						type : "POST",
-																						url : "/admin/adminMenuUpdate.do",
-																						data : $(
-																								'#popUpdateForm')
-																								.serialize(),
-																						dataType : "json",
-																						success : function(
-																								data) {
-																							alert("수정 되었습니다.")
-																							$(
-																									"#updatePopup")
-																									.dialog(
-																											"close");
-																						},
-																						error : function(
-																								data) {
-																							alert("오류가 발생했습니다.")
-																						}
-																					})
-																		}
-																	},
-																	"닫기" : function() {
-																		$(
-																				"#updatePopup")
-																				.dialog(
-																						"close");
-																	}
-																},
-																open : function() {
-																	// "등록" 버튼만 스타일 적용
-																	$(
-																			".ui-dialog-buttonpane button:contains('등록')")
-																			.css(
-																					{
-																						"background-color" : "#007bff",
-																						"color" : "#fff"
-																					});
-																}
-															});
-										},
-										error : function(data) {
-											alert("오류가 발생했습니다.");
-										}
-									});
-						});
-	});
+        // 노드 추가 예시
+        $('#menuTree').on("ready.jstree", function() {
+            // 트리가 로드된 후 필요한 초기 작업을 수행할 수 있습니다.
+            console.log("jsTree가 초기화되었습니다.");
+        });
+    });
 </script>
