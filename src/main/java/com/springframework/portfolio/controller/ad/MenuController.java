@@ -185,7 +185,9 @@ public class MenuController {
 	 * @return
 	 */
 	@RequestMapping(value = "/admin/menuUpdatePage.do")
-	public String adminMenuUpdatePage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
+	public String adminMenuUpdatePage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
+		List<Map<String,Object>> menuList = TestData.menuList();
+		model.addAttribute("menuList", menuList);
 		return "/admin/menu/menuUpdate";
 	}
 
@@ -199,8 +201,7 @@ public class MenuController {
 	 * @return
 	 */
 	@RequestMapping(value = "/admin/userMenuList.do")
-	public String userMenuListPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap,
-			Model model) {
+	public String userMenuListPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap,Model model) {
 		model.addAttribute("content", "/admin/menu/userMenuList.jsp");
 		return CommandUtil.getAdminLayout();
 	}
@@ -238,6 +239,37 @@ public class MenuController {
 			}
 		} catch (Exception e) {
 			CommandLogger.debug(e, this.getClass(), "adminMenuInsert");
+		}
+	}
+	
+	@RequestMapping(value="/admin/selectMenuListData.do")
+	public void selectMenuListData(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
+		try {
+			List<Map<String,Object>> menuList = TestData.menuList();
+			for (int i=0; i < menuList.size(); i++) {
+				Map<String, Object> menuMap = menuList.get(i);
+				if(!menuMap.get("menuType").equals("U")) {
+					menuList.remove(i);
+				}
+			}
+			Gson gson = new Gson();
+			PrintWriter out = null;
+
+			try {
+				response.setCharacterEncoding("utf-8");
+				String json = gson.toJson(menuList);
+				out = response.getWriter();
+				out.print(json);
+			} catch (IOException e) {
+				CommandLogger.debug(e, this.getClass(), "selectMenuListData");
+			} finally {
+				if (out != null) {
+					out.flush();
+					out.close();
+				}
+			}
+		} catch (Exception e) {
+			CommandLogger.debug(e, this.getClass(), "selectMenuListData");
 		}
 	}
 }

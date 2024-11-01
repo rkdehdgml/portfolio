@@ -44,7 +44,7 @@
 					<select name="menuType">
 						<option value="" title="선택">선택</option>
 						<c:forEach var="menuList" items="${menuList}">
-							<option value="<c:out value="${menuList.menuId}"/>" title="<c:out value="${menuList.menuId}"/>"><c:out value="${menuList.menuNm}"/>(<c:out value="${menuList.menuId}"/>)</option>
+							<option value="<c:out value="${menuList.menuSeq}"/>" title="<c:out value="${menuList.menuSeq}"/>"><c:out value="${menuList.menuNm}"/></option>
 						</c:forEach>
 					</select>
 				</td>
@@ -59,3 +59,41 @@
 		</table>
 	</form>
 </div>
+<script>
+$(document).ready(function() {
+	// 초기 로드 시 기본 메뉴 설정
+	updateParentMenu();
+
+	// 라디오 버튼 클릭 시 메뉴 업데이트
+	$('input[name="menuType"]').on('change', function() {
+		updateParentMenu();
+	});
+
+	function updateParentMenu() {
+		// 선택된 메뉴 타입 가져오기
+		const selectedType = $('input[name="menuType"]:checked').val();
+		const $parentMenu = $('#parentMenu');
+
+		// 기존 옵션 초기화
+		$parentMenu.empty();
+		$parentMenu.append('<option value="">선택</option>');
+
+		// AJAX 요청하여 메뉴 가져오기
+		$.ajax({
+			url: '/admin/selectMenuListData.do', // 서버의 URL (예: /getMenuList)
+			method: 'GET',
+			data: { menuType: selectedType }, // 선택된 메뉴 타입 전달
+			dataType:"json",
+			success: function(data) {
+				// 서버로부터 받은 데이터를 기반으로 옵션 추가
+				$.each(data, function(index, menu) {
+					$parentMenu.append('<option value="' + menu.value + '">' + menu.name + '</option>');
+				});
+			},
+			error: function() {
+				alert("오류가 발생했습니다.");
+			}
+		});
+	}
+});
+</script>
