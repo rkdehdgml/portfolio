@@ -44,7 +44,6 @@ public class MenuController {
 	@RequestMapping(value = "/admin/adminMenuList.do")
 	public String adminMenuListPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
 		model.addAttribute("content", "/admin/menu/adminMenuList.jsp");
-
 		return CommandUtil.getAdminLayout();
 	}
 	
@@ -54,7 +53,7 @@ public class MenuController {
 	 * @param response
 	 */
 	@RequestMapping(value="/admin/adminMenuJson.do")
-	public void adminMenuJson(HttpServletRequest request, HttpServletResponse response) {
+	public void adminMenuJson(HttpServletRequest request, HttpServletResponse response,Model model) {
 		try {
 			List<Map<String,Object>> menuList = TestData.menuList();
 			for (int i=0; i < menuList.size(); i++) {
@@ -93,7 +92,9 @@ public class MenuController {
 	 * @return
 	 */
 	@RequestMapping(value = "/admin/menuInsertPage.do")
-	public String adminMenuInsertPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
+	public String adminMenuInsertPage(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap,Model model) {
+		List<Map<String,Object>> menuList = TestData.menuList();
+		model.addAttribute("menuList", menuList);
 		return "/admin/menu/menuInsert";
 	}
 

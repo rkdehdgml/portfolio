@@ -29,11 +29,15 @@
 			<c:forEach var="mberList" items="${mberList}">
 				<tr>
 					<td>${mberList.mberId}</td>
-					<td>${mberList.mberName}</td>
-					<td>${mberList.mberAuth}</td>
+					<td>${mberList.mberNm}</td>
+					<td>
+						<c:if test="${mberList.mberAuth eq 'A'}">
+							관리자
+						</c:if>
+					</td>
 					<td>${mberList.mberDate}</td>
 					<td class="button-cell">
-						<button class="btn edit-btn" data-id="<c:out value="${mberList.mberSeq}"/>">수정</button>
+						<button class="btn edit-btn" id="update" data-id="<c:out value="${mberList.mberSeq}"/>">수정</button>
 						<button class="btn delete-btn">삭제</button>
 					</td>
 	
@@ -50,8 +54,8 @@ $(document).ready(function(){
 		$('#mberListForm').attr('action','/admin/mberInsertPage.do').submit();
 	});
 	//수정
-	$('.edit-btn').click(function(){
-		const mberSeq = $(this).attr("data-id");
+	$('#update').click(function(){
+		var mberSeq = $(this).attr("data-id");
 		$("#mberSeq").val(mberSeq);
 		$('#mberListForm').attr('action','/admin/mberUpdatePage.do').submit();
 	});

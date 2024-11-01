@@ -26,18 +26,34 @@
 				</td>
 			</tr>
 			<tr>
-				<th>링크</th>
+				<th>메뉴타입</th>
 				<td>
-					<input type="text" name="menuUrl" placeholder="연결할 메뉴 Url를 입력하세요." />
+					<input type="radio" id="mberType" name="mberType" value="A"><label for="mberType">관리자메뉴</label>
+					<input type="radio" id="mberType" name="mberType" value="U"><label for="mberType">사용자메뉴</label>
+				</td>
+			</tr>
+			<tr>
+				<th>연결url</th>
+				<td>
+					<input type="text" name="menuUrl" placeholder="연결할 메뉴 Url를 입력하세요." style="width:500px;" />
+				</td>
+			</tr>
+			<tr>
+				<th>상위메뉴</th>
+				<td>
+					<select name="menuType">
+						<option value="" title="선택">선택</option>
+						<c:forEach var="menuList" items="${menuList}">
+							<option value="<c:out value="${menuList.menuId}"/>" title="<c:out value="${menuList.menuId}"/>"><c:out value="${menuList.menuNm}"/>(<c:out value="${menuList.menuId}"/>)</option>
+						</c:forEach>
+					</select>
 				</td>
 			</tr>
 			<tr>
 				<th>사용여부</th>
 				<td>
-					<select name="menuYn">
-						<option value="Y">사용</option>
-						<option value="N">미사용</option>
-					</select>
+					<input type="radio" id="menuYn" name="menuYn" value="Y" checked><label for="menuYn">사용</label>
+					<input type="radio" id="menuYn" name="menuYn" value="N"><label for="menuYn">미사용</label>
 				</td>
 			</tr>
 		</table>

@@ -1,24 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <form method="post" id="insertForm">
 	<table class="form-table">
 		<tr>
-			<th>아이디</th>
-			<td><input type="text" id="mberId" name="mberId" required></td>
+			<th>게시판ID</th>
+			<td><input type="text" id="boardId" name="boardId" required></td>
 		</tr>
 		<tr>
-			<th>비밀번호</th>
-			<td><input type="text" id="mberPw" name="mberPw" required></td>
+			<th>게시판명</th>
+			<td><input type="text" id="boardNm" name="boardNm" required></td>
 		</tr>
 		<tr>
-			<th>이름</th>
-			<td><input type="text" id="mberName" name="mberName" required></td>
+			<th>연결게시물명</th>
+			<td><input type="text" id="boardNm" name="boardNm" required></td>
 		</tr>
 		<tr>
-			<th>권한</th>
+			<th>사용여부</th>
 			<td>
-				<input type="radio" id="mberAuth" name="mberAuth" value="A"><label for="mberAuth">관리자</label>
-				<input type="radio" id="mberAuth" name="mberAuth" value="U"><label for="mberAuth">사용자</label>
+				<input type="radio" id="boardYn" name="boardYn" value="Y"><label for="boardYn">사용</label>
+				<input type="radio" id="boardYn" name="boardYn" value="N"><label for="boardYn">미사용</label>
 			</td>
 		</tr>
 	</table>
@@ -61,3 +61,4 @@ $(document).ready(function(){
 
 
 </script>
+    

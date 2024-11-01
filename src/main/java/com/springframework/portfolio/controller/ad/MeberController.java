@@ -45,9 +45,9 @@ public class MeberController {
 	public String menuList(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
 		try {
 			//회원정보 리스트 조회
-			List<Map<String, Object>> mberList = commandService.selectList("mb_mber.selectMberAllList", null);
+//			List<Map<String, Object>> mberList = commandService.selectList("mb_mber.selectMberAllList", null);
 			//테스트용 회원리스트 조회
-//			List<Map<String, Object>> mberList = TestData.mberList();
+			List<Map<String, Object>> mberList = TestData.mberList();
 			model.addAttribute("mberList", mberList);
 			model.addAttribute("content", "/admin/member/mberList.jsp");
 		} catch (Exception e) {
@@ -119,13 +119,13 @@ public class MeberController {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/admin/mberUpdatePage.do")
 	public String mberUpdatePage (HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
-		try {
-			Map<String, Object> mberInfo = commandService.selectMap("mb_mber.selectMberUpdateInfo", commonMap.getMap());
-			model.addAttribute("mberInfo", mberInfo);
-		} catch (Exception e) {
-			CommandLogger.debug(e, this.getClass(), "mberUpdatePage");
-		}
-		model.addAttribute("commonMap", commonMap.getMap());
+//		try {
+//			Map<String, Object> mberInfo = commandService.selectMap("mb_mber.selectMberUpdateInfo", commonMap.getMap());
+//			model.addAttribute("mberInfo", mberInfo);
+//		} catch (Exception e) {
+//			CommandLogger.debug(e, this.getClass(), "mberUpdatePage");
+//		}
+//		model.addAttribute("commonMap", commonMap.getMap());
 		model.addAttribute("content", "/admin/member/mberUpdate.jsp");
 		return CommandUtil.getAdminLayout();
 	}

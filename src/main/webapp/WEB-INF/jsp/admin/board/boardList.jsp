@@ -24,13 +24,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="mberList" items="${mberList}">
+			<c:forEach var="boardList" items="${boardList}">
 				<tr>
-					<td>${mberList.MBER_ID}</td>
-					<td>${mberList.MBER_NAME}</td>
-					<td>${mberList.MBER_EMAIL}</td>
+					<td>${boardList.boardId}</td>
+					<td>${boardList.boardNm}</td>
+					<td>${boardList.MBER_EMAIL}</td>
 					<td class="button-cell">
-						<button class="btn edit-btn" data-id="<c:out value="${mberList.MBER_SEQ}"/>">수정</button>
+						<button class="btn edit-btn" data-id="<c:out value="${boardList.MBER_SEQ}"/>">수정</button>
 						<button class="btn delete-btn">삭제</button>
 					</td>
 	
@@ -39,3 +39,9 @@
 		</tbody>
 	</table>
 </form>
+<script>
+//등록페이지
+$('.register-btn').click(function(){
+	$('#mberListForm').attr('action','/admin/boardInsertPage.do').submit();
+});
+</script>

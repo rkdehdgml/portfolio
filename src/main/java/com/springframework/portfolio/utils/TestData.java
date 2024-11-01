@@ -20,10 +20,11 @@ public class TestData {
 		List<Map<String, Object>> list = new ArrayList<>();
 		//리스트에 담을 맵
 		Map<String, Object> map = new HashMap<>();
-		map.put("MBER_SEQ", 1);
-		map.put("MBER_ID", "admin");
-		map.put("MBER_PW", "admin");
-		map.put("MBER_NM", "관리자");
+		map.put("mberSeq", 1);
+		map.put("mberId", "admin");
+		map.put("mberNm", "관리자");
+		map.put("mberAuth", "A");
+		map.put("mberDate", "2024-11-01");
 		list.add(map);
 		return list;
 	}
@@ -112,7 +113,7 @@ public class TestData {
 	    Map<String, Object> map7 = new HashMap<>();
 	    map7.put("mberSeq", 3);
 	    map7.put("menuId", "MN7");
-	    map7.put("menuNm", "회원리스트");
+	    map7.put("menuNm", "프로젝트");
 	    map7.put("menuLev", "2");
 	    map7.put("menuType", "U");
 	    map7.put("menuUrl", "/admin/memberList.do");
@@ -124,7 +125,7 @@ public class TestData {
 	    Map<String, Object> map8 = new HashMap<>();
 	    map8.put("mberSeq", 4);
 	    map8.put("menuId", "MN8");
-	    map8.put("menuNm", "회원등록");
+	    map8.put("menuNm", "장래희망");
 	    map8.put("menuLev", "2");
 	    map8.put("menuType", "U");
 	    map8.put("menuUrl", "/admin/thirdMenu.do");
@@ -145,10 +146,10 @@ public class TestData {
 		List<Map<String, Object>> list = new ArrayList<>();
 		//리스트에 담을 맵
 		Map<String, Object> map = new HashMap<>();
-		map.put("BOARD_SEQ", 1);
-		map.put("MENU_SEQ", 1);
-		map.put("BOARD_ID", "BD1");
-		map.put("BOARD_NM", "자기소개");
+		map.put("boardSeq", 1);
+		map.put("menuSeq", 1);
+		map.put("boardId", "BD1");
+		map.put("boardNm", "자기소개");
 		list.add(map);
 		return list;
 	}

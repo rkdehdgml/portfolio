@@ -74,14 +74,13 @@ tbody tr:hover {
 }
 
 .form-table input {
-	width: 100%;
+/* 	width: 100%; */
 	padding: 10px;
 	font-size: 16px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	box-sizing: border-box;
 }
-
 /*
 ------------------------------관리자페이지 공통 btn---------------------------
 */
