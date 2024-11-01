@@ -3,8 +3,9 @@
 
 /* 메뉴 트리의 스타일 설정 */
 #menuTree {
-	width: 80%; /* 전체 너비의 80% 사용 */
+	width: 90%; /* 전체 너비의 80% 사용 */
 	margin: 20px auto; /* 수평 중앙 정렬 및 위쪽에 20px 여백 추가 */
+	margin-top: 70px;
 	padding: 10px; /* 패딩 추가 (선택 사항) */
 	border: 1px solid #ddd; /* 경계선 추가 (선택 사항) */
 	border-radius: 5px; /* 모서리 둥글게 (선택 사항) */

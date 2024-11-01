@@ -1,199 +1,90 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" type="text/css" href="/css/admin/menuUserMange.css">
+
+<!-- CSS  -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css">
+<link rel="stylesheet" type="text/css" href="/css/admin/menuMange.css">
+
+<!-- jsTree 로드 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
+
+
 <h2 style="font-size: 40px; font-weight: bold;">사용자페이지 메뉴 정보</h2>
 <div class="button-container">
-	<button id="insert" class="btn register-btn">등록</button>
+	<button class="btn register-btn">등록</button>
 	<button id="saveBtn" class="btn list-btn">순서적용</button>
 </div>
-<form method="post" id="mberListForm">
-	<input type="hidden" name="menuSeq" id="menuSeq" value="" />
-	<ul id="sortable-menu" class="menu-list">
-		<li class="menu-item" data-id="1">
-			<span class="menu-title">메뉴 1</span>
-			<div class="menu-buttons">
-				<button class="btn edit-btn">수정</button>
-				<button class="btn delete-btn">삭제</button>
-			</div>
-		</li>
-		<li class="menu-item" data-id="2">
-			<span class="menu-title">메뉴 2</span>
-			<div class="menu-buttons">
-				<button class="btn edit-btn">수정</button>
-				<button class="btn delete-btn">삭제</button>
-			</div>
-		</li>
-		<li class="menu-item" data-id="3">
-			<span class="menu-title">메뉴 3</span>
-			<div class="menu-buttons">
-				<button class="btn edit-btn">수정</button>
-				<button class="btn delete-btn">삭제</button>
-			</div>
-		</li>
-		<li class="menu-item" data-id="4">
-			<span class="menu-title">메뉴 4</span>
-			<div class="menu-buttons">
-				<button class="btn edit-btn">수정</button>
-				<button class="btn delete-btn">삭제</button>
-			</div>
-		</li>
-	</ul>
-</form>
 
-<!-- 메뉴 등록창 -->
-<div id="insertPopup"></div>
-<!-- 메뉴 수정창 -->
-<div id="updatePopup"></div>
+<!-- 메뉴 구역 -->
+<div id="menuTree"></div>
+<!-- 모달창 js -->
+<script src="/js/dialogCustom.js"></script>
+<!-- 모달창 구역 -->
+<div id="insertPopup" style="display:none;"></div>
+<div id="updatePopup" style="display:none;"></div>
 
 <script>
-	$(function() {
-		// jQuery UI의 sortable 기능 적용
-		$("#sortable-menu").sortable();
-		$("#sortable-menu").disableSelection();
-
-		// 저장 버튼 클릭 시
-		$("#saveBtn").click(function() {
-			var order = [];
-
-			// 현재 메뉴의 순서를 배열로 저장
-			$("#sortable-menu .menu-item").each(function() {
-				var id = $(this).data("id");
-				order.push(id);
-			});
-
-			$.ajax({
-				type : "POST",
-				url : "/admin/menuInsert.do",
-				data : {
-					order : order
-				},
-				traditional : true,
-				success : function(response) {
-					alert("메뉴 순서가 저장되었습니다!");
-				},
-				error : function(response) {
-					alert("저장 실패: ");
-				}
-			});
-		});
-		
-		// 등록 버튼 클릭 시 모달 열기
-		$('.register-btn').click(function() {
-			$.ajax({
-				type: 'POST',
-				url: '/admin/menuInsertPage.do',
-				data: $('#menuListForm').serialize(),
-				dataType: 'html',
-				success: function(data) {
-					$("#insertPopup").html(data);
-					$("#insertPopup").dialog({
-						modal: true,
-						width: 900,
-						height: 700,
-						escapeClose : true,
-						title : '메뉴등록',
-						buttons: {
-							"등록": function() {
-								if($("#menuNm").val() == "") {
-									alert("메뉴명을 입력하세요.");
-									$("#menuNm").focus();
-								} else if ($("#menuUrl").val() == "") {
-									alert("메뉴url를 입력하세요");
-									$("#menuUrl").focus();
-								}
-								//등록
-								$.ajax({
-									type : "POST",
-									url  : "/admin/menuInsert.do",
-									data : $('#popInsertForm').serialize(),
-									dataType : "json",
-									success : function(data) {
-										alert("등록 되었습니다.")
-										$("#insertPopup").dialog("close");
-									},
-									error : function (data) {
-										alert("오류가 발생했습니다.")
-									}
-								})
-							},
-							"닫기": function() {
-								 $("#insertPopup").dialog("close");
-							}
-						},
-						open: function() {
-							// "등록" 버튼만 스타일 적용
-							$(".ui-dialog-buttonpane button:contains('등록')").css({
-								"background-color": "#007bff",
-								"color": "#fff"
-							});
+function getJsonData() {
+	$.ajax({
+			type : "GET",
+			url : "/admin/userMenuJson.do",
+			dataType : "json",
+			success : function(data) {
+				var jsonArray = new Array();
+				$.each(data, function(idx, item) {
+					jsonArray[idx] = {id:item.menuId,
+									parent: item.parMenuNm,
+									text:item.menuNm + '<div class="menu-buttons"><button class="btn edit-btn">수정</button><button class="btn delete-btn">삭제</button></div>'}
+				});
+				$('#menuTree').jstree({
+					"core" : {
+						"data" : jsonArray,
+						"check_callback" : true,
+						"themes" : {
+							"responsive" : true
 						}
-					});
-				},
-				error: function(data) {
-					alert("오류가 발생했습니다.");
-				}
-			});
-		});
-		
-		// 수정 버튼 클릭 시 팝업 열기
-		$('.edit-btn').click(function() {
-			event.preventDefault(); // form제출로 인하여 막음
-			$.ajax({
-				type: 'POST',
-				url: '/admin/menuUpdatePage.do',
-				data: $('#menuListForm').serialize(),
-				dataType: 'html',
-				success: function(data) {
-					console.log($("#updatePopup"));
-					$("#updatePopup").html(data);
-					$("#updatePopup").dialog({
-						modal: true,
-						width: 900,
-						height: 700,
-						escapeClose : true,
-						title : '메뉴수정',
-						buttons: {
-							"등록": function() {
-								if($("#menuNm").val() == "") {
-									alert("메뉴명을 입력하세요.");
-									$("#menuNm").focus();
-								} else if ($("#menuUrl").val() == "") {
-									alert("메뉴url를 입력하세요");
-									$("#menuUrl").focus();
-								}
-								//등록
-								$.ajax({
-									type : "POST",
-									url  : "/admin/menuUpdate.do",
-									data : $('#popUpdateForm').serialize(),
-									dataType : "json",
-									success : function(data) {
-										alert("수정 되었습니다.")
-										$("#updatePopup").dialog("close");
-									},
-									error : function (data) {
-										alert("오류가 발생했습니다.")
-									}
-								})
-							},
-							"닫기": function() {
-								$("#updatePopup").dialog("close");
-							}
-						},
-						open: function() {
-							// "등록" 버튼만 스타일 적용
-							$(".ui-dialog-buttonpane button:contains('등록')").css({
-								"background-color": "#007bff",
-								"color": "#fff"
-							});
+					},
+					"plugins" : [ "dnd", "contextmenu", "state", "wholerow" ],
+					"types" : {
+						"default" : {
+							"icon" : false
 						}
-					});
-				},
-				error: function(data) {
-					alert("오류가 발생했습니다.");
-				}
-			});
+					}
+				});
+
+				// 페이지 로드 될 때 모든 노드를 닫음
+				$('#menuTree').on("ready.jstree", function() {
+					$('#menuTree').jstree("close_all");
+				});
+
+				$('#menuTree').on("select_node.jstree", function(e, data) {
+					var node = data.node;
+					$('#menuTree').jstree().toggle_node(node); // 노드를 접거나 펼침
+					$('#menuTree').jstree().deselect_node(node); // 선택 해제
+				});
+
+				// 수정 및 삭제 버튼 클릭 이벤트
+				$('#menuTree').on('click','.edit-btn', function(e) {
+					e.stopPropagation();
+					let menuId = $(this).closest('li').data('id'); // menuId를 data 속성으로 설정했다고 가정
+					updatedialog(menuId); // 다이얼로그 열기 함수 호출
+				});
+
+				$('#menuTree').on('click','.delete-btn', function(e) {
+					e.stopPropagation();
+					let nodeName = $(this).closest('li').children('.jstree-anchor').text().trim();
+					if (confirm('정말로 삭제하시겠습니까?')) {
+						$(this).closest('li').remove();
+					}
+				});
+			},
+			error : function(data) {
+				alert("오류가 발생했습니다.");
+			}
 		});
+	}
+	$(document).ready(function() {
+		getJsonData(); // 페이지 로드 시 JSON 데이터 가져오기
 	});
 </script>
+

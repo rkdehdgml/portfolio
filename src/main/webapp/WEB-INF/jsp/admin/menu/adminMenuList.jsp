@@ -3,7 +3,7 @@
 
 <!-- CSS  -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css">
-<link rel="stylesheet" type="text/css" href="/css/admin/menuAdminMange.css">
+<link rel="stylesheet" type="text/css" href="/css/admin/menuMange.css">
 
 <!-- jsTree 로드 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
@@ -15,9 +15,11 @@
 	<button id="saveBtn" class="btn list-btn">순서적용</button>
 </div>
 
-<!-- 메뉴 동적으로 그려줌 -->
+<!-- 메뉴 구역 -->
 <div id="menuTree"></div>
+<!-- 모달창 js -->
 <script src="/js/dialogCustom.js"></script>
+<!-- 모달창 구역 -->
 <div id="insertPopup" style="display:none;"></div>
 <div id="updatePopup" style="display:none;"></div>
 <script>
@@ -41,7 +43,7 @@ function getJsonData() {
 							"responsive" : true
 						}
 					},
-					"plugins" : [ "dnd", "contextmenu", "state", "wholerow" ],
+					"plugins" : [ "dnd", "state", "wholerow" ],
 					"types" : {
 						"default" : {
 							"icon" : false

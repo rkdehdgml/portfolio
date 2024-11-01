@@ -68,7 +68,6 @@ function updatedialog(menuId) {
 		data: $('#menuListForm').serialize(),
 		dataType: 'html',
 		success: function(data) {
-			console.log(data);
 			$("#updatePopup").html(data);
 			$("#updatePopup").dialog({
 				modal: true,

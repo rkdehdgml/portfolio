@@ -48,10 +48,21 @@ public class MenuController {
 		return CommandUtil.getAdminLayout();
 	}
 	
+	/**
+	 * 동적메뉴 json데이터(관리자 메뉴)
+	 * @param request
+	 * @param response
+	 */
 	@RequestMapping(value="/admin/adminMenuJson.do")
-	public void adminMenuJson(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
+	public void adminMenuJson(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			List<Map<String,Object>> menuList = TestData.menuList();
+			for (int i=0; i < menuList.size(); i++) {
+				Map<String, Object> menuMap = menuList.get(i);
+				if(!menuMap.get("menuType").equals("A")) {
+					menuList.remove(i);
+				}
+			}
 			Gson gson = new Gson();
 			PrintWriter out = null;
 
@@ -192,5 +203,40 @@ public class MenuController {
 		model.addAttribute("content", "/admin/menu/userMenuList.jsp");
 		return CommandUtil.getAdminLayout();
 	}
+	
+	/**
+	 * 동적메뉴 json데이터(사용자메뉴)
+	 * @param request
+	 * @param response
+	 */
+	@RequestMapping(value="/admin/userMenuJson.do")
+	public void userMenuJson(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			List<Map<String,Object>> menuList = TestData.menuList();
+			for (int i=0; i < menuList.size(); i++) {
+				Map<String, Object> menuMap = menuList.get(i);
+				if(!menuMap.get("menuType").equals("U")) {
+					menuList.remove(i);
+				}
+			}
+			Gson gson = new Gson();
+			PrintWriter out = null;
 
+			try {
+				response.setCharacterEncoding("utf-8");
+				String json = gson.toJson(menuList);
+				out = response.getWriter();
+				out.print(json);
+			} catch (IOException e) {
+				CommandLogger.debug(e, this.getClass(), "adminMenuInsert");
+			} finally {
+				if (out != null) {
+					out.flush();
+					out.close();
+				}
+			}
+		} catch (Exception e) {
+			CommandLogger.debug(e, this.getClass(), "adminMenuInsert");
+		}
+	}
 }
