@@ -7,7 +7,6 @@
 
 <!-- jsTree 로드 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
-<script src="/js/dialogCustom.js"></script>
 
 
 <h2 style="font-size: 40px; font-weight: bold;">관리자페이지 메뉴 정보</h2>
@@ -18,6 +17,9 @@
 
 <!-- 메뉴 동적으로 그려줌 -->
 <div id="menuTree"></div>
+<script src="/js/dialogCustom.js"></script>
+<div id="insertPopup" style="display:none;"></div>
+<div id="updatePopup" style="display:none;"></div>
 <script>
 function getJsonData() {
 	$.ajax({
@@ -27,9 +29,10 @@ function getJsonData() {
 			success : function(data) {
 				var jsonArray = new Array();
 				$.each(data, function(idx, item) {
-					jsonArray[idx] = {id:item.menuId, parent: item.parMenuNm, text:item.menuNm}
+					jsonArray[idx] = {id:item.menuId,
+									parent: item.parMenuNm,
+									text:item.menuNm + '<div class="menu-buttons"><button class="btn edit-btn">수정</button><button class="btn delete-btn">삭제</button></div>'}
 				});
-				console.log(jsonArray);
 				$('#menuTree').jstree({
 					"core" : {
 						"data" : jsonArray,
@@ -53,7 +56,6 @@ function getJsonData() {
 
 				$('#menuTree').on("select_node.jstree", function(e, data) {
 					var node = data.node;
-					console.log(node);
 					$('#menuTree').jstree().toggle_node(node); // 노드를 접거나 펼침
 					$('#menuTree').jstree().deselect_node(node); // 선택 해제
 				});
@@ -61,9 +63,8 @@ function getJsonData() {
 				// 수정 및 삭제 버튼 클릭 이벤트
 				$('#menuTree').on('click','.edit-btn', function(e) {
 					e.stopPropagation();
-					let nodeName = $(this).closest('li').children('.jstree-anchor').text().trim();
-					alert('수정하시겠습니까?');
-					// 수정 로직 추가
+					let menuId = $(this).closest('li').data('id'); // menuId를 data 속성으로 설정했다고 가정
+					updatedialog(menuId); // 다이얼로그 열기 함수 호출
 				});
 
 				$('#menuTree').on('click','.delete-btn', function(e) {

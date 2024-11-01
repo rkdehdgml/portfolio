@@ -49,7 +49,7 @@ public class MenuController {
 	}
 	
 	@RequestMapping(value="/admin/adminMenuJson.do")
-	public void adminMenuList(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
+	public void adminMenuJson(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
 		try {
 			List<Map<String,Object>> menuList = TestData.menuList();
 			Gson gson = new Gson();
