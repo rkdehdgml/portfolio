@@ -44,6 +44,7 @@ public class TestData {
 	    map1.put("menuType", "A");
 	    map1.put("menuUrl", "/admin/mberList.do");
 	    map1.put("menuYn", "Y");
+	    map1.put("parMenuNm", "#");
 	    list.add(map1);
 
 	    // 두 번째 메뉴 (서브 메뉴 없음)
@@ -55,28 +56,31 @@ public class TestData {
 	    map2.put("menuType", "A");
 	    map2.put("menuUrl", "/admin/mberInfo.do");
 	    map2.put("menuYn", "Y");
+	    map2.put("parMenuNm", "MN1");
 	    list.add(map2);
 
 	    // 서브 메뉴 추가
 	    Map<String, Object> map1_sub = new HashMap<>();
 	    map1_sub.put("mberSeq", 3);
-	    map1_sub.put("menuId", "MN1_SUB1");
+	    map1_sub.put("menuId", "MN3");
 	    map1_sub.put("menuNm", "회원리스트");
 	    map1_sub.put("menuLev", "2");
 	    map1_sub.put("menuType", "A");
 	    map1_sub.put("menuUrl", "/admin/memberList.do");
 	    map1_sub.put("menuYn", "Y");
+	    map1_sub.put("parMenuNm", "MN2");
 	    list.add(map1_sub);
 
 	    // 마지막 메뉴 (서브 메뉴 없음)
 	    Map<String, Object> map3 = new HashMap<>();
 	    map3.put("mberSeq", 4);
-	    map3.put("menuId", "MN3");
-	    map3.put("menuNm", "세번째 메뉴");
+	    map3.put("menuId", "MN4");
+	    map3.put("menuNm", "회원등록");
 	    map3.put("menuLev", "2");
 	    map3.put("menuType", "A");
 	    map3.put("menuUrl", "/admin/thirdMenu.do");
 	    map3.put("menuYn", "Y");
+	    map3.put("parMenuNm", "MN2");
 	    list.add(map3);
 
 	    return list;
