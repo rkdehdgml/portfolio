@@ -7,12 +7,10 @@
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName"
-			value="com.mysql.jdbc.Driver" />
-		<property name="url"
-			value="jdbc:mysql://database.ctses2imofvv.ap-northeast-2.rds.amazonaws.com/chapark" />
-		<property name="username" value="chapark" />
-		<property name="password" value="Ckqkr12#$" />
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://172.30.1.13:3306/portfolio" />
+		<property name="username" value="root" />
+		<property name="password" value="kdh@1311" />
 	</bean>
 
 

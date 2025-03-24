@@ -2,16 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mn_menu">
-	<!-- 회원정보 조회 -->
-	<select id="selectMenuList" resultType="map">
+	<!-- 메뉴정보 조회 -->
+	<select id="selectMenuList" resultType="utilMap">
 		SELECT 
-			MBER_SEQ
-			, MBER_ID
-			, MBER_PW
-			, MBER_NAME
+			MENU_SEQ
+			, MENU_NM
+			, MENU_LEV
+			, MENU_TYPE
+			, MENU_URL
+			, MENU_YN
+			, PAR_MENU_NM
 		FROM
-			TB_MBER
+			DH_MENU
 		WHERE
-			MBER_PW = #{mberPw}
+			MENU_TYPE = #{menuType}
 	</select>
 </mapper>

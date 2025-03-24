@@ -9,7 +9,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
 
 <form method="post" id="menuForm">
-	<input type="hidden" id>
 </form>
 
 <h2 style="font-size: 40px; font-weight: bold;">관리자페이지 메뉴 정보</h2>
@@ -31,16 +30,19 @@ function getJsonData() {
 			url : "/admin/adminMenuJson.do",
 			dataType : "json",
 			success : function(data) {
-				var jsonArray = new Array();
-				$.each(data, function(idx, item) {
-					jsonArray[idx] = {id:item.menuId,
-									parent: item.parMenuNm,
-									text:item.menuNm 
-									+ '<div class="menu-buttons">'
-									+ '<button class="btn edit-btn" data-id="'+item.menuId+'">수정</button>'
-									+ '<button class="btn delete-btn"data-id="'+item.menuId+'">삭제</button>'
-									+'</div>'}
-				});
+// 				var jsonArray = new Array();
+// 				$.each(data, function(idx, item) {
+// 					jsonArray[idx] = {id:item.menuId,
+// 									parent: item.parMenuNm,
+// 									text:item.menuNm 
+// 									+ '<div class="menu-buttons">'
+// 									+ '<button class="btn edit-btn" data-id="'+item.menuId+'">수정</button>'
+// 									+ '<button class="btn delete-btn"data-id="'+item.menuId+'">삭제</button>'
+// 									+'</div>'}
+// 				});
+				console.log(data);
+				var menuList = data.list;
+				console.log(menuList);
 				$('#menuTree').jstree({
 					"core" : {
 						"data" : jsonArray,

@@ -53,9 +53,11 @@ public class MenuController {
 	 * @param response
 	 */
 	@RequestMapping(value="/admin/adminMenuJson.do")
-	public void adminMenuJson(HttpServletRequest request, HttpServletResponse response,Model model) {
+	public void adminMenuJson(HttpServletRequest request, HttpServletResponse response,Model model, CommandMap commandMap) {
 		try {
-			List<Map<String,Object>> menuList = TestData.menuList();
+//			List<Map<String,Object>> menuList = TestData.menuList();
+			commandMap.put("menuType", "A");
+			List<Map<String,Object>> menuList = commandService.selectList("mn_menu.selectMenuList", commandMap.getMap());
 			for (int i=0; i < menuList.size(); i++) {
 				Map<String, Object> menuMap = menuList.get(i);
 				if(!menuMap.get("menuType").equals("A")) {
