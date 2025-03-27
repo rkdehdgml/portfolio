@@ -1,4 +1,4 @@
-//slick-slider.js
+zz//slick-slider.js
 $(document).ready(function() {
 	$('.project').slick({
 		rows: 1,

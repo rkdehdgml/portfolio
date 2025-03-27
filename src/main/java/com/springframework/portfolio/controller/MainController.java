@@ -17,10 +17,4 @@ public class MainController {
 	public String main(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
 		return "/user/main";
 	}
-
-	// 3번 섹션의 동적 콘텐츠를 반환하는 메서드
-	@RequestMapping(value = "/aboutMe.do")
-	public String aboutMe(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap) {
-		return "aboutMe";
-	}
 }
