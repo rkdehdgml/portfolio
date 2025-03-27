@@ -13,7 +13,7 @@ import com.springframework.portfolio.common.CommandMap;
 @Controller
 public class MainController {
 
-	@RequestMapping(value = "/main.do")
+	@RequestMapping(value = "/mainPage")
 	public String main(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
 		return "/user/main";
 	}
