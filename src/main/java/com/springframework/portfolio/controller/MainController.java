@@ -15,6 +15,6 @@ public class MainController {
 
 	@RequestMapping(value = "/mainPage")
 	public String main(HttpServletRequest request, HttpServletResponse response, CommandMap commonMap, Model model) {
-		return "/user/main";
+		return "/user/layout";
 	}
 }
